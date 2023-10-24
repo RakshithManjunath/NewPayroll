@@ -1,0 +1,168 @@
+container:
+  type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
+components:
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Earning head1, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'PNEWIY,EZKOMN'}
+- type: TextBox
+  properties: {}
+  name: text_box_1
+  layout_properties: {grid_position: 'PNEWIY,OUGIDT'}
+  event_bindings: {change: text_box_1_change}
+- type: TextBox
+  properties: {}
+  name: text_box_2
+  layout_properties: {grid_position: 'PNEWIY,PQGPUS'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Earning head2, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'NROLRZ,PGKAII'}
+- type: TextBox
+  properties: {}
+  name: text_box_3
+  layout_properties: {grid_position: 'NROLRZ,PXJGJI'}
+  event_bindings: {change: text_box_3_change}
+- type: TextBox
+  properties: {}
+  name: text_box_4
+  layout_properties: {grid_position: 'NROLRZ,MHSRDD'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Earning head3, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_3
+  layout_properties: {grid_position: 'LVOMLA,WQBYPD'}
+- type: TextBox
+  properties: {}
+  name: text_box_5
+  layout_properties: {grid_position: 'LVOMLA,PYCQHE'}
+  event_bindings: {change: text_box_5_change}
+- type: TextBox
+  properties: {}
+  name: text_box_6
+  layout_properties: {grid_position: 'LVOMLA,ALVBDF'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Earning head4, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_4
+  layout_properties: {grid_position: 'YYSEDD,XSGXMO'}
+- type: TextBox
+  properties: {}
+  name: text_box_7
+  layout_properties: {grid_position: 'YYSEDD,FWFHAN'}
+  event_bindings: {change: text_box_7_change}
+- type: TextBox
+  properties: {}
+  name: text_box_8
+  layout_properties: {grid_position: 'YYSEDD,YKDLUQ'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Earning head5, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_5
+  layout_properties: {grid_position: 'RMBVIO,RZJYHZ'}
+- type: TextBox
+  properties: {}
+  name: text_box_9
+  layout_properties: {grid_position: 'RMBVIO,IVBSKG'}
+  event_bindings: {change: text_box_9_change}
+- type: TextBox
+  properties: {}
+  name: text_box_10
+  layout_properties: {grid_position: 'RMBVIO,AZKHKV'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Earning head6, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_6
+  layout_properties: {grid_position: 'OSQLYY,XSJHLC'}
+- type: TextBox
+  properties: {}
+  name: text_box_11
+  layout_properties: {grid_position: 'OSQLYY,WASUUP'}
+  event_bindings: {change: text_box_11_change}
+- type: TextBox
+  properties: {}
+  name: text_box_12
+  layout_properties: {grid_position: 'OSQLYY,BZTWAO'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Earning head7, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_7
+  layout_properties: {grid_position: 'WLQWVE,HBOFPH'}
+- type: TextBox
+  properties: {}
+  name: text_box_13
+  layout_properties: {grid_position: 'WLQWVE,EFRZWZ'}
+  event_bindings: {change: text_box_13_change}
+- type: TextBox
+  properties: {}
+  name: text_box_14
+  layout_properties: {grid_position: 'WLQWVE,RUGSJO'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Earning head8, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_8
+  layout_properties: {grid_position: 'GUWRPK,TPUQDR'}
+- type: TextBox
+  properties: {}
+  name: text_box_15
+  layout_properties: {grid_position: 'GUWRPK,KWVMUJ'}
+  event_bindings: {change: text_box_15_change}
+- type: TextBox
+  properties: {}
+  name: text_box_16
+  layout_properties: {grid_position: 'GUWRPK,ICHYTL'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Earning head9, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_9
+  layout_properties: {grid_position: 'VZOKLP,CGWWVA'}
+- type: TextBox
+  properties: {}
+  name: text_box_17
+  layout_properties: {grid_position: 'VZOKLP,UNVPFB'}
+  event_bindings: {change: text_box_17_change}
+- type: TextBox
+  properties: {}
+  name: text_box_18
+  layout_properties: {grid_position: 'VZOKLP,ZDGXNO'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Earning head10, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_10
+  layout_properties: {grid_position: 'XODETX,RSSIMA'}
+- type: TextBox
+  properties: {}
+  name: text_box_19
+  layout_properties: {grid_position: 'XODETX,JXISTV'}
+  event_bindings: {change: text_box_19_change}
+- type: TextBox
+  properties: {}
+  name: text_box_20
+  layout_properties: {grid_position: 'XODETX,KSZKZU'}
+is_package: true
+custom_component: true

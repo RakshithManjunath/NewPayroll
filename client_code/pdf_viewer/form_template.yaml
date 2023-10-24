@@ -1,0 +1,10 @@
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: "\n<iframe id='pdf_view' src='' frameborder=\"0\" width=\"100%\"\
+      \ height=\"500\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"\
+      true\"></iframe>\n\n<script>\nfunction display_pdf(url){\n\t$('#pdf_view').attr('src',\
+      \ url)\n}\n</script>\n  "}
+  event_bindings: {show: form_show}
+components: []
+is_package: true

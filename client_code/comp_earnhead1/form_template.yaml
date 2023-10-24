@@ -1,0 +1,506 @@
+container:
+  type: ColumnPanel
+  properties: {role: null, tooltip: '', border: dotted, foreground: '', visible: false,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: '#e1e8ed'}
+components:
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_3
+  layout_properties: {grid_position: 'NAGUDA,OIMCEE'}
+- type: Label
+  properties: {role: body, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'ASYSFE,UNFMFU'}
+- type: Label
+  properties: {role: body, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'ASYSFE,STYCOL'}
+- type: Label
+  properties: {role: body, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_3
+  layout_properties: {grid_position: 'ASYSFE,AJJJJD'}
+- type: Label
+  properties: {role: body, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_4
+  layout_properties: {grid_position: 'ASYSFE,DMVAKT'}
+- type: Label
+  properties: {role: body, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_5
+  layout_properties: {grid_position: 'ASYSFE,BCBRJG'}
+- type: Label
+  properties: {role: body, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_6
+  layout_properties: {grid_position: 'ASYSFE,LOIZJZ'}
+- type: Label
+  properties: {role: body, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_7
+  layout_properties: {grid_position: 'ASYSFE,JQJFEM'}
+- type: Label
+  properties: {role: body, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_8
+  layout_properties: {grid_position: 'ASYSFE,JEUPFZ'}
+- type: Label
+  properties: {role: body, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_9
+  layout_properties: {grid_position: 'ASYSFE,PUEPVH'}
+- type: Label
+  properties: {role: body, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+    spacing_below: small, italic: false, background: '', bold: true, underline: false,
+    icon: ''}
+  name: label_10
+  layout_properties: {grid_position: 'ASYSFE,QJHVZA'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PF, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_1
+  layout_properties: {grid_position: 'SNGBBE,BZURXT'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PF, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_2
+  layout_properties: {grid_position: 'SNGBBE,QCIPPN'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PF, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_3
+  layout_properties: {grid_position: 'SNGBBE,HJKUEL'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PF, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_4
+  layout_properties: {grid_position: 'SNGBBE,IRQRRN'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PF, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_5
+  layout_properties: {grid_position: 'SNGBBE,ZCFWRW'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PF, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_6
+  layout_properties: {grid_position: 'SNGBBE,WGRKSA'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PF, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_7
+  layout_properties: {grid_position: 'SNGBBE,SCVNCB'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PF, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_8
+  layout_properties: {grid_position: 'SNGBBE,YSRXCX'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PF, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_9
+  layout_properties: {grid_position: 'SNGBBE,RAEMQJ'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PF, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_10
+  layout_properties: {grid_position: 'SNGBBE,FDCXXQ'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: ESI, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_11
+  layout_properties: {grid_position: 'WNSCFX,XEXENZ'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: ESI, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_12
+  layout_properties: {grid_position: 'WNSCFX,EQDYRM'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: ESI, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_13
+  layout_properties: {grid_position: 'WNSCFX,TNHJJQ'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: ESI, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_14
+  layout_properties: {grid_position: 'WNSCFX,CONQYN'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: ESI, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_15
+  layout_properties: {grid_position: 'WNSCFX,SUKKPH'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: ESI, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_16
+  layout_properties: {grid_position: 'WNSCFX,VDTEWS'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: ESI, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_17
+  layout_properties: {grid_position: 'WNSCFX,BJJGBU'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: ESI, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_18
+  layout_properties: {grid_position: 'WNSCFX,MHBLHT'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: ESI, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_19
+  layout_properties: {grid_position: 'WNSCFX,OPTVHH'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: ESI, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_20
+  layout_properties: {grid_position: 'WNSCFX,KIZDQV'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_21
+  layout_properties: {grid_position: 'OTCAJT,NCQMDY'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_22
+  layout_properties: {grid_position: 'OTCAJT,WQVOBK'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_23
+  layout_properties: {grid_position: 'OTCAJT,XGGEXE'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_24
+  layout_properties: {grid_position: 'OTCAJT,YQKZZV'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_25
+  layout_properties: {grid_position: 'OTCAJT,BWMORG'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_26
+  layout_properties: {grid_position: 'OTCAJT,DVGUSI'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_27
+  layout_properties: {grid_position: 'OTCAJT,AAAKEN'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_28
+  layout_properties: {grid_position: 'OTCAJT,UHBVGP'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_29
+  layout_properties: {grid_position: 'OTCAJT,UEERMA'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: PT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_30
+  layout_properties: {grid_position: 'OTCAJT,ZGAJLO'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: OT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_31
+  layout_properties: {grid_position: 'RZXWSD,UIAIKR'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: OT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_32
+  layout_properties: {grid_position: 'RZXWSD,JYZRXN'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: OT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_33
+  layout_properties: {grid_position: 'RZXWSD,MEMJQD'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: OT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_34
+  layout_properties: {grid_position: 'RZXWSD,GWGIQV'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: OT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_35
+  layout_properties: {grid_position: 'RZXWSD,YZTTGZ'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: OT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_36
+  layout_properties: {grid_position: 'RZXWSD,QGWZTD'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: OT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_37
+  layout_properties: {grid_position: 'RZXWSD,QNUTSN'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: OT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_38
+  layout_properties: {grid_position: 'RZXWSD,LKDYYY'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: OT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_39
+  layout_properties: {grid_position: 'RZXWSD,ZCEXGR'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: OT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_40
+  layout_properties: {grid_position: 'RZXWSD,AURZHX'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: IT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_41
+  layout_properties: {grid_position: 'NYLWTF,PDMUGE'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: IT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_42
+  layout_properties: {grid_position: 'NYLWTF,BGGHHC'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: IT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_43
+  layout_properties: {grid_position: 'NYLWTF,JHGBGT'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: IT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_44
+  layout_properties: {grid_position: 'NYLWTF,TMGISC'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: IT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_45
+  layout_properties: {grid_position: 'NYLWTF,GMMRJH'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: IT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_46
+  layout_properties: {grid_position: 'NYLWTF,OHAOBN'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: IT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_47
+  layout_properties: {grid_position: 'NYLWTF,EXHWSW'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: IT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_48
+  layout_properties: {grid_position: 'NYLWTF,CAYPVR'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: IT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_49
+  layout_properties: {grid_position: 'NYLWTF,AJBSBX'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: IT, font_size: null,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_50
+  layout_properties: {grid_position: 'NYLWTF,LSKQPX'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: Bonus, font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_51
+  layout_properties: {grid_position: 'VRDDJL,SNCCUZ'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: Bonus, font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_52
+  layout_properties: {grid_position: 'VRDDJL,FAQDLH'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: Bonus, font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_53
+  layout_properties: {grid_position: 'VRDDJL,TIDDGD'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: Bonus, font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_54
+  layout_properties: {grid_position: 'VRDDJL,TOSKAU'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: Bonus, font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_55
+  layout_properties: {grid_position: 'VRDDJL,JLJXUH'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: Bonus, font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_56
+  layout_properties: {grid_position: 'VRDDJL,RJHQXN'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: Bonus, font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_57
+  layout_properties: {grid_position: 'VRDDJL,RXHPPW'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: Bonus, font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_58
+  layout_properties: {grid_position: 'VRDDJL,OBBXAA'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: Bonus, font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_59
+  layout_properties: {grid_position: 'VRDDJL,YKKNZE'}
+- type: CheckBox
+  properties: {role: null, align: center, tooltip: '', border: dotted, enabled: true,
+    foreground: '', allow_indeterminate: false, visible: true, text: Bonus, font_size: 14,
+    font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+    bold: false, checked: false, underline: false}
+  name: check_box_60
+  layout_properties: {grid_position: 'VRDDJL,KMYKRS'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_1
+  layout_properties: {grid_position: 'KWSRLK,EFUSEX'}
+is_package: true
+custom_component: true

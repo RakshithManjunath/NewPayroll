@@ -1,0 +1,243 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: title, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'ZTQTVD,GXJYVA'}
+  - type: Spacer
+    properties: {height: 19}
+    name: spacer_1
+    layout_properties: {grid_position: 'FOCZOQ,FBPZHZ'}
+  - type: Label
+    properties: {role: body, align: left, tooltip: '', border: '', foreground: 'theme:Error',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: label_5
+    layout_properties: {grid_position: 'ZQUMXA,NHNHVV'}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_2
+    layout_properties: {grid_position: 'ZQUMXA,YHJZOA'}
+  - type: TextBox
+    properties: {role: outlined-error, align: left, hide_text: false, tooltip: '',
+      placeholder: New employee code, border: '', enabled: true, foreground: '', visible: true,
+      text: '', font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false}
+    name: text_box_1
+    layout_properties: {grid_position: 'JYOYUA,LCPQVO'}
+    event_bindings: {change: text_box_1_change, pressed_enter: text_box_1_pressed_enter}
+  - type: TextBox
+    properties: {role: outlined-error, align: left, hide_text: false, tooltip: '',
+      placeholder: New employee name, border: '', enabled: true, foreground: '', visible: true,
+      text: '', font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false}
+    name: text_box_2
+    layout_properties: {grid_position: 'JYOYUA,PRNDFE'}
+    event_bindings: {change: text_box_2_change}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Father / Husband name,
+      border: '', enabled: false, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: text_box_3
+    layout_properties: {grid_position: 'JNLXDH,BQIYFG'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Employee sex, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'JNLXDH,NWSDLN'}
+  - type: RadioButton
+    properties: {role: null, selected: false, align: left, tooltip: '', border: '',
+      enabled: false, foreground: '', value: '', visible: true, text: Male, font_size: null,
+      font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+      bold: false, group_name: gender, underline: false}
+    name: radio_button_1
+    layout_properties: {grid_position: 'JNLXDH,BGLHDB'}
+  - type: RadioButton
+    properties: {role: null, selected: true, align: left, tooltip: '', border: '',
+      enabled: false, foreground: '', value: '', visible: true, text: Female, font_size: null,
+      font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+      bold: false, group_name: gender, underline: false}
+    name: radio_button_2
+    layout_properties: {grid_position: 'JNLXDH,SUMYVW'}
+  - type: DatePicker
+    properties: {role: null, align: left, max_date: '', pick_time: false, tooltip: '',
+      placeholder: Date of Birth, border: '', enabled: false, foreground: '', visible: true,
+      font_size: null, font: '', spacing_above: small, spacing_below: small, italic: false,
+      date: '', min_date: '', background: '', bold: false, underline: false, format: '%d/%m/Y'}
+    name: date_picker_1
+    layout_properties: {grid_position: 'HTXEQL,XDGIKZ'}
+    event_bindings: {}
+  - type: DatePicker
+    properties: {role: null, align: left, max_date: '', pick_time: false, tooltip: '',
+      placeholder: Date of  Joining, border: '', enabled: false, foreground: '', visible: true,
+      font_size: null, font: '', spacing_above: small, spacing_below: small, italic: false,
+      date: '', min_date: '', background: '', bold: false, underline: false, format: '%d/%m/Y'}
+    name: date_picker_2
+    layout_properties: {grid_position: 'HTXEQL,WQNIZR'}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Employee type, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'NGTLKM,QFSCBW'}
+  - type: RadioButton
+    properties: {role: null, selected: false, align: left, tooltip: '', border: '',
+      enabled: false, foreground: '', value: '', visible: true, text: Staff, font_size: null,
+      font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+      bold: false, group_name: emp_type, underline: false}
+    name: radio_button_3
+    layout_properties: {grid_position: 'NGTLKM,TVHMTE'}
+  - type: RadioButton
+    properties: {role: null, selected: true, align: left, tooltip: '', border: '',
+      enabled: false, foreground: '', value: '', visible: true, text: Worker, font_size: null,
+      font: '', spacing_above: small, spacing_below: small, italic: false, background: '',
+      bold: false, group_name: emp_type, underline: false}
+    name: radio_button_4
+    layout_properties: {grid_position: 'NGTLKM,LARIOV'}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: Select department
+      border: ''
+      enabled: false
+      foreground: ''
+      items: []
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: drop_down_1
+    layout_properties: {grid_position: 'QCDGAM,BDFDZQ'}
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: Select designation
+      border: ''
+      enabled: false
+      foreground: ''
+      items: []
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: true
+    name: drop_down_2
+    layout_properties: {grid_position: 'QCDGAM,HXGLIR'}
+  - type: Link
+    properties: {role: title, url: '', align: center, tooltip: '', border: solid,
+      foreground: '', visible: false, text: 'Provident Fund [ PF ]', font_size: null,
+      wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small, icon_align: left,
+      col_widths: '', spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: link_1
+    layout_properties: {grid_position: 'KVACKN,NQTEVF'}
+    event_bindings: {click: link_1_click}
+  - type: Link
+    properties: {role: title, url: '', align: center, tooltip: '', border: double,
+      foreground: '', visible: false, text: 'Emp State Insurance [ ESI ]', font_size: null,
+      wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small, icon_align: left,
+      col_widths: '{}', spacing_below: small, italic: false, background: '#e1e1ed',
+      bold: true, underline: false, icon: ''}
+    name: link_2
+    layout_properties: {grid_position: 'KVACKN,FOWFWS'}
+    components: []
+    event_bindings: {click: link_2_click}
+  - type: Link
+    properties: {role: title, url: '', align: center, tooltip: '', border: dotted,
+      foreground: '', visible: false, text: Professional & Income Tax, font_size: null,
+      wrap_on: mobile, font: '', col_spacing: medium, spacing_above: small, icon_align: left,
+      col_widths: '', spacing_below: small, italic: false, background: '#e1e5ed',
+      bold: true, underline: false, icon: ''}
+    name: link_3
+    layout_properties: {grid_position: 'KVACKN,KYXVSO'}
+    event_bindings: {click: link_3_click}
+  - type: form:pt_and_it_form1
+    properties: {}
+    name: custom_3
+    layout_properties: {grid_position: 'BYNRPT,UZFZYV'}
+  - type: form:esi_form_add1
+    properties: {}
+    name: custom_2
+    layout_properties: {grid_position: 'JVWOPY,HRDHCF'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'ORQYFW,NJSQQI'}
+    components:
+    - type: form:pf_form_add1
+      properties: {}
+      name: custom_1
+      layout_properties: {grid_position: 'GTAWGA,SBLUQC'}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_3
+    layout_properties: {grid_position: 'EXWEOC,QGVIYM'}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: false,
+      foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'HHNBOT,HUYBWQ'}
+    event_bindings: {click: button_1_click}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: false,
+      foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: button_2
+    layout_properties: {grid_position: 'HHNBOT,BTFFTR'}
+    event_bindings: {click: button_2_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Main menu, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: outlined_button_1
+    layout_properties: {}
+    event_bindings: {click: outlined_button_1_click}
+- type: Label
+  properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Employee add, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_1
+  layout_properties: {slot: title}

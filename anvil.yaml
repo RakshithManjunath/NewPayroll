@@ -1,0 +1,925 @@
+correct_dependency_ids: {}
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
+    confirm_email: true}
+  server_config: {user_table: users}
+- source: /runtime/services/anvil/files.yml
+  client_config: {}
+  server_config: {}
+startup: {type: form, module: logform}
+package_name: Payroll
+allow_embedding: false
+name: Clone of Payroll
+runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
+startup_form: null
+db_schema:
+  designation:
+    title: designation
+    client: none
+    server: full
+    columns:
+    - name: desi_id
+      admin_ui: {width: 200}
+      type: string
+    - name: desi_code
+      admin_ui: {width: 200}
+      type: string
+    - name: desi_name
+      admin_ui: {width: 200}
+      type: string
+    - name: desi_comp_code
+      admin_ui: {order: 0.5, width: 200}
+      type: string
+  department:
+    title: department
+    client: none
+    server: full
+    columns:
+    - name: dept_id
+      admin_ui: {width: 200}
+      type: string
+    - name: dept_code
+      admin_ui: {width: 200}
+      type: string
+    - name: dept_name
+      admin_ui: {width: 200}
+      type: string
+    - name: dept_comp_code
+      admin_ui: {order: 0.5, width: 200}
+      type: string
+  transaction:
+    title: transaction
+    client: none
+    server: full
+    columns:
+    - name: id
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_date
+      admin_ui: {width: 200}
+      type: date
+    - name: trans_empid
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_empname
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_father_husband
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_empsex
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_empdob
+      admin_ui: {width: 200}
+      type: date
+    - name: trans_empdoj
+      admin_ui: {width: 200}
+      type: date
+    - name: trans_emptype
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_deptcode
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_deptname
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_desicode
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_desiname
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_emppfc
+      admin_ui: {width: 200}
+      type: bool
+    - name: trans_emppfno
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_emp_pfuan
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_empesic
+      admin_ui: {width: 200}
+      type: bool
+    - name: trans_empesino
+      admin_ui: {order: 15, width: 200}
+      type: number
+    - name: trans_empdispensary
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_empptc
+      admin_ui: {width: 200}
+      type: bool
+    - name: trans_empitc
+      admin_ui: {width: 200}
+      type: bool
+    - name: trans_emppan
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_mandays
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_wo
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_ph
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_layoff
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_absent
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_leave1
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_leave2
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_leave3
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_othrs
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_inchrs
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_ded1
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_ded2
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_ded3
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_ded4
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_loan1
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_loan2
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_adv
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_tds
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_pfvol
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_lic
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_arr_esipt
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_arr_pf
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn1
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn2
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn3
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn4
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn5
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn6
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn7
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn8
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn9
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn10
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn1
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn2
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn3
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn4
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn5
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn6
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn7
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn8
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn9
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_earn_earn10
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_phone_number
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_alt_phone_number
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_email_address
+      admin_ui: {width: 200}
+      type: string
+    - name: trans_aadhar_number
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_attn_bonus
+      admin_ui: {width: 200}
+      type: number
+    - name: fxd_earn_gross
+      admin_ui: {order: 67, width: 200}
+      type: number
+    - name: earn_pf_salary
+      admin_ui: {width: 200}
+      type: number
+    - name: earn_fpf_salary
+      admin_ui: {width: 200}
+      type: number
+    - name: earn_esi_salary
+      admin_ui: {width: 200}
+      type: number
+    - name: earn_pt_salary
+      admin_ui: {width: 200}
+      type: number
+    - name: earn_ot_salary
+      admin_ui: {width: 200}
+      type: number
+    - name: earn_it_salary
+      admin_ui: {width: 200}
+      type: number
+    - name: earn_bonus_salary
+      admin_ui: {width: 200}
+      type: number
+    - name: pf_amt
+      admin_ui: {width: 200}
+      type: number
+    - name: fpf_amt
+      admin_ui: {width: 200}
+      type: number
+    - name: esi_amt
+      admin_ui: {width: 200}
+      type: number
+    - name: pt_amt
+      admin_ui: {width: 200}
+      type: number
+    - name: ot_amt
+      admin_ui: {width: 200}
+      type: number
+    - name: it_or_tds_amt
+      admin_ui: {width: 200}
+      type: number
+    - name: bonus_amt
+      admin_ui: {width: 200}
+      type: number
+    - name: trans_paid_days
+      admin_ui: {order: 27.5, width: 200}
+      type: number
+    - name: trans_comp_code
+      admin_ui: {order: -0.25, width: 200}
+      type: string
+    - name: trans_earn_attn_bonus
+      admin_ui: {order: 66.5, width: 200}
+      type: number
+    - name: emp_photo
+      admin_ui: {width: 200, order: 80}
+      type: media
+  test_table:
+    client: none
+    server: full
+    columns:
+    - name: name
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: age
+      type: number
+      admin_ui: {width: 200, order: 1}
+    - name: gender
+      type: bool
+      admin_ui: {width: 200, order: 2}
+    - name: dob
+      type: date
+      admin_ui: {width: 200, order: 3}
+    - name: Punch
+      type: datetime
+      admin_ui: {width: 200, order: 4}
+    - name: photo
+      type: media
+      admin_ui: {width: 200, order: 5}
+    - name: salary
+      admin_ui: {order: 1.5, width: 200}
+      type: number
+    - name: pdf
+      admin_ui: {width: 200, order: 6}
+      type: media
+    title: test_table
+  company:
+    title: company
+    client: none
+    server: full
+    columns:
+    - name: comp_id
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_code
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_name
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_addr1
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_addr2
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_addr3
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_pto_circle
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_emp_pfrate
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_empr_fpfrate
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_pf_admin
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_pf_edli
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_mgmt_pf_lt
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_mgmt_fpf_lt
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_esi_sal_lt
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_pts1_from
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_pts1_to
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_pts1_pt
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_pts2_from
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_pts2_to
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_pts2_pt
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_pts3_from
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_pts3_to
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_pts3_pt
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_ded1
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_ded2
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_ded3
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_ded4
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_earn_head1
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_earnhead1_pf
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead1_pt
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead1_it
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead1_ot
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead1_bonus
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earn_head2
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_earnhead2_pf
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead2_esi
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead2_pt
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead2_it
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead2_ot
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead2_bonus
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earn_head3
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_earnhead3_pf
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead3_esi
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead3_pt
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead3_it
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead3_ot
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead3_bonus
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earn_head4
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_earnhead4_pf
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead4_esi
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead4_pt
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead4_it
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead4_ot
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead4_bonus
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earn_head5
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_earnhead5_pf
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead5_esi
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead5_pt
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead5_it
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead5_ot
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead5_bonus
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earn_head6
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_earnhead6_pf
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead6_esi
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead6_pt
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead6_it
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead6_ot
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead6_bonus
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earn_head7
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_earnhead7_pf
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead7_esi
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead7_pt
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead7_it
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead7_ot
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead7_bonus
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earn_head8
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_earnhead8_pf
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead8_esi
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead8_pt
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead8_it
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead8_ot
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead8_bonus
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earn_head9
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_earnhead9_pf
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead9_esi
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead9_pt
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead9_it
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead9_ot
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead9_bonus
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earn_head10
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_earnhead10_pf
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead10_esi
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead10_pt
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead10_ot
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead10_it
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead10_bonus
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_earnhead1_esi
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_bonus_from
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_bonus_to
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_bonus_percentage
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_bonus_limit
+      admin_ui: {width: 200}
+      type: number
+    - name: comp_bonus_pt_included
+      admin_ui: {width: 200}
+      type: bool
+    - name: comp_leave_head1
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_leave_head2
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_leave_head3
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_loan_head1
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_loan_head2
+      admin_ui: {width: 200}
+      type: string
+    - name: comp_pay_date
+      admin_ui: {width: 200}
+      type: date
+    - name: comp_esi_number
+      admin_ui: {order: 5.5, width: 200}
+      type: string
+    - name: comp_pf_number
+      type: string
+      admin_ui: {width: 200, order: 3.5}
+  files:
+    client: none
+    server: full
+    columns:
+    - name: path
+      type: string
+      admin_ui: {order: 0, width: 200}
+    - name: file
+      type: media
+      admin_ui: {order: 1, width: 200}
+    - name: file_version
+      type: string
+      admin_ui: {order: 2, width: 200}
+    title: Files
+  trans_date:
+    title: trans_date
+    client: none
+    server: full
+    columns:
+    - name: tr_date
+      admin_ui: {width: 200}
+      type: date
+    - name: tr_days
+      admin_ui: {width: 200}
+      type: number
+    - name: tr_sundays
+      admin_ui: {width: 200}
+      type: number
+    - name: tr_end_date
+      admin_ui: {width: 200}
+      type: date
+    - name: tr_id
+      admin_ui: {width: 200}
+      type: number
+    - name: trdate_comp_code
+      admin_ui: {order: -1, width: 200}
+      type: string
+  employee:
+    title: employee
+    client: none
+    server: full
+    columns:
+    - name: id
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: emp_code
+      admin_ui: {order: 1, width: 200}
+      type: string
+    - name: emp_name
+      admin_ui: {width: 200}
+      type: string
+    - name: emp_hus_name
+      admin_ui: {width: 200}
+      type: string
+    - name: emp_dob
+      admin_ui: {width: 200}
+      type: date
+    - name: emp_doj
+      admin_ui: {width: 200}
+      type: date
+    - name: emp_sex
+      admin_ui: {width: 200}
+      type: string
+    - name: emp_type
+      admin_ui: {width: 200}
+      type: string
+    - name: emp_pf_contribution
+      admin_ui: {width: 200}
+      type: bool
+    - name: emp_pf_number
+      admin_ui: {width: 200}
+      type: number
+    - name: emp_pf_uan
+      admin_ui: {width: 200}
+      type: string
+    - name: emp_esi_contribution
+      admin_ui: {width: 200}
+      type: bool
+    - name: emp_esi_number
+      admin_ui: {width: 200}
+      type: number
+    - name: emp_esi_dispensary
+      admin_ui: {width: 200}
+      type: string
+    - name: emp_pt_contribution
+      admin_ui: {width: 200}
+      type: bool
+    - name: emp_dept_code
+      admin_ui: {width: 200}
+      type: string
+    - name: emp_dept_name
+      admin_ui: {width: 200}
+      type: string
+    - name: emp_desi_code
+      admin_ui: {width: 200}
+      type: string
+    - name: emp_desi_name
+      admin_ui: {width: 200}
+      type: string
+    - name: emp_it_contribution
+      admin_ui: {order: 14.5, width: 200}
+      type: bool
+    - name: emp_pan_number
+      admin_ui: {order: 14.75, width: 200}
+      type: string
+    - name: earn1
+      admin_ui: {width: 200}
+      type: number
+    - name: earn2
+      admin_ui: {width: 200}
+      type: number
+    - name: earn3
+      admin_ui: {width: 200}
+      type: number
+    - name: earn4
+      admin_ui: {width: 200}
+      type: number
+    - name: earn5
+      admin_ui: {width: 200}
+      type: number
+    - name: earn6
+      admin_ui: {width: 200}
+      type: number
+    - name: earn7
+      admin_ui: {width: 200}
+      type: number
+    - name: earn8
+      admin_ui: {width: 200}
+      type: number
+    - name: earn9
+      admin_ui: {width: 200}
+      type: number
+    - name: earn10
+      admin_ui: {width: 200}
+      type: number
+    - name: phone_number
+      admin_ui: {width: 200}
+      type: number
+    - name: alt_phone_number
+      admin_ui: {width: 200}
+      type: number
+    - name: email_address
+      admin_ui: {width: 200}
+      type: string
+    - name: aadhar_number
+      admin_ui: {width: 200}
+      type: number
+    - name: attn_bonus
+      admin_ui: {width: 200}
+      type: number
+    - name: emp_photo
+      admin_ui: {width: 200, order: 30}
+      type: media
+    - name: emp_comp_code
+      admin_ui: {order: 0.5, width: 200}
+      type: string
+    - name: total_fxd_salary
+      admin_ui: {order: 24.9921875, width: 200}
+      type: number
+  users:
+    client: none
+    server: full
+    columns:
+    - name: email
+      type: string
+      admin_ui: {order: 0, width: 200}
+    - name: enabled
+      type: bool
+      admin_ui: {order: 1, width: 200}
+    - name: last_login
+      type: datetime
+      admin_ui: {order: 2, width: 200}
+    - name: password_hash
+      type: string
+      admin_ui: {order: 3, width: 200}
+    - name: n_password_failures
+      type: number
+      admin_ui: {order: 4, width: 200}
+    - name: confirmed_email
+      type: bool
+      admin_ui: {order: 5, width: 200}
+    - name: signed_up
+      type: datetime
+      admin_ui: {order: 6, width: 200}
+    - name: email_confirmation_key
+      admin_ui: {width: 200}
+      type: string
+    title: Users
+  password:
+    title: password
+    client: none
+    server: full
+    columns:
+    - name: username
+      admin_ui: {width: 200}
+      type: string
+    - name: password
+      admin_ui: {width: 200}
+      type: string
+    - name: pass_comp_code
+      admin_ui: {order: -1, width: 200}
+      type: string
+    - name: pass_id
+      admin_ui: {order: -2, width: 200}
+      type: string
+    - name: pass_code
+      admin_ui: {order: -1.5, width: 200}
+      type: string
+  bank:
+    title: bank
+    client: none
+    server: full
+    columns:
+    - name: bank_id
+      admin_ui: {width: 200}
+      type: string
+    - name: bank_code
+      admin_ui: {width: 200}
+      type: string
+    - name: bank_name
+      admin_ui: {width: 200}
+      type: string
+    - name: bank_addr1
+      admin_ui: {width: 200}
+      type: string
+    - name: bank_addr2
+      admin_ui: {width: 200}
+      type: string
+    - name: bank_addr3
+      admin_ui: {width: 200}
+      type: string
+    - name: bank_ifsc
+      admin_ui: {width: 200}
+      type: string
+    - name: bank_comp_code
+      admin_ui: {order: 0.5, width: 200}
+      type: string
+renamed: true

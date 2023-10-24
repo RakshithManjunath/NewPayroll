@@ -1,0 +1,74 @@
+container:
+  type: ColumnPanel
+  properties: {role: null, tooltip: '', border: dotted, foreground: '', visible: false,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: '#D3D3D3'}
+components:
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_1
+  layout_properties: {grid_position: 'MQMBKV,INTISA'}
+- type: Label
+  properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Select designation name to change, font_size: null, font: '',
+    spacing_above: small, icon_align: left, spacing_below: small, italic: false, background: '',
+    bold: true, underline: false, icon: ''}
+  name: label_1
+  layout_properties: {grid_position: 'WTVLOJ,YQPOYO'}
+- type: DropDown
+  properties:
+    role: null
+    align: full
+    tooltip: ''
+    placeholder: Select designation
+    border: ''
+    enabled: true
+    foreground: ''
+    items: []
+    visible: true
+    font_size: null
+    font: ''
+    spacing_above: small
+    spacing_below: small
+    italic: false
+    background: ''
+    bold: false
+    underline: false
+    include_placeholder: true
+  name: drop_down_1
+  layout_properties: {grid_position: 'WTVLOJ,XJRILF HPTDHB,BTBIFY'}
+  event_bindings: {change: drop_down_1_change}
+- type: TextBox
+  properties: {role: outlined-error, align: left, hide_text: false, tooltip: '', placeholder: '',
+    border: '', enabled: true, foreground: '', visible: false, text: '', font_size: null,
+    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: text_box_1
+  layout_properties: {grid_position: 'WTVLOJ,XJRILF SCLPHF,VOUBZL'}
+  event_bindings: {lost_focus: text_box_1_lost_focus, change: text_box_1_change}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_2
+  layout_properties: {grid_position: 'YJBKGE,WBZGHB'}
+- type: Button
+  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: false,
+    foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: button_1
+  layout_properties: {grid_position: 'TUEYCE,DUHQAV'}
+  event_bindings: {click: button_1_click}
+- type: Button
+  properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: button_2
+  layout_properties: {grid_position: 'TUEYCE,NQFNZZ'}
+  event_bindings: {click: button_2_click}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_3
+  layout_properties: {grid_position: 'KOQWFD,YDZQKS'}
+is_package: true
+custom_component: true

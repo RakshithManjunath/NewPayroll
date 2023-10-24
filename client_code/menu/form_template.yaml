@@ -1,0 +1,186 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
+    role: null, html: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"\
+      UTF-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta\
+      \ name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Responsive\
+      \ Dropdown Navigation Bar</title>\n  <style>\n    *{\n  margin: 0;\n  padding:\
+      \ 0;\n  box-sizing: border-box;\n  font-family: Arial, Helvetica, sans-serif;\n\
+      }\nbody{\n  background-color: #e1e8ed;\n}\n\n#top-search{\n  background-color:\
+      \ #2196f3;\n  padding: 0px 5%;\n  height: 0;\n}\n.input-box{\n  position: relative;\n\
+      }\n#top-search .search{\n  width: 100%;\n  height: 40px;\n  padding: 0 30px\
+      \ 0 30px;\n  border: none;\n  background-color: transparent;\n  color: #fff;\n\
+      \  font-size: 17px;\n}\n#top-search .search::placeholder{\n  font-size: 17px;\n\
+      \  color: #fff;\n}\n#top-search .search:focus{\n  outline: none;\n}\n.topser-icon{\n\
+      \  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  background-color:\
+      \ transparent;\n  color: #fff;\n  font-size: 27px;\n  border: none;\n  transform:\
+      \ rotate(-45deg);\n  -webkit-transform: rotate(-45deg);\n  -moz-transform: rotate(-45deg);\n\
+      \  -ms-transform: rotate(-45deg);\n  -o-transform: rotate(-45deg);\n}\n#topsercross-icon{\n\
+      \  position: absolute;\n  right: 0;\n  color: #fff;\n  font-size: 20px;\n  font-weight:\
+      \ 700;\n  cursor: pointer;\n  top: 3px;\n}\n\n.header{\n  position: relative;\n\
+      \  background: #008800;\n  padding: 0 5%;\n  display: flex;\n  flex-direction:\
+      \ row;\n  align-items: center;\n  justify-content: space-between;\n}\n.logo\
+      \ a{\n  text-decoration: none;\n  color: #fff;\n  font-size: 35px;\n  font-weight:\
+      \ 800;\n  text-transform: uppercase;\n  letter-spacing: 0;\n}\n.navbar ul{\n\
+      \  list-style: none;\n}\n.navbar>ul{\n  display: flex;\n  flex-direction: row;\n\
+      }\n.navbar ul li{\n  position: relative;\n}\n.navbar ul li a{\n  position: relative;\n\
+      \  display: block;\n  color: #fff;\n  font-size: 17px;\n  font-weight: 700;\n\
+      \  text-decoration: none;\n  padding: 22px 20px;\n  text-transform: uppercase;\n\
+      \  letter-spacing: 0.5px;\n  transition: all 0.5s;\n  -webkit-transition: all\
+      \ 0.5s;\n  -moz-transition: all 0.5s;\n  -ms-transition: all 0.5s;\n  -o-transition:\
+      \ all 0.5s;\n}\n.navbar ul li a.active,\n.navbar ul>li>a:hover{\n  color: #0093FF;\n\
+      }\n.ser-btn ul{\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n\
+      \  list-style: none;\n  gap: 20px;\n}\n.ser-btn ul li a{\n  text-decoration:\
+      \ none;\n}\n.ser-btn #ser-btn-icon{\n  display: inline-block;\n  font-size:\
+      \ 28px;\n  color: #fff;\n  font-weight: 700;\n  transform: rotate(-45deg);\n\
+      \  -webkit-transform: rotate(-45deg);\n  -moz-transform: rotate(-45deg);\n \
+      \ -ms-transform: rotate(-45deg);\n  -o-transform: rotate(-45deg);\n}\n.ser-btn\
+      \ .enquiry-bnt a{\n  padding: 10px 15px;\n  color: #fff;\n  font-size: 15px;\n\
+      \  display: block;\n  background-color: #0093FF;\n  border: 2px solid #0093FF;\n\
+      \  text-align: center;\n  letter-spacing: 2px;\n  font-weight: 600;\n  text-transform:\
+      \ uppercase;\n  border-radius: 4px;\n  -webkit-border-radius: 4px;\n  -moz-border-radius:\
+      \ 4px;\n  -ms-border-radius: 4px;\n  -o-border-radius: 4px;\n  transition: all\
+      \ 0.5s;\n  -webkit-transition: all 0.5s;\n  -moz-transition: all 0.5s;\n  -ms-transition:\
+      \ all 0.5s;\n  -o-transition: all 0.5s;\n}\n.ser-btn .enquiry-bnt a:hover{\n\
+      \  color: #152733;\n  background-color: #fff;\n  border: 2px solid #152733;\n\
+      }\n#bar-icon{\n  display: none;\n}\n.down-arrow{\n  position: absolute;\n  right:\
+      \ 0;\n  top: 20px;\n  display: inline-block;\n  font-size: 30px;\n}\n.navbar\
+      \ ul ul li a .arrow-right{\n  display: block;\n  position: absolute;\n  right:\
+      \ 10px;\n  top: 8px;\n}\n@media(min-width:992px){\n  .navbar ul li ul{\n   \
+      \ position: absolute;\n    border-top: 3px solid #0093FF;\n    list-style: none;\n\
+      \    min-width: 250px;\n    background: #152733;\n    padding: 0;\n    border-radius:\
+      \ 0;\n    -webkit-border-radius: 0;\n    -moz-border-radius: 0;\n    -ms-border-radius:\
+      \ 0;\n    -o-border-radius: 0;\n    box-shadow: 0 3px 5px 0 rgb(0 0 0 / 20%);\n\
+      \    transition: all 0.3s;\n    -webkit-transition: all 0.3s;\n    -moz-transition:\
+      \ all 0.3s;\n    -ms-transition: all 0.3s;\n    -o-transition: all 0.3s;\n \
+      \   transform: translateY(20px);\n    -webkit-transform: translateY(20px);\n\
+      \    -moz-transform: translateY(20px);\n    -ms-transform: translateY(20px);\n\
+      \    -o-transform: translateY(20px);\n    visibility: hidden;\n    opacity:\
+      \ 0;\n}\n\n.navbar ul>li:hover>ul{\n  visibility: visible;\n  opacity: 1;\n\
+      \  transform: translateY(0);\n  -webkit-transform: translateY(0);\n  -moz-transform:\
+      \ translateY(0);\n  -ms-transform: translateY(0);\n  -o-transform: translateY(0);\n\
+      }\n\n.navbar ul ul li{\n  position: relative;\n}\n.navbar ul ul li a{\n  display:\
+      \ block;\n  color: #fff;\n  font-weight: 700;\n  font-size: 15px;\n  padding:\
+      \ 8px 10px;\n  line-height: 1.8rem;\n  border-bottom: 1px solid #ddd;\n  transition:\
+      \ all 0.5s;\n  -webkit-transition: all 0.5s;\n  -moz-transition: all 0.5s;\n\
+      \  -ms-transition: all 0.5s;\n  -o-transition: all 0.5s;\n}\n.navbar ul ul li\
+      \ a:hover{\n  color: #fff;\n  background-color: #0d6efd;\n  border-color: transparent;\n\
+      \  padding-left: 25px;\n}\n\n.navbar ul li ul ul{\n  position: absolute;\n \
+      \ left: 100%;\n  top: 0;\n}\n\n}\n\n\n@media(max-width:1200px){\n  .logo a{\n\
+      \    font-size: 20px;\n  }\n  .navbar ul li a{\n    font-size: 15px;\n    padding:\
+      \ 22px 16px;\n  }\n  .ser-btn .enquiry-bnt{\n    padding: 10px 3px;\n    font-size:\
+      \ 12px;\n  }\n}\n\n@media(max-width:992px){\n  .navbar>ul{\n    position: absolute;\n\
+      \    background-color: #152733;\n    left: 0;\n    right: 0;\n    top: 60px;\n\
+      \    width: 90%;\n    margin: auto;\n    flex-direction: column;\n    border-top:\
+      \ 8px solid #0d6efd;\n  }\n  .header{\n    height: 60px;\n  }\n  .ser-btn .enquiry-bnt{\n\
+      \    display: none;\n  }\n  .ser-btn #bar-icon{\n    display: block;\n  }\n\
+      \  .ser-btn #bar-icon a{\n    background-color: #0162CA;\n    color: #fff;\n\
+      \    font-size: 27px;\n    padding: 1px 5px;\n  }\n  .logo a{\n    font-size:\
+      \ 30px;\n    font-weight: 800;\n  }\n  .navbar ul li{\n    border-top: 1px solid\
+      \ #e6e6e6;\n  }\n\n  .navbar ul li a{\n    padding: 15px 16px;\n  }\n\n  .navbar\
+      \ ul li>ul{\n    background-color: #2b5570;\n  }\n  .navbar ul li>ul li a{\n\
+      \    font-size: 13px;\n    padding: 10px 25px;\n  }\n\n  .navbar ul ul li a\
+      \ .arrow-right{\n    font-size: 18px;\n    transform: rotate(90deg);\n    -webkit-transform:\
+      \ rotate(90deg);\n    -moz-transform: rotate(90deg);\n    -ms-transform: rotate(90deg);\n\
+      \    -o-transform: rotate(90deg);\n}\n\n.navbar ul li a .down-arrow{\n  right:\
+      \ 10px;\n  top: 9px;\n  font-size: 35px;\n}\n.navbar ul li ul li>ul{\n  background-color:\
+      \ #0162cA;\n}\n\n#menu{\n  max-height: 0;\n  visibility: hidden;\n  opacity:\
+      \ 0;\n  transition: all 0.5s;\n  -webkit-transition: all 0.5s;\n  -moz-transition:\
+      \ all 0.5s;\n  -ms-transition: all 0.5s;\n  -o-transition: all 0.5s;\n}\n#menu.show{\n\
+      \  overflow-y: scroll;\n  visibility: visible;\n  opacity: 1;\n  max-height:\
+      \ 100vh;\n}\n\n.submanu, .sub-sub-menu{\n  display: none;\n}\n.submenushow,\
+      \ .show-sub-sub-menu{\n  display: block;\n}\n\n}\n\n  </style>\n</head>\n<body>\n\
+      \n  <div class=\"nav-wrapper\">\n    <div class=\"nav-container\">\n      <div\
+      \ id=\"top-search\">\n        <form action=\"\">\n          <div class=\"input-box\"\
+      >\n            <span class=\"topser-icon\">\u26b2</span>\n            <input\
+      \ type=\"text\" class=\"search\" placeholder=\"Search...\">\n            <span\
+      \ id=\"topsercross-icon\">\u2715</span>\n          </div>\n        </form>\n\
+      \      </div>\n\n\n      <div class=\"header\">\n        <div class=\"logo\"\
+      >\n        </div>\n        <div class=\"navbar\">\n          <ul id=\"menu\"\
+      >\n            <li>\n              <a href=\"#\" class=\"droptoggle\">Master\
+      \ <span class=\"down-arrow\">\ud83e\udc93</span></a>\n\n              <ul class=\"\
+      submanu\">\n                <li>\n               <a href=\"#\" class=\"sub-sub-drop\"\
+      >Company <span class=\"arrow-right\">\u276f</span></a>\n    \n             \
+      \ <ul class=\"sub-sub-menu\">\n                    <li><a href=\"#\" id=\"comp_add\"\
+      >Add</a></li>\n                    <li><a href=\"#\" id=\"comp_change\">Change</a></li>\
+      \              \n               </ul>             \n                </li>\n\
+      \                \n                <li>\n                  <a href=\"#\" class=\"\
+      sub-sub-drop\" id=\"dept_add_and_change\">Department</a>\n                </li>\n\
+      \                \n                <li>\n                  <a href=\"#\" class=\"\
+      sub-sub-drop\" id=\"desi_add_and_change\">Designation</a>\n                </li>\n\
+      \n                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
+      \ id=\"bank_add_and_change\">Bank</span></a>\n                </li>\n\n    \
+      \            <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"\
+      comp_more\">Statutory - 1</span></a>\n                </li>\n\n            \
+      \    <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"statutory\"\
+      >Statutory - 2</span></a>\n                </li>\n                \n       \
+      \         <li>\n                  <a href=\"#\" class=\"sub-sub-drop\">Employee\
+      \ <span class=\"arrow-right\">\u276f</span></a>\n                  <ul class=\"\
+      sub-sub-menu\">\n                    <li><a href=\"#\" id=\"emp_add\">Add</a></li>\n\
+      \                    <li><a href=\"#\" id=\"emp_chg\">Change</a></li>\n    \
+      \                <li><a href=\"#\" id=\"emp_more\">More</a></li>\n         \
+      \         </ul>\n                </li>\n                \n              </ul>\n\
+      \n\n            </li>\n\n           <li>\n             <a href=\"#\" class=\"\
+      droptoggle\">Transaction <span class=\"down-arrow\">\ud83e\udc93</span></a>\n\
+      \             <ul class=\"submanu\">\n                <li>\n               \
+      \   <a href=\"#\" class=\"sub-sub-drop\" id=\"change_trans\">Transaction</span></a>\n\
+      \                </li>\n                <li>\n                  <a href=\"#\"\
+      \ class=\"sub-sub-drop\" id=\"view_trans\">View</span></a>\n               \
+      \ </li>\n              </ul>\n           </li>\n\n            <li><a href=\"\
+      #\" id=\"update_form\">Update</a></li>\n            <li><a href=\"#\" class=\"\
+      const_page\">Report</a></li>\n\n             <li>\n             <a href=\"#\"\
+      \ class=\"droptoggle\">Utilities <span class=\"down-arrow\">\ud83e\udc93</span></a>\n\
+      \             <ul class=\"submanu\">\n                <li>\n               \
+      \   <a href=\"#\" class=\"sub-sub-drop\" id=\"data_backup\">Data Backup</span></a>\n\
+      \                </li>\n                <li>\n                  <a href=\"#\"\
+      \ class=\"sub-sub-drop\" id=\"recalculate\">Recalculate</span></a>\n       \
+      \         </li>\n                <li>\n                  <a href=\"#\" class=\"\
+      sub-sub-drop\" id=\"pass_add\">Password</span></a>\n                </li>\n\
+      \               </ul>\n           </li>\n            <li><a href=\"#\" id=\"\
+      login_page\">Logout</a></li\n            \n          </ul>\n        </div>\n\
+      \n        <div class=\"ser-btn\">\n        </div>\n\n      </div>\n\n\n\n  \
+      \  </div>\n  </div>\n  <div id='my-div'></div>\n  <script>\n    \n    \n   $('#dept_add_and_change').on('click',\
+      \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_dept\"\
+      );\n  e.preventDefault();   \n}); \n\n$('#desi_add_and_change').on('click',\
+      \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_desi\"\
+      );\n  e.preventDefault();\n}); \n\n$('#comp_add').on('click', function(e) {\n\
+      \  var linkElement = this;\n  anvil.call(linkElement, \"open_comp\");\n  e.preventDefault();\n\
+      }); \n\n$('#comp_change').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_comp_change\");\n  e.preventDefault();\n});\
+      \ \n\n$('#comp_more').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_comp_more\");\n  e.preventDefault();\n});\
+      \     \n\n$('#bank_add_and_change').on('click', function(e) {\n  var linkElement\
+      \ = this;\n  anvil.call(linkElement, \"open_bank\");\n  e.preventDefault();\n\
+      }); \n    \n  $('#emp_add').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_emp_add\");\n  e.preventDefault();\n});  \
+      \    \n  $('#emp_chg').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_emp_chg\");\n  e.preventDefault();\n});  \
+      \ \n\n$('#emp_more').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_emp_more\");\n  e.preventDefault();\n});\n\
+      \             \n\n\n\n  $('.const_page').on('click', function(e) {\n  var linkElement\
+      \ = this;\n  anvil.call(linkElement, \"open_report1_page\");\n  e.preventDefault();\n\
+      });\n    \n\n                     \n\n $('#login_page').on('click', function(e)\
+      \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_login_page\"\
+      );\n  e.preventDefault();\n});    \n\n$('#update_form').on('click', function(e)\
+      \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_update_page\"\
+      );\n  e.preventDefault();\n});\n\n$('#statutory').on('click', function(e) {\n\
+      \  var linkElement = this;\n  anvil.call(linkElement, \"open_stat\");\n  e.preventDefault();\n\
+      });\n\n  $('#change_trans').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_change_trans\");\n  e.preventDefault();\n\
+      });\n\n\n  $('#view_trans').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_view_trans\");\n  e.preventDefault();\n});\
+      \        \n\n    $('#data_backup').on('click', function(e) {\n  var linkElement\
+      \ = this;\n  anvil.call(linkElement, \"open_data_backup\");\n  e.preventDefault();\n\
+      }); \n\n    $('#pass_add').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_pass_add\");\n  e.preventDefault();\n}); \n\
+      \    \n  </script>\n</body>\n</html>"}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}

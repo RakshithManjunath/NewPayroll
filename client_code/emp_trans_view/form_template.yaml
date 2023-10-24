@@ -1,0 +1,216 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: title, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: label_2
+    layout_properties: {grid_position: 'NICBZU,EEPOTK'}
+  - type: Spacer
+    properties: {height: 18}
+    name: spacer_1
+    layout_properties: {grid_position: 'OXUPTA,KFUCHF'}
+  - type: DataGrid
+    properties:
+      role: wide
+      columns:
+      - {id: HXAGHO, title: Employee Code, data_key: trans_empid, $$hashKey: 'object:1745',
+        width: '75'}
+      - {id: EPJUXG, title: Employee Name, data_key: trans_empname, $$hashKey: 'object:1746',
+        width: '200'}
+      - {id: OXDSTU, title: Date Of Birth, data_key: trans_empdob, $$hashKey: 'object:1749',
+        width: '100'}
+      - {id: BTCGMT, title: Date Of Joining, data_key: trans_empdoj, $$hashKey: 'object:1750',
+        width: '100'}
+      - {id: AXDGLJ, title: Emp Type, data_key: trans_emptype, $$hashKey: 'object:1751',
+        width: '75'}
+      - {id: VWPHIX, title: Department, data_key: trans_deptname, $$hashKey: 'object:1753',
+        width: '150'}
+      - {id: RXVHGN, title: Designation, data_key: trans_desiname, $$hashKey: 'object:1755',
+        width: '150'}
+      - {id: JAFHNV, title: PF contribution, data_key: trans_emppfc, $$hashKey: 'object:1756',
+        width: '100'}
+      - {id: XBMITN, title: PF number, data_key: trans_emppfno, $$hashKey: 'object:1757',
+        width: '100'}
+      - {id: UCUZMR, title: PF UAN, data_key: trans_emp_pfuan, $$hashKey: 'object:1758',
+        width: '100'}
+      - {id: XVXHBR, title: ESI contribution, data_key: trans_empesic, $$hashKey: 'object:1759',
+        width: '100'}
+      - {id: ZMAHZM, title: ESI number, data_key: trans_empesino, $$hashKey: 'object:1760',
+        width: '100'}
+      - {id: HFGLCJ, title: ESI dispensary, data_key: trans_empdispensary, $$hashKey: 'object:1761',
+        width: '150'}
+      - {id: DXIPYS, title: PT contribution, data_key: trans_empptc, $$hashKey: 'object:1762',
+        width: '100'}
+      - {id: ARIUUS, title: TDS deduction, data_key: trans_empitc, $$hashKey: 'object:1763',
+        width: '100'}
+      - {id: JUDJIO, title: PAN number, data_key: trans_emppan, $$hashKey: 'object:1764',
+        width: '100'}
+      - {id: URNPHN, title: Mandays, data_key: trans_mandays, $$hashKey: 'object:1765',
+        width: '100'}
+      - {id: WHWVGB, title: Weekly Off, data_key: trans_wo, $$hashKey: 'object:1766',
+        width: '100'}
+      - {id: SJKQEG, title: Paid holiday, data_key: trans_ph, $$hashKey: 'object:1767',
+        width: '100'}
+      - {id: KPOXDE, title: Lay Off, data_key: trans_layoff, $$hashKey: 'object:1768',
+        width: '100'}
+      - {id: VFIZBC, title: Absent, data_key: trans_absent, $$hashKey: 'object:1769',
+        width: '100'}
+      - {id: ZEORCG, title: '- * -', data_key: trans_leave1, $$hashKey: 'object:1770',
+        width: '100'}
+      - {id: GNSSLZ, title: '- * -', data_key: trans_leave2, $$hashKey: 'object:1771',
+        width: '100'}
+      - {id: GXUUUD, title: '- * -', data_key: trans_leave3, $$hashKey: 'object:1772',
+        width: '100'}
+      - {id: TJIZDF, title: OT Hrs, data_key: trans_othrs, $$hashKey: 'object:1773',
+        width: '100'}
+      - {id: GLFFVE, title: Incentive Hrs, data_key: trans_inchrs, $$hashKey: 'object:1774',
+        width: '100'}
+      - {id: OLIAAN, title: '- * -', data_key: trans_ded1, $$hashKey: 'object:1775',
+        width: '100'}
+      - {id: KYXRIR, title: '- * -', data_key: trans_ded2, $$hashKey: 'object:1776',
+        width: '100'}
+      - {id: KLDDNE, title: '- * -', data_key: trans_ded3, $$hashKey: 'object:1777',
+        width: '100'}
+      - {id: UDJIVV, title: '- * -', data_key: trans_ded4, $$hashKey: 'object:1778',
+        width: '100'}
+      - {id: GAZBKU, title: '- * -', data_key: trans_loan1, $$hashKey: 'object:1779',
+        width: '100'}
+      - {id: XMJUDX, title: '- * -', data_key: trans_loan2, $$hashKey: 'object:1780',
+        width: '100'}
+      - {id: WQQLXS, title: Advance, data_key: trans_adv, $$hashKey: 'object:1781',
+        width: '100'}
+      - {id: DYFJDW, title: TDS Amount, data_key: trans_tds, $$hashKey: 'object:1782',
+        width: '100'}
+      - {id: MBQSMC, title: PF voluntary, data_key: trans_pfvol, $$hashKey: 'object:1783',
+        width: '100'}
+      - {id: RPOWTY, title: LIC deduction, data_key: trans_lic, $$hashKey: 'object:1784',
+        width: '100'}
+      - {id: EVHQZO, title: 'Arrears [ ESI / PT ]', data_key: trans_arr_esipt, $$hashKey: 'object:1785',
+        width: '100'}
+      - {id: TMVTVQ, title: 'Arrears [ PT ]', data_key: trans_arr_pf, $$hashKey: 'object:1786',
+        width: '100'}
+      - {id: XFCJJK, title: Trans Earn1, data_key: trans_earn1, $$hashKey: 'object:1787',
+        width: '100'}
+      - {id: HTLFKH, title: Trans Earn_earn1, data_key: trans_earn_earn1, $$hashKey: 'object:1797',
+        width: '100'}
+      - {id: DSNAVA, title: Trans Earn2, data_key: trans_earn2, $$hashKey: 'object:1788',
+        width: '100'}
+      - {id: ILWEJW, title: Trans Earn_earn2, data_key: trans_earn_earn2, $$hashKey: 'object:1798',
+        width: '100'}
+      - {id: DJKPJF, title: Trans Earn3, data_key: trans_earn3, $$hashKey: 'object:1789',
+        width: '100'}
+      - {id: VTUEGO, title: Trans Earn_earn3, data_key: trans_earn_earn3, $$hashKey: 'object:1799',
+        width: '100'}
+      - {id: JOHEYJ, title: Trans Earn4, data_key: trans_earn4, $$hashKey: 'object:1790',
+        width: '100'}
+      - {id: VGTSRY, title: Trans Earn_earn4, data_key: trans_earn_earn4, $$hashKey: 'object:1800',
+        width: '100'}
+      - {id: BWIZFV, title: Trans Earn5, data_key: trans_earn5, $$hashKey: 'object:1791',
+        width: '100'}
+      - {id: UDCIBC, title: Trans Earn_earn5, data_key: trans_earn_earn5, $$hashKey: 'object:1801',
+        width: '100'}
+      - {id: KAXULL, title: Trans Earn6, data_key: trans_earn6, $$hashKey: 'object:1792',
+        width: '100'}
+      - {id: KCNLAJ, title: Trans Earn_earn6, data_key: trans_earn_earn6, $$hashKey: 'object:1802',
+        width: '100'}
+      - {id: RJWNJA, title: Trans Earn7, data_key: trans_earn7, $$hashKey: 'object:1793',
+        width: '100'}
+      - {id: GAUEBD, title: Trans Earn_earn7, data_key: trans_earn_earn7, $$hashKey: 'object:1803',
+        width: '100'}
+      - {id: MXTLGS, title: Trans Earn8, data_key: trans_earn8, $$hashKey: 'object:1794',
+        width: '100'}
+      - {id: JPFYSO, title: Trans Earn_earn8, data_key: trans_earn_earn8, $$hashKey: 'object:1804',
+        width: '100'}
+      - {id: ZHWDWJ, title: Trans Earn9, data_key: trans_earn9, $$hashKey: 'object:1795',
+        width: '100'}
+      - {id: BYHZNJ, title: Trans Earn_earn9, data_key: trans_earn_earn9, $$hashKey: 'object:1805',
+        width: '100'}
+      - {id: SNPJEC, title: Trans Earn10, data_key: trans_earn10, $$hashKey: 'object:1796',
+        width: '100'}
+      - {id: BRQHOR, title: Trans Earn_earn10, data_key: trans_earn_earn10, $$hashKey: 'object:1806',
+        width: '100'}
+      - {id: UEIPVM, title: Attendance bonus, data_key: trans_attn_bonus, $$hashKey: 'object:1811',
+        width: '100'}
+      - {id: KMICBQ, title: Fixed Gross, data_key: Fxd_earn_gross, $$hashKey: 'object:1812',
+        width: '100'}
+      - {id: BLUTZQ, title: PF salary, data_key: earn_pf_salary, $$hashKey: 'object:1813',
+        width: '100'}
+      - {id: TLATMS, title: FPF salary, data_key: earn_fpf_salary, $$hashKey: 'object:1814',
+        width: '100'}
+      - {id: RJTUCE, title: ESI salary, data_key: earn_esi_salary, $$hashKey: 'object:1815',
+        width: '100'}
+      - {id: QJEPOE, title: PT salary, data_key: earn_pt_salary, $$hashKey: 'object:1816',
+        width: '100'}
+      - {id: XWOOHM, title: OT salary, data_key: earn_ot_salary, $$hashKey: 'object:1817',
+        width: '100'}
+      - {id: FJHEVO, title: IT salary, data_key: earn_it_salary, $$hashKey: 'object:1818',
+        width: '100'}
+      - {id: NNUCHB, title: Bonus salary, data_key: earn_bonus_salary, $$hashKey: 'object:1819',
+        width: '100'}
+      - {id: UBYMRP, title: PF Amt, data_key: pf_amt, $$hashKey: 'object:1820', width: '100'}
+      - {id: NLBOFM, title: FPF AMT, data_key: fpf_amt, $$hashKey: 'object:1821',
+        width: '100'}
+      - {id: BXYZDH, title: ESI Amt, data_key: esi_amt, $$hashKey: 'object:1822',
+        width: '100'}
+      - {id: OSLHWM, title: PT Amt, data_key: pt_amt, $$hashKey: 'object:1823', width: '100'}
+      - {id: BLCMWS, title: OT Amt, data_key: ot_amt, $$hashKey: 'object:1824', width: '100'}
+      - {id: RBRHNO, title: TDS Amt, data_key: it_or_tds_amt, $$hashKey: 'object:1825',
+        width: '100'}
+      - {id: NPNMFO, title: Bonus Amt, data_key: bonus_amt, $$hashKey: 'object:1826',
+        width: '100'}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 20
+      visible: true
+      wrap_on: never
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_1
+    layout_properties: {grid_position: 'LVMLNR,JRFHBU'}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: emp_trans_view.RowTemplate4}
+      name: repeating_panel_1
+      layout_properties: {}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Download, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: button_1
+    layout_properties: {grid_position: 'VBICUF,TVOCBR'}
+    event_bindings: {click: button_1_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+  components:
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Main menu, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: outlined_button_1
+    layout_properties: {}
+    event_bindings: {click: outlined_button_1_click}
+- type: Label
+  properties: {role: headline, align: left, tooltip: '', border: '', foreground: '',
+    visible: true, text: Transaction view, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+    underline: false, icon: ''}
+  name: label_1
+  layout_properties: {slot: title}

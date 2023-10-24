@@ -1,0 +1,61 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: title, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'ZQPIQY,NIQZQC'}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_3
+    layout_properties: {grid_position: 'HGIHGT,QXYYPP'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'UPMAWH,BAZDAY'}
+    components:
+    - type: Button
+      properties: {role: tonal-button, align: full, tooltip: '', border: '', enabled: false,
+        foreground: '', visible: true, text: Time Office, font_size: 25, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: true, underline: false, icon: ''}
+      name: time_office_btn
+      layout_properties: {grid_position: 'HGVPAO,IOLUUA'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_1
+      layout_properties: {grid_position: 'EUIERK,DOLRSZ'}
+    - type: Button
+      properties: {role: tonal-button, align: full, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: Payroll, font_size: 25, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: payroll_btn
+      layout_properties: {grid_position: 'IYNEGB,EEXNDS'}
+      event_bindings: {click: payroll_btn_click}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_2
+      layout_properties: {grid_position: 'BFGVOF,VRWKPV'}
+    - type: Button
+      properties: {role: tonal-button, align: full, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: Exit, font_size: 25, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: Exit
+      layout_properties: {grid_position: 'XQXTQK,CPXUBO'}
+      event_bindings: {click: exit_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
