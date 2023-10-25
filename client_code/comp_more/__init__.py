@@ -13,7 +13,7 @@ class comp_more(comp_moreTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
+    self.label_2.text = gvarb.g_comname+' '+(gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
 
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""

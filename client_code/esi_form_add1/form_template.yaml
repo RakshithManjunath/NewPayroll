@@ -50,5 +50,6 @@ components:
   properties: {}
   name: text_box_2
   layout_properties: {grid_position: 'NHPIYY,OVEDQP'}
+  event_bindings: {change: text_box_2_change}
 is_package: true
 custom_component: true

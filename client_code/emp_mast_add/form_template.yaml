@@ -55,6 +55,7 @@ components:
       background: '', bold: false, underline: false}
     name: text_box_3
     layout_properties: {grid_position: 'JNLXDH,BQIYFG'}
+    event_bindings: {change: text_box_3_change}
   - type: Label
     properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: Employee sex, font_size: null, font: '', spacing_above: small,

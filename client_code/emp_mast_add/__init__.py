@@ -13,7 +13,7 @@ class emp_mast_add(emp_mast_addTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_4.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
+    self.label_4.text = gvarb.g_comname+' '+(gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
     self.drop_down_1.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
     self.drop_down_2.items = anvil.server.call('desi_change_name_and_code',gvarb.g_comcode)
     self.label_5.text = anvil.server.call('get_last_emp_code',gvarb.g_comcode)
@@ -134,6 +134,7 @@ class emp_mast_add(emp_mast_addTemplate):
 
   def text_box_1_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
+    self.text_box_1.text = self.text_box_1.text.upper()
     if ((self.text_box_1.text) and (self.text_box_2.text )):
       self.text_box_3.enabled = True
       self.radio_button_1.enabled = True
@@ -167,6 +168,7 @@ class emp_mast_add(emp_mast_addTemplate):
 
   def text_box_2_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
+    self.text_box_2.text = self.text_box_2.text.upper()
     if ((self.text_box_1.text) and (self.text_box_2.text )):
       self.text_box_3.enabled = True
       self.radio_button_1.enabled = True
@@ -197,6 +199,11 @@ class emp_mast_add(emp_mast_addTemplate):
       self.link_3.visible = False
       self.button_1.enabled = False
       self.button_2.enabled = False
+
+  def text_box_3_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    self.text_box_3.text = self.text_box_3.text.upper()
+
 
       
     
