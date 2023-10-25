@@ -15,6 +15,6 @@ class pt_and_it_form1(pt_and_it_form1Template):
 
   def text_box_1_change(self, **event_args):
     """This method is called when the text in this text box is edited"""
-    self.text_box_3.text = self.text_box_3.text.upper()
+    self.text_box_1.text = self.text_box_1.text.upper()
 
 
