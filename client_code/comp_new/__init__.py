@@ -153,6 +153,11 @@ class comp_new(comp_newTemplate):
     else:
       self.button_1.enabled = False  
 
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('menu')
+
+
 
 
 
