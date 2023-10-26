@@ -75,7 +75,7 @@ class comp_new(comp_newTemplate):
     print("current days: " + str(current_days))
     print("Num of sundays: " + str(num_of_sundays))
     print("end date: ", end_date)
-    anvil.server.call('new_trans_date', start_date,current_days,num_of_sundays,end_date)
+    anvil.server.call('new_trans_date', start_date,current_days,num_of_sundays,end_date,compcode)
     #open_form('logform')
 
 ###########################################################################
@@ -93,7 +93,7 @@ class comp_new(comp_newTemplate):
                         self.text_box_3.text,compcode)
       #anvil.server.call('comp_default_values',row)
       if  ((self.text_box_3.text ) == (self.text_box_4.text )):
-        #result = confirm(self.text_box_1.text+" user successfully added ! continue to login  ?", buttons=["Yes"])
+        result = confirm(self.text_box_1.text+" New company added successfully ! continue to login  ?", buttons=["Yes"])
         if result == "Yes":
           self.clear_inputs()
           open_form('logform')
