@@ -68,6 +68,7 @@ def check_username_and_password(username, password):
       return True, row['pass_comp_code']
     else:
       print(f"Incorrect password for {username}")
+      return False,False
   else:
     print(f"User {username} doesn't exist")
     return False,False
