@@ -36,9 +36,10 @@ class comp_change(comp_changeTemplate):
       self.text_box_1.text, self.text_box_2.text,
       self.text_box_3.text,self.text_box_4.text,
       self.text_box_5.text,self.text_box_6.text,self.text_box_7.text)
-      result = confirm(self.text_box_7.text+" modified successfully ! to continue relogin  ?", buttons=["Yes"])
-      if result == "Yes":
-         open_form('logform')
+      Notification(self.text_box_1.text + " data modifed successfully").show()
+      # result = confirm(self.text_box_7.text+" modified successfully ! to continue relogin  ?", buttons=["Yes"])
+      # if result == "Yes":
+      #    open_form('logform')
       
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""

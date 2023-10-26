@@ -32,7 +32,7 @@ class menu(menuTemplate):
     open_form('desi')
 
   def open_comp(self, **kwargs):
-    open_form('comp_add')
+    open_form('comp_new')
 
   def open_comp_change(self, **kwargs):
     open_form('comp_change')

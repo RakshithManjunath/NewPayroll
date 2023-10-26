@@ -103,7 +103,7 @@ container:
       submanu\">\n                <li>\n               <a href=\"#\" class=\"sub-sub-drop\"\
       >Company <span class=\"arrow-right\">\u276f</span></a>\n    \n             \
       \ <ul class=\"sub-sub-menu\">\n                    <li><a href=\"#\" id=\"comp_add\"\
-      >Add</a></li>\n                    <li><a href=\"#\" id=\"comp_change\">Change</a></li>\
+      >New</a></li>\n                    <li><a href=\"#\" id=\"comp_change\">Change</a></li>\
       \              \n               </ul>             \n                </li>\n\
       \                \n                <li>\n                  <a href=\"#\" class=\"\
       sub-sub-drop\" id=\"dept_add_and_change\">Department</a>\n                </li>\n\
