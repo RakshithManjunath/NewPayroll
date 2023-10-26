@@ -28,7 +28,7 @@ components:
     layout_properties: {grid_position: 'HLFTNR,FYGYOS'}
   - type: TextBox
     properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
-      border: '', enabled: false, foreground: '', visible: false, text: '', font_size: null,
+      border: '', enabled: true, foreground: '', visible: false, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: '', bold: false, underline: false}
     name: text_box_1
@@ -66,7 +66,7 @@ components:
     layout_properties: {grid_position: 'TLIWJR,DFIAZI'}
     event_bindings: {change: text_box_2_change}
   - type: Spacer
-    properties: {height: 32}
+    properties: {height: 16}
     name: spacer_2
     layout_properties: {grid_position: 'FMPWKM,XPWVBL'}
   - type: Button
@@ -76,8 +76,9 @@ components:
       background: '', bold: false, underline: false, icon: ''}
     name: button_4
     layout_properties: {grid_position: 'MFMCCK,VWZDSU'}
+    event_bindings: {click: button_4_click}
   - type: Spacer
-    properties: {height: 32}
+    properties: {height: 16}
     name: spacer_6
     layout_properties: {grid_position: 'ZGMBVC,VKLDQY'}
   - type: Label

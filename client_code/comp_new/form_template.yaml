@@ -16,9 +16,13 @@ components:
     name: label_1
     layout_properties: {grid_position: 'NDPXJA,HSKGCB'}
   - type: TextBox
-    properties: {}
+    properties: {role: outlined-error, align: left, hide_text: false, tooltip: '',
+      placeholder: '', border: '', enabled: true, foreground: '', visible: true, text: '',
+      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false}
     name: text_box_1
     layout_properties: {grid_position: 'NDPXJA,CHGWEZ'}
+    event_bindings: {change: text_box_1_change}
   - type: Spacer
     properties: {height: 32}
     name: spacer_1
@@ -79,8 +83,65 @@ components:
     properties: {height: 32}
     name: spacer_2
     layout_properties: {grid_position: 'WKUYYF,MHHHXN'}
+  - type: Label
+    properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: User name, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_3
+    layout_properties: {grid_position: 'XNXEOA,WMJEVB'}
+  - type: TextBox
+    properties: {role: outlined-error, align: left, hide_text: false, tooltip: '',
+      placeholder: '', border: '', enabled: true, foreground: '', visible: true, text: '',
+      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false}
+    name: text_box_2
+    layout_properties: {grid_position: 'XNXEOA,EOIZKI'}
+    event_bindings: {change: text_box_2_change}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_3
+    layout_properties: {grid_position: 'PFNYRB,TLQLIR'}
+  - type: Label
+    properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Password, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_4
+    layout_properties: {grid_position: 'BARSRZ,UPDLYM'}
+  - type: TextBox
+    properties: {role: outlined-error, align: left, hide_text: true, tooltip: '',
+      placeholder: '', border: '', enabled: true, foreground: '', visible: true, text: '',
+      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false}
+    name: text_box_3
+    layout_properties: {grid_position: 'BARSRZ,XSQOSS'}
+    event_bindings: {change: text_box_3_change}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_4
+    layout_properties: {grid_position: 'PEYBYV,MDCMWQ'}
+  - type: Label
+    properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Re-confirm password, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_5
+    layout_properties: {grid_position: 'DKERKU,LVPFGA'}
+  - type: TextBox
+    properties: {role: outlined-error, align: left, hide_text: true, tooltip: '',
+      placeholder: '', border: '', enabled: true, foreground: '', visible: true, text: '',
+      font_size: null, font: '', spacing_above: small, type: text, spacing_below: small,
+      italic: false, background: '', bold: false, underline: false}
+    name: text_box_4
+    layout_properties: {grid_position: 'DKERKU,HXYCRU'}
+    event_bindings: {change: text_box_4_change}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_5
+    layout_properties: {grid_position: 'MUZVSQ,ILJOQM'}
   - type: Button
-    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: false,
       foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}

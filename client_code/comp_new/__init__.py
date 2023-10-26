@@ -83,3 +83,39 @@ class comp_new(comp_newTemplate):
     # Clear our three text boxes
     self.text_box_1.text = ""
 
+  def text_box_1_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    self.text_box_1.text = self.text_box_1.text.upper()
+    if ((self.text_box_1.text) and (self.text_box_2.text ) and (self.text_box_3.text ) and (self.text_box_4.text )):
+      self.button_1.enabled = True 
+    else:
+      self.button_1.enabled = False  
+
+  def text_box_2_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    self.text_box_2.text = self.text_box_2.text.upper()
+    if ((self.text_box_1.text) and (self.text_box_2.text ) and (self.text_box_3.text ) and (self.text_box_4.text )):
+      self.button_1.enabled = True 
+    else:
+      self.button_1.enabled = False  
+
+  def text_box_4_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    if ((self.text_box_1.text) and (self.text_box_2.text ) and (self.text_box_3.text ) and (self.text_box_4.text )):
+      self.button_1.enabled = True 
+    else:
+      self.button_1.enabled = False  
+
+  def text_box_3_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    if ((self.text_box_1.text) and (self.text_box_2.text ) and (self.text_box_3.text ) and (self.text_box_4.text )):
+      self.button_1.enabled = True 
+    else:
+      self.button_1.enabled = False  
+
+
+
+
+
+
+

@@ -85,6 +85,15 @@ class pass_add(pass_addTemplate):
 
     self.button_1.visible = True
     self.button_2.visible = True
+
+    self.button_3.visible = False
+    self.button_4.visible = False
+
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('comp_new')
+
+
     
 
     
