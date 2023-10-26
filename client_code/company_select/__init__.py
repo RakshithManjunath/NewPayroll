@@ -13,7 +13,7 @@ class company_select(company_selectTemplate):
     self.init_components(**properties)
 
     # after login, populate dropdown 
-    self.company_select_dp.items = anvil.server.call('company_select_code_and_name')
+    self.company_select_dp.items = anvil.server.call('company_select_code_and_name',gvarb.g_comcode)
 
   def submit_btn_click(self, **event_args):
     """This method is called when the button is clicked"""

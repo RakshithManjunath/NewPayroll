@@ -30,9 +30,10 @@ class logform(logformTemplate):
           self.button_4.visible = True    
           # self.button_5.visible = True        
     else :
-        value = anvil.server.call('check_username_and_password', self.text_box_1.text, self.text_box_2.text)
+        value,row = anvil.server.call('check_username_and_password', self.text_box_1.text, self.text_box_2.text)
         if value == True:
-         # gvarb.g_comcode = 
+          gvarb.g_comcode = row
+          print(gvarb.g_comcode)
           open_form('company_select')
 
   def button_3_click(self, **event_args):

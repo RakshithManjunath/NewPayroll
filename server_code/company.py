@@ -217,8 +217,8 @@ def comp_update(comp_code, comp_addr1,comp_addr2,comp_addr3,comppfno,compesino,c
 
 ####### company select ########
 @anvil.server.callable
-def company_select_code_and_name():
-  company_details = [row['comp_code'] + " | "  +row['comp_name'] for row in app_tables.company.search(tables.order_by("comp_code"))]
+def company_select_code_and_name(comp_code):
+  company_details = [row['comp_code'] + " | "  +row['comp_name'] for row in app_tables.company.search(comp_code=comp_code)]
   return company_details
 
 

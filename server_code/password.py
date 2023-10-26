@@ -65,12 +65,12 @@ def check_username_and_password(username, password):
     #print(f"User {username} exists")
     if row['password'] == password:
       #print(f"Correct password for {username}")
-      return True
+      return True, row['pass_comp_code']
     else:
       print(f"Incorrect password for {username}")
   else:
     print(f"User {username} doesn't exist")
-    return False
+    return False,False
   # password_table = app_tables.password.search()
   # db_username, db_password = password[username], password_table[password]
 
