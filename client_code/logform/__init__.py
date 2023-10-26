@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .. import gvarb
 
 class logform(logformTemplate):
   def __init__(self, **properties):
@@ -31,6 +32,7 @@ class logform(logformTemplate):
     else :
         value = anvil.server.call('check_username_and_password', self.text_box_1.text, self.text_box_2.text)
         if value == True:
+         # gvarb.g_comcode = 
           open_form('company_select')
 
   def button_3_click(self, **event_args):
