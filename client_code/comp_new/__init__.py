@@ -76,8 +76,48 @@ class comp_new(comp_newTemplate):
     print("Num of sundays: " + str(num_of_sundays))
     print("end date: ", end_date)
     anvil.server.call('new_trans_date', start_date,current_days,num_of_sundays,end_date)
-    open_form('logform')
+    #open_form('logform')
+
+###########################################################################
+###########################################################################
+###########################################################################
+
+
+
+    if self.text_box_2.text == "":
+      Notification("User name cannot be blank").show()
+    else:
+      id= anvil.server.call('pass_get_next_string_value')
+      passcode= anvil.server.call('next_pass_code_value')
+      row = anvil.server.call('pass_add',id,passcode, self.text_box_2.text,
+                        self.text_box_3.text,compcode)
+      #anvil.server.call('comp_default_values',row)
+      if  ((self.text_box_3.text ) == (self.text_box_4.text )):
+        #result = confirm(self.text_box_1.text+" user successfully added ! continue to login  ?", buttons=["Yes"])
+        if result == "Yes":
+          self.clear_inputs()
+          open_form('logform')
+      else:
+        result = confirm(" Password re-confirmation failed !  ", buttons=["Yes"])
+        if result == "Yes":
+          self.clear_inputs()
+          open_form('logform')
     
+  def clear_inputs(self):
+    # Clear our three text boxes
+    self.text_box_2.text = ""
+    self.text_box_3.text = ""
+    self.text_box_4.text = ""
+
+
+###########################################################################
+###########################################################################
+###########################################################################
+
+
+
+
+  
     
   def clear_inputs(self):
     # Clear our three text boxes
