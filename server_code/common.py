@@ -210,7 +210,8 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
     print(index, modified_col_names[index])
     filtered_col = {}
     filtered_col['id'] =  selected_col
-    filtered_col['title'] = modified_col_names[index].capitalize()
+    # filtered_col['title'] = modified_col_names[index].capitalize()
+    filtered_col['title'] = modified_col_names[index].upper()
     filtered_col['data_key'] = selected_col
     filtered_col['width'] = 150
     final_filtered_cols_modified.append(filtered_col)

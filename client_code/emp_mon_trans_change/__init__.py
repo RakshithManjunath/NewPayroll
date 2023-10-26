@@ -13,7 +13,7 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_10.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
+    self.label_10.text = gvarb.g_comname+' '+(gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
     self.drop_down_1.items = anvil.server.call('trans_emp_name_and_code',gvarb.g_comcode)
 
   def outlined_button_1_click(self, **event_args):

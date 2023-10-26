@@ -13,7 +13,7 @@ class pass_add(pass_addTemplate):
     self.init_components(**properties)
   
     # Any code you write here will run before the form opens.
-    self.label_5.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
+    self.label_5.text = gvarb.g_comname+' '+(gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
   
     
   def outlined_button_1_click(self, **event_args):
