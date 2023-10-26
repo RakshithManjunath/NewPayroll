@@ -13,7 +13,7 @@ class emp_change(emp_changeTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_10.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
+    self.label_10.text = gvarb.g_comname+' '+(gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
 
     # self.drop_down_1.items = anvil.server.call('emp_name_and_code',gvarb.g_comcode)
     #print(type(anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode)))
@@ -187,9 +187,9 @@ class emp_change(emp_changeTemplate):
                     self.text_box_4.text
                     )
 
-      print(self.dept_code,self.text_box_3.text)
-      print(self.desi_code,self.text_box_4.text)
-      print(self.emp_esic,self.custom_2.text_box_1.text,self.custom_2.text_box_2.text)
+      # print(self.dept_code,self.text_box_3.text)
+      # print(self.desi_code,self.text_box_4.text)
+      # print(self.emp_esic,self.custom_2.text_box_1.text,self.custom_2.text_box_2.text)
             
       Notification(self.text_box_1.text+' [ '+self.emp_code+' ]' + " data saved successfully").show()
       self.drop_down_1.visible=True
@@ -249,6 +249,18 @@ class emp_change(emp_changeTemplate):
   def drop_down_3_change(self, **event_args):
     """This method is called when an item is selected"""
     self.text_box_4.text = self.drop_down_3.selected_value
+
+  def text_box_1_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    self.text_box_1.text = self.text_box_1.text.upper()
+
+  def text_box_2_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    self.text_box_2.text = self.text_box_2.text.upper()
+
+
+
+
 
 
 

@@ -50,5 +50,6 @@ components:
   properties: {}
   name: text_box_1
   layout_properties: {grid_position: 'EBXYOR,BOTHZH'}
+  event_bindings: {change: text_box_1_change}
 is_package: true
 custom_component: true

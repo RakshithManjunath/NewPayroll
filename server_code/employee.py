@@ -171,10 +171,10 @@ def emp_update2_row(emp_code,emp_name,emp_hus_name,emp_dob,emp_doj,
             emp_pan_number,emp_dept_code,emp_dept_name,emp_desi_code,
             emp_desi_name):
 
-  print('dept code', emp_dept_code)
-  print('dept name', emp_dept_name)
-  print('desi code', emp_desi_code)
-  print('desi name', emp_desi_name)
+  # print('dept code', emp_dept_code)
+  # print('dept name', emp_dept_name)
+  # print('desi code', emp_desi_code)
+  # print('desi name', emp_desi_name)
   # rows = anvil.server.call('emp_change_name_and_code',emp_comp_code)
   row = app_tables.employee.get(emp_code=emp_code)
   trans_row = app_tables.transaction.get(trans_empid=emp_code)
