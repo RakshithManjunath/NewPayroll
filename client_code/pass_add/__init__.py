@@ -73,5 +73,21 @@ class pass_add(pass_addTemplate):
     else:
       self.button_1.enabled = False  
 
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.label_2.visible = True
+    self.label_3.visible = True
+    self.label_4.visible = True
+
+    self.text_box_1.visible = True
+    self.text_box_2.visible = True
+    self.text_box_3.visible = True
+
+    self.button_1.visible = True
+    self.button_2.visible = True
+    
+
+    
+
 
 

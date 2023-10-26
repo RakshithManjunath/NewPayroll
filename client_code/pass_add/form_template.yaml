@@ -21,30 +21,45 @@ components:
     layout_properties: {grid_position: 'IKLDHT,ZEXVDD'}
   - type: Label
     properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: User name, font_size: null, font: '', spacing_above: small,
+      visible: false, text: User name, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_2
     layout_properties: {grid_position: 'HLFTNR,FYGYOS'}
   - type: TextBox
-    properties: {}
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+      border: '', enabled: false, foreground: '', visible: false, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
     name: text_box_1
     layout_properties: {grid_position: 'HLFTNR,MUBMLN'}
     event_bindings: {change: text_box_1_change}
   - type: Spacer
-    properties: {height: 32}
+    properties: {height: 18}
+    name: spacer_5
+    layout_properties: {grid_position: 'DYDFDU,SDJFOM'}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Create new password, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_3
+    layout_properties: {grid_position: 'BNRVXN,EYCJFE'}
+    event_bindings: {click: button_3_click}
+  - type: Spacer
+    properties: {height: 18}
     name: spacer_1
     layout_properties: {grid_position: 'QEWGQY,WHHZHS'}
   - type: Label
     properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Password, font_size: null, font: '', spacing_above: small,
+      visible: false, text: Password, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_3
     layout_properties: {grid_position: 'TLIWJR,FNUWBZ'}
   - type: TextBox
     properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: '',
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      border: '', enabled: true, foreground: '', visible: false, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: '', bold: false, underline: false}
     name: text_box_2
@@ -54,16 +69,27 @@ components:
     properties: {height: 32}
     name: spacer_2
     layout_properties: {grid_position: 'FMPWKM,XPWVBL'}
+  - type: Button
+    properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Create new company, font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false, icon: ''}
+    name: button_4
+    layout_properties: {grid_position: 'MFMCCK,VWZDSU'}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_6
+    layout_properties: {grid_position: 'ZGMBVC,VKLDQY'}
   - type: Label
     properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Re-confirm password, font_size: null, font: '', spacing_above: small,
+      visible: false, text: Re-confirm password, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: label_4
     layout_properties: {grid_position: 'UKIVWJ,NKUBFE'}
   - type: TextBox
     properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: '',
-      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      border: '', enabled: true, foreground: '', visible: false, text: '', font_size: null,
       font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
       background: '', bold: false, underline: false}
     name: text_box_3
@@ -75,7 +101,7 @@ components:
     layout_properties: {grid_position: 'IIFYKG,LOETFA'}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: false,
-      foreground: '', visible: true, text: Submit, font_size: null, font: '', spacing_above: small,
+      foreground: '', visible: false, text: Submit, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: button_1
@@ -83,7 +109,7 @@ components:
     event_bindings: {click: button_1_click}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
+      foreground: '', visible: false, text: Cancel, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: button_2
