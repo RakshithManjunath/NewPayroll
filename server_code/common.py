@@ -143,6 +143,29 @@ def get_transaction_columns(comp_details, comp_code):
                               'trans_ded1','trans_ded2','trans_ded3','trans_ded4',
                               'trans_leave1','trans_leave2','trans_leave3',
                               'trans_loan1','trans_loan2']
+  actual_column_names = ['slno', 'trans_empid', 'trans_empname', 'trans_father_husband', 'trans_empsex', 
+                           'trans_empdob', 'trans_empdoj', 'trans_emptype', 'trans_deptname', 'trans_desiname', 
+                           'trans_emppfc', 'trans_emppfno', 'trans_emp_pfuan', 'trans_empesic', 'trans_empesino', 
+                           'trans_empdispensary', 'trans_empptc', 'trans_empitc', 'trans_emppan', 'trans_mandays', 
+                           'trans_wo', 'trans_ph', 'trans_layoff', 'trans_absent', 'trans_paid_days', 
+                           'trans_othrs', 'trans_inchrs', 'trans_adv', 'trans_tds', 
+                           'trans_pfvol', 'trans_lic', 'trans_arr_esipt', 'trans_arr_pf', 'trans_phone_number', 
+                           'trans_alt_phone_number', 'trans_email_address', 'trans_aadhar_number', 'trans_attn_bonus', 
+                           'trans_earn_attn_bonus', 'fxd_earn_gross', 'earn_pf_salary', 'earn_fpf_salary', 
+                           'earn_esi_salary', 'earn_pt_salary', 'earn_ot_salary', 'earn_it_salary', 'earn_bonus_salary', 
+                           'pf_amt', 'fpf_amt', 'esi_amt', 'pt_amt', 'ot_amt', 'it_or_tds_amt', 'bonus_amt']
+  
+  display_column_names = ['Sl no', 'Emp code', 'Emp name', 'Husband / Father', 'Emp gender', 
+                           'Date of birth', 'Date join', 'Emp type', 'Department', 'Designation', 
+                           'PF contribution', 'PF No', 'PF UAN', 'ESI contribution', 'Esi No', 
+                           'Dispensary', 'PT contribution', 'IT contribution', 'PAN', 'Mandays', 
+                           'Weekly Off', 'Paid Holiday', 'Lay Off', 'Absent', 'Paid days', 
+                           'OT Hrs', 'Incentive Hrs', 'Advance', 'TDS', 
+                           'PF Voluantary', 'LIC', 'Arrears esi pt', 'Arrears pf', 'Phone number', 
+                           'Alt Phone number', 'Email address', 'Aadhar number', 'Attn bonus', 
+                           'Attn bonus earned', 'fxd_earn_gross', 'earn_pf_salary', 'earn_fpf_salary', 
+                           'earn_esi_salary', 'earn_pt_salary', 'earn_ot_salary', 'earn_it_salary', 'earn_bonus_salary', 
+                           'pf_amt', 'fpf_amt', 'esi_amt', 'pt_amt', 'ot_amt', 'it_or_tds_amt', 'bonus_amt']
   final_selected_records = []
   for record in company_data:
     filtered_row = {}
@@ -194,8 +217,10 @@ def get_transaction_columns(comp_details, comp_code):
 
   column_names.insert(0,'slno')
   unmodified_cols.insert(0,'slno')
+
+  return display_column_names,unmodified_cols
   
-  return column_names, unmodified_cols
+  # return column_names, unmodified_cols
 
 @anvil.server.callable
 def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_names):
