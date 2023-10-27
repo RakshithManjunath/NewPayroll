@@ -16,7 +16,7 @@ class month_and_year_select(month_and_year_selectTemplate):
     self.year = ""
     self.encoded_month = ""
 
-    self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode.upper()
+    self.label_2.text = (gvarb.g_comname+' '+gvarb.g_mode).upper()
 
     self.cur_trans_date = anvil.server.call('cur_trans_date')
 

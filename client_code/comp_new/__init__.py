@@ -44,7 +44,8 @@ class comp_new(comp_newTemplate):
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.users.login_with_form()
+    #anvil.users.login_with_form()
+    open_form('logform')
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""

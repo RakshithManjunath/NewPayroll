@@ -13,7 +13,7 @@ class mode_select(mode_selectTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_1.text = gvarb.g_comname
+    self.label_1.text = gvarb.g_comname.upper()
 
   
   def exit_click(self, **event_args):
