@@ -129,7 +129,9 @@ def get_reportlab_pdf():
 @anvil.server.callable
 def get_transaction_columns(comp_details, comp_code):
   columns_and_type = app_tables.transaction.list_columns()
-  # company_data = app_tables.company.search(comp_code='002')
+  #########################################################
+  #company_data = app_tables.company.search(comp_code='002')
+  #########################################################
   company_data = app_tables.company.search(comp_code=comp_code)
   company_columns_to_include = ['comp_earn_head1','comp_earn_head2','comp_earn_head3','comp_earn_head4','comp_earn_head5',
                                 'comp_earn_head6', 'comp_earn_head7', 'comp_earn_head8', 'comp_earn_head9', 'comp_earn_head10',
@@ -189,6 +191,9 @@ def get_transaction_columns(comp_details, comp_code):
     for key,val in updated_columns.items():
       if column == key:
         column_names[column_names.index(column)] = val 
+
+  column_names.insert(0,'slno')
+  unmodified_cols.insert(0,'slno')
   
   return column_names, unmodified_cols
 
@@ -199,8 +204,13 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
   for record in trans_records:
     filtered_row = {}
     for selected_col in selected_list:
-      filtered_row[selected_col] = record[selected_col]
+      if selected_col != "slno":
+        filtered_row[selected_col] = record[selected_col]
     final_filter_records.append(filtered_row)
+  sl_count = 1
+  for row in final_filter_records:
+    row['slno'] = sl_count
+    sl_count+=1
   print("final filer records: ",final_filter_records)
 
   final_filtered_cols_modified = []

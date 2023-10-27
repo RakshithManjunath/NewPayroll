@@ -14,16 +14,20 @@ class report_new(report_newTemplate):
 
     # Any code you write here will run before the form opens.
     self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
+    ############################################################
+    #comp_details = anvil.server.call('comp_get_details', '002')  
+    ###########################################################
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
 
-    #comp_details = anvil.server.call('comp_get_details', '002')
     self.columns,self.unmodified_cols = anvil.server.call('get_transaction_columns', comp_details,gvarb.g_comcode)
     print("Original cols: ", self.unmodified_cols)
     print("Modified cols: ", self.columns)
 
+    # self.add_component(anvil.CheckBox(text="slno",checked=True,visible=False))
+
     flow_panel = anvil.FlowPanel()
     for i in range(len(self.columns)):
-      if self.columns[i] == 'trans_empid' or self.columns[i] == 'trans_empname':
+      if self.columns[i] == 'trans_empid' or self.columns[i] == 'trans_empname' or self.columns[i] == 'slno':
         checkbox = CheckBox(text=self.columns[i], checked=True)  
         flow_panel.add_component(checkbox)
       else:
@@ -84,7 +88,9 @@ class report_new(report_newTemplate):
         selected_boxes.append(checkbox.text)
         modified_col_names.append(checkbox.text)
         
-   # grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes,modified_col_names)
+    ###################################################################################################################
+    #grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes,modified_col_names)
+    ###################################################################################################################
     grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', gvarb.g_comcode,selected_boxes,modified_col_names)
 
     print("Selected boxes:, ", selected_boxes)
