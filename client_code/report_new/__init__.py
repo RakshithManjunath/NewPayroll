@@ -16,7 +16,7 @@ class report_new(report_newTemplate):
     self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
 
-    # comp_details = anvil.server.call('comp_get_details', '002')
+    #comp_details = anvil.server.call('comp_get_details', '002')
     self.columns,self.unmodified_cols = anvil.server.call('get_transaction_columns', comp_details,gvarb.g_comcode)
     print("Original cols: ", self.unmodified_cols)
     print("Modified cols: ", self.columns)
@@ -84,7 +84,7 @@ class report_new(report_newTemplate):
         selected_boxes.append(checkbox.text)
         modified_col_names.append(checkbox.text)
         
-    # grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes,modified_col_names)
+   # grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes,modified_col_names)
     grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', gvarb.g_comcode,selected_boxes,modified_col_names)
 
     print("Selected boxes:, ", selected_boxes)
