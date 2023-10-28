@@ -218,27 +218,15 @@ def get_transaction_columns(comp_details, comp_code):
   columns_after_modifying = column_names.copy()
   print("columns after modifying", columns_after_modifying)
 
-  #  'trans_empesic', 'trans_empesino', 'trans_empdispensary', 'trans_empptc', 'trans_empitc', 'trans_emppan', 
-  #  'trans_mandays', 'trans_wo', 'trans_ph', 'trans_layoff', 'trans_absent', 'Causual', 'Earned', 'leave3', 
-  #  'trans_paid_days', 'trans_othrs', 'trans_inchrs', 'NEWS PAPER', 'CANTEEN', 'ded3', 'VAN DED', 'Motor', 
-  #  'loan2', 'trans_adv', 'trans_tds', 'trans_pfvol', 'trans_lic', 'trans_arr_esipt', 'trans_arr_pf', 
-  #  'BASIC', 'DA', 'HRA', 'CONVYANCE', 'OTHERS', 'SPL ALLOWENCE', 'SPL BASIC', 'earn8', 'earn9', 'earn10', 
-  #  'earned_BASIC', 'earned_DA', 'earned_HRA', 'earned_CONVYANCE', 'earned_OTHERS', 'earned_SPL ALLOWENCE', 
-  #  'earned_SPL BASIC', 'earned_earn8', 'earned_earn9', 'earned_earn10', 'trans_phone_number', 
-  #  'trans_alt_phone_number', 'trans_email_address', 'trans_aadhar_number', 'trans_attn_bonus', 
+
   #  'trans_earn_attn_bonus', 'fxd_earn_gross', 'earn_pf_salary', 'earn_fpf_salary', 'earn_esi_salary', 
   #  'earn_pt_salary', 'earn_ot_salary', 'earn_it_salary', 'earn_bonus_salary', 'pf_amt', 'fpf_amt', 
   #  'esi_amt', 'pt_amt', 'ot_amt', 'it_or_tds_amt', 'bonus_amt']
 
-  #                          'ESI contribution', 'Esi No', 
-  #                          'Dispensary', 'PT contribution', 'IT contribution', 'PAN', 'Mandays', 
-  #                          'Weekly Off', 'Paid Holiday', 'Lay Off', 'Absent', 'Paid days', 
-  #                          'OT Hrs', 'Incentive Hrs', 'Advance', 'TDS', 
-  #                          'PF Voluantary', 'LIC', 'Arrears esi pt', 'Arrears pf', 'Phone number', 
-  #                          'Alt Phone number', 'Email address', 'Aadhar number', 'Attn bonus', 
   #                          'Attn bonus earned', 'Fixed Gross', 'PF salary', 'FPF salary', 
   #                          'ESI salary', 'PT_salary', 'OT salary', 'IT salary', 'Bonus salary', 
   #                          'PF Amt', 'FPF Amt', 'ESI Amt', 'PT Amt', 'OT Amt', 'TDS repeated', 'Bonus Amt']
+
   for index,row in enumerate(columns_after_modifying):
     if row == 'trans_empid':
       columns_after_modifying[index] = 'Emp code'
@@ -264,8 +252,58 @@ def get_transaction_columns(comp_details, comp_code):
       columns_after_modifying[index] = 'PF No' 
     elif row == 'trans_emp_pfuan':
       columns_after_modifying[index] = 'PF UAN' 
+    elif row == 'trans_empesic':
+      columns_after_modifying[index] = 'ESI contribution' 
+    elif row == 'trans_empesino':
+      columns_after_modifying[index] = 'ESI number' 
+    elif row == 'trans_empdispensary':
+      columns_after_modifying[index] = 'Dispensary name' 
+    elif row == 'trans_empptc':
+      columns_after_modifying[index] = 'PT contribution' 
+    elif row == 'trans_empitc':
+      columns_after_modifying[index] = 'IT contribution' 
+    elif row == 'trans_emppan':
+      columns_after_modifying[index] = 'PAN' 
+    elif row == 'trans_mandays':
+      columns_after_modifying[index] = 'Mandays' 
+    elif row == 'trans_wo':
+      columns_after_modifying[index] = 'Weekly Off' 
+    elif row == 'trans_ph':
+      columns_after_modifying[index] = 'Paid Holiday' 
+    elif row == 'trans_layoff':
+      columns_after_modifying[index] = 'Lay Off' 
+    elif row == 'trans_absent':
+      columns_after_modifying[index] = 'Absent' 
+    elif row == 'trans_paid_days':
+      columns_after_modifying[index] = 'Paid days' 
+    elif row == 'trans_othrs':
+      columns_after_modifying[index] = 'OT Hrs' 
+    elif row == 'trans_inchrs':
+      columns_after_modifying[index] = 'Incentive Hrs' 
+    elif row == 'trans_adv':
+      columns_after_modifying[index] = 'Advance' 
+    elif row == 'trans_tds':
+      columns_after_modifying[index] = 'TDS' 
+    elif row == 'trans_pfvol':
+      columns_after_modifying[index] = 'PF Voluantary' 
+    elif row == 'trans_lic':
+      columns_after_modifying[index] = 'LIC' 
+    elif row == 'trans_arr_esipt':
+      columns_after_modifying[index] = 'Arrears esi pt' 
+    elif row == 'trans_arr_pf':
+      columns_after_modifying[index] = 'Arrears pf' 
+    elif row == 'trans_phone_number':
+      columns_after_modifying[index] = 'Phone number' 
+    elif row == 'trans_alt_phone_number':
+      columns_after_modifying[index] = 'Alt Phone number' 
+    elif row == 'trans_email_address':
+      columns_after_modifying[index] = 'Email address' 
+    elif row == 'trans_aadhar_number':
+      columns_after_modifying[index] = 'Aadhar number' 
+    elif row == 'trans_attn_bonus':
+      columns_after_modifying[index] = 'Attn bonus' 
 
-
+  
 
   
   # column_names.insert(0,'Sl no')
