@@ -219,12 +219,10 @@ def get_transaction_columns(comp_details, comp_code):
   print("columns after modifying", columns_after_modifying)
 
 
-  #  'trans_earn_attn_bonus', 'fxd_earn_gross', 'earn_pf_salary', 'earn_fpf_salary', 'earn_esi_salary', 
-  #  'earn_pt_salary', 'earn_ot_salary', 'earn_it_salary', 'earn_bonus_salary', 'pf_amt', 'fpf_amt', 
+  #  'earn_bonus_salary', 'pf_amt', 'fpf_amt', 
   #  'esi_amt', 'pt_amt', 'ot_amt', 'it_or_tds_amt', 'bonus_amt']
 
-  #                          'Attn bonus earned', 'Fixed Gross', 'PF salary', 'FPF salary', 
-  #                          'ESI salary', 'PT_salary', 'OT salary', 'IT salary', 'Bonus salary', 
+   #                         'Bonus salary', 
   #                          'PF Amt', 'FPF Amt', 'ESI Amt', 'PT Amt', 'OT Amt', 'TDS repeated', 'Bonus Amt']
 
   for index,row in enumerate(columns_after_modifying):
@@ -302,8 +300,27 @@ def get_transaction_columns(comp_details, comp_code):
       columns_after_modifying[index] = 'Aadhar number' 
     elif row == 'trans_attn_bonus':
       columns_after_modifying[index] = 'Attn bonus' 
+    elif row == 'trans_earn_attn_bonus':
+      columns_after_modifying[index] = 'Attn bonus earned' 
+    elif row == 'fxd_earn_gross':
+      columns_after_modifying[index] = 'Fixed Gross'   
+    elif row == 'earn_pf_salary':
+      columns_after_modifying[index] = 'PF salary'   
+    elif row == 'earn_fpf_salary':
+      columns_after_modifying[index] = 'FPF salary'   
+    elif row == 'earn_esi_salary':
+      columns_after_modifying[index] = 'ESI salary'   
+    elif row == 'earn_esi_salary':
+      columns_after_modifying[index] = 'ESI salary'   
+    elif row == 'earn_pt_salary':
+      columns_after_modifying[index] = 'PT_salary'   
+    elif row == 'earn_ot_salary':
+      columns_after_modifying[index] = 'OT salary'   
+    elif row == 'earn_it_salary':
+      columns_after_modifying[index] = 'IT salary'   
 
-  
+
+
 
   
   # column_names.insert(0,'Sl no')
