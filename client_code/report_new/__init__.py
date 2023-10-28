@@ -27,7 +27,7 @@ class report_new(report_newTemplate):
 
     flow_panel = anvil.FlowPanel()
     for i in range(len(self.columns)):
-      if self.columns[i] == 'trans_empid' or self.columns[i] == 'trans_empname' or self.columns[i] == 'slno':
+      if self.columns[i] == 'Emp code' or self.columns[i] == 'Emp name' or self.columns[i] == 'Sl no':
         checkbox = CheckBox(text=self.columns[i], checked=True)  
         flow_panel.add_component(checkbox)
       else:

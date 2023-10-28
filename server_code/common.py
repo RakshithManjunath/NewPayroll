@@ -155,17 +155,17 @@ def get_transaction_columns(comp_details, comp_code):
                            'earn_esi_salary', 'earn_pt_salary', 'earn_ot_salary', 'earn_it_salary', 'earn_bonus_salary', 
                            'pf_amt', 'fpf_amt', 'esi_amt', 'pt_amt', 'ot_amt', 'it_or_tds_amt', 'bonus_amt']
   
-  display_column_names = ['Sl no', 'Emp code', 'Emp name', 'Husband / Father', 'Emp gender', 
-                           'Date of birth', 'Date join', 'Emp type', 'Department', 'Designation', 
-                           'PF contribution', 'PF No', 'PF UAN', 'ESI contribution', 'Esi No', 
-                           'Dispensary', 'PT contribution', 'IT contribution', 'PAN', 'Mandays', 
-                           'Weekly Off', 'Paid Holiday', 'Lay Off', 'Absent', 'Paid days', 
-                           'OT Hrs', 'Incentive Hrs', 'Advance', 'TDS', 
-                           'PF Voluantary', 'LIC', 'Arrears esi pt', 'Arrears pf', 'Phone number', 
-                           'Alt Phone number', 'Email address', 'Aadhar number', 'Attn bonus', 
-                           'Attn bonus earned', 'Fixed Gross', 'PF salary', 'FPF salary', 
-                           'ESI salary', 'PT_salary', 'OT salary', 'IT salary', 'Bonus salary', 
-                           'PF Amt', 'FPF Amt', 'ESI Amt', 'PT Amt', 'OT Amt', 'TDS repeated', 'Bonus Amt']
+  # display_column_names = ['Sl no','Emp code', 'Emp name', 'Husband / Father', 'Emp gender', 
+  #                          'Date of birth', 'Date join', 'Emp type', 'Department', 'Designation', 
+  #                          'PF contribution', 'PF No', 'PF UAN', 'ESI contribution', 'Esi No', 
+  #                          'Dispensary', 'PT contribution', 'IT contribution', 'PAN', 'Mandays', 
+  #                          'Weekly Off', 'Paid Holiday', 'Lay Off', 'Absent', 'Paid days', 
+  #                          'OT Hrs', 'Incentive Hrs', 'Advance', 'TDS', 
+  #                          'PF Voluantary', 'LIC', 'Arrears esi pt', 'Arrears pf', 'Phone number', 
+  #                          'Alt Phone number', 'Email address', 'Aadhar number', 'Attn bonus', 
+  #                          'Attn bonus earned', 'Fixed Gross', 'PF salary', 'FPF salary', 
+  #                          'ESI salary', 'PT_salary', 'OT salary', 'IT salary', 'Bonus salary', 
+  #                          'PF Amt', 'FPF Amt', 'ESI Amt', 'PT Amt', 'OT Amt', 'TDS repeated', 'Bonus Amt']
   final_selected_records = []
   for record in company_data:
     filtered_row = {}
@@ -213,12 +213,45 @@ def get_transaction_columns(comp_details, comp_code):
   for column in column_names:
     for key,val in updated_columns.items():
       if column == key:
-        column_names[column_names.index(column)] = val 
+        column_names[column_names.index(column)] = val
 
-  column_names.insert(0,'slno')
-  unmodified_cols.insert(0,'slno')
+  columns_after_modifying = column_names.copy()
+  print("columns after modifying", columns_after_modifying)
+  # ['trans_empid', 'trans_empname', 'trans_father_husband', 'trans_empsex', 'trans_empdob', 'trans_empdoj', 
+  #  'trans_emptype', 'trans_deptname', 'trans_desiname', 'trans_emppfc', 'trans_emppfno', 'trans_emp_pfuan', 
+  #  'trans_empesic', 'trans_empesino', 'trans_empdispensary', 'trans_empptc', 'trans_empitc', 'trans_emppan', 
+  #  'trans_mandays', 'trans_wo', 'trans_ph', 'trans_layoff', 'trans_absent', 'Causual', 'Earned', 'leave3', 
+  #  'trans_paid_days', 'trans_othrs', 'trans_inchrs', 'NEWS PAPER', 'CANTEEN', 'ded3', 'VAN DED', 'Motor', 
+  #  'loan2', 'trans_adv', 'trans_tds', 'trans_pfvol', 'trans_lic', 'trans_arr_esipt', 'trans_arr_pf', 
+  #  'BASIC', 'DA', 'HRA', 'CONVYANCE', 'OTHERS', 'SPL ALLOWENCE', 'SPL BASIC', 'earn8', 'earn9', 'earn10', 
+  #  'earned_BASIC', 'earned_DA', 'earned_HRA', 'earned_CONVYANCE', 'earned_OTHERS', 'earned_SPL ALLOWENCE', 
+  #  'earned_SPL BASIC', 'earned_earn8', 'earned_earn9', 'earned_earn10', 'trans_phone_number', 
+  #  'trans_alt_phone_number', 'trans_email_address', 'trans_aadhar_number', 'trans_attn_bonus', 
+  #  'trans_earn_attn_bonus', 'fxd_earn_gross', 'earn_pf_salary', 'earn_fpf_salary', 'earn_esi_salary', 
+  #  'earn_pt_salary', 'earn_ot_salary', 'earn_it_salary', 'earn_bonus_salary', 'pf_amt', 'fpf_amt', 
+  #  'esi_amt', 'pt_amt', 'ot_amt', 'it_or_tds_amt', 'bonus_amt']
 
-  return display_column_names,unmodified_cols
+  # display_column_names = ['Sl no','Emp code', 'Emp name', 'Husband / Father', 'Emp gender', 
+  #                          'Date of birth', 'Date join', 'Emp type', 'Department', 'Designation', 
+  #                          'PF contribution', 'PF No', 'PF UAN', 'ESI contribution', 'Esi No', 
+  #                          'Dispensary', 'PT contribution', 'IT contribution', 'PAN', 'Mandays', 
+  #                          'Weekly Off', 'Paid Holiday', 'Lay Off', 'Absent', 'Paid days', 
+  #                          'OT Hrs', 'Incentive Hrs', 'Advance', 'TDS', 
+  #                          'PF Voluantary', 'LIC', 'Arrears esi pt', 'Arrears pf', 'Phone number', 
+  #                          'Alt Phone number', 'Email address', 'Aadhar number', 'Attn bonus', 
+  #                          'Attn bonus earned', 'Fixed Gross', 'PF salary', 'FPF salary', 
+  #                          'ESI salary', 'PT_salary', 'OT salary', 'IT salary', 'Bonus salary', 
+  #                          'PF Amt', 'FPF Amt', 'ESI Amt', 'PT Amt', 'OT Amt', 'TDS repeated', 'Bonus Amt']
+  for index,row in enumerate(columns_after_modifying):
+    if row == 'trans_empid':
+      columns_after_modifying[index] = 'Emp code'
+    elif row == 'trans_empname':
+      columns_after_modifying[index] = 'Emp name'
+
+  # column_names.insert(0,'Sl no')
+  unmodified_cols.insert(0,'Sl no')
+
+  return columns_after_modifying,unmodified_cols
   
   # return column_names, unmodified_cols
 
@@ -229,12 +262,12 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
   for record in trans_records:
     filtered_row = {}
     for selected_col in selected_list:
-      if selected_col != "slno":
+      if selected_col != "Sl no":
         filtered_row[selected_col] = record[selected_col]
     final_filter_records.append(filtered_row)
   sl_count = 1
   for row in final_filter_records:
-    row['slno'] = sl_count
+    row['Sl no'] = sl_count
     sl_count+=1
   print("final filer records: ",final_filter_records)
 
