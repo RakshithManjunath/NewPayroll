@@ -219,12 +219,6 @@ def get_transaction_columns(comp_details, comp_code):
   print("columns after modifying", columns_after_modifying)
 
 
-  #  'earn_bonus_salary', 'pf_amt', 'fpf_amt', 
-  #  'esi_amt', 'pt_amt', 'ot_amt', 'it_or_tds_amt', 'bonus_amt']
-
-   #                         'Bonus salary', 
-  #                          'PF Amt', 'FPF Amt', 'ESI Amt', 'PT Amt', 'OT Amt', 'TDS repeated', 'Bonus Amt']
-
   for index,row in enumerate(columns_after_modifying):
     if row == 'trans_empid':
       columns_after_modifying[index] = 'Emp code'
@@ -318,8 +312,22 @@ def get_transaction_columns(comp_details, comp_code):
       columns_after_modifying[index] = 'OT salary'   
     elif row == 'earn_it_salary':
       columns_after_modifying[index] = 'IT salary'   
-
-
+    elif row == 'earn_bonus_salary':
+      columns_after_modifying[index] = 'Bonus salary'   
+    elif row == 'pf_amt':
+      columns_after_modifying[index] = 'PF Amt'   
+    elif row == 'fpf_amt':
+      columns_after_modifying[index] = 'FPF Amt'   
+    elif row == 'esi_amt':
+      columns_after_modifying[index] = 'ESI Amt'   
+    elif row == 'pt_amt':
+      columns_after_modifying[index] = 'PT Amt'   
+    elif row == 'ot_amt':
+      columns_after_modifying[index] = 'OT Amt'   
+    elif row == 'it_or_tds_amt':
+      columns_after_modifying[index] = 'TDS repeated'   
+    elif row == 'bonus_amt':
+      columns_after_modifying[index] = 'Bonus Amt'   
 
 
   
