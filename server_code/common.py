@@ -217,8 +217,7 @@ def get_transaction_columns(comp_details, comp_code):
 
   columns_after_modifying = column_names.copy()
   print("columns after modifying", columns_after_modifying)
-  # ['trans_empid', 'trans_empname', 'trans_father_husband', 'trans_empsex', 'trans_empdob', 'trans_empdoj', 
-  #  'trans_emptype', 'trans_deptname', 'trans_desiname', 'trans_emppfc', 'trans_emppfno', 'trans_emp_pfuan', 
+
   #  'trans_empesic', 'trans_empesino', 'trans_empdispensary', 'trans_empptc', 'trans_empitc', 'trans_emppan', 
   #  'trans_mandays', 'trans_wo', 'trans_ph', 'trans_layoff', 'trans_absent', 'Causual', 'Earned', 'leave3', 
   #  'trans_paid_days', 'trans_othrs', 'trans_inchrs', 'NEWS PAPER', 'CANTEEN', 'ded3', 'VAN DED', 'Motor', 
@@ -231,9 +230,7 @@ def get_transaction_columns(comp_details, comp_code):
   #  'earn_pt_salary', 'earn_ot_salary', 'earn_it_salary', 'earn_bonus_salary', 'pf_amt', 'fpf_amt', 
   #  'esi_amt', 'pt_amt', 'ot_amt', 'it_or_tds_amt', 'bonus_amt']
 
-  # display_column_names = ['Sl no','Emp code', 'Emp name', 'Husband / Father', 'Emp gender', 
-  #                          'Date of birth', 'Date join', 'Emp type', 'Department', 'Designation', 
-  #                          'PF contribution', 'PF No', 'PF UAN', 'ESI contribution', 'Esi No', 
+  #                          'ESI contribution', 'Esi No', 
   #                          'Dispensary', 'PT contribution', 'IT contribution', 'PAN', 'Mandays', 
   #                          'Weekly Off', 'Paid Holiday', 'Lay Off', 'Absent', 'Paid days', 
   #                          'OT Hrs', 'Incentive Hrs', 'Advance', 'TDS', 
@@ -247,9 +244,34 @@ def get_transaction_columns(comp_details, comp_code):
       columns_after_modifying[index] = 'Emp code'
     elif row == 'trans_empname':
       columns_after_modifying[index] = 'Emp name'
+    elif row == 'trans_father_husband':
+      columns_after_modifying[index] = 'Husband / Father'
+    elif row == 'trans_empsex':
+      columns_after_modifying[index] = 'Emp gender'
+    elif row == 'trans_empdob':
+      columns_after_modifying[index] = 'Date of birth'
+    elif row == 'trans_empdoj':
+      columns_after_modifying[index] = 'Date join'
+    elif row == 'trans_emptype':
+      columns_after_modifying[index] = 'Emp type'
+    elif row == 'trans_deptname':
+      columns_after_modifying[index] = 'Department' 
+    elif row == 'trans_desiname':
+      columns_after_modifying[index] = 'Designation' 
+    elif row == 'trans_emppfc':
+      columns_after_modifying[index] = 'PF contribution' 
+    elif row == 'trans_emppfno':
+      columns_after_modifying[index] = 'PF No' 
+    elif row == 'trans_emp_pfuan':
+      columns_after_modifying[index] = 'PF UAN' 
 
+
+
+  
   # column_names.insert(0,'Sl no')
   unmodified_cols.insert(0,'Sl no')
+
+  columns_after_modifying.insert(0, 'Sl no')
 
   return columns_after_modifying,unmodified_cols
   
