@@ -450,7 +450,50 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
       elif selected_col == "earn_bonus_salary":
         formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
         filtered_row[selected_col] = formatted_rupees  
-         
+
+      elif selected_col == "trans_adv":
+        formatted_only_2decimal = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal       
+      elif selected_col == "trans_tds":
+        formatted_only_2decimal = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal  
+      elif selected_col == "trans_pfvol":
+        formatted_only_2decimal = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal 
+      elif selected_col == "trans_lic":
+        formatted_only_2decimal = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal 
+      elif selected_col == "trans_arr_esipt":
+        formatted_only_2decimal = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal       
+      elif selected_col == "trans_arr_pf":
+        formatted_only_2decimal = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal 
+
+      elif selected_col == "pf_amt":
+        formatted_only_2decimal = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal
+        if formatted_only_2decimal == "₹ 0.00":
+          filtered_row[selected_col] = ""
+      elif selected_col == "fpf_amt":
+        formatted_only_2decimal = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal  
+      elif selected_col == "esi_amt":
+        formatted_only_2decimal = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal 
+      elif selected_col == "pt_amt":
+        formatted_only_2decimal = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal 
+      elif selected_col == "ot_amt":
+        formatted_only_2decimal = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal       
+      elif selected_col == "it_or_tds_amt":
+        formatted_only_2decimal = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal 
+      elif selected_col == "bonus_amt":
+        formatted_only_2decimal = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal         
+        
       elif selected_col == "trans_empdob":
         print("converted_date",record[selected_col].strftime("%d/%m/%Y"))
         filtered_row[selected_col] = record[selected_col].strftime("%d/%m/%Y")
@@ -492,7 +535,9 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
         formatted_only_2decimal = "{:,.2f}".format(record[selected_col])
         filtered_row[selected_col] = formatted_only_2decimal 
 
-      
+
+
+
       
       elif selected_col == "Sl no":
         pass
