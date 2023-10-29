@@ -130,9 +130,9 @@ def get_reportlab_pdf():
 def get_transaction_columns(comp_details, comp_code):
   columns_and_type = app_tables.transaction.list_columns()
   #########################################################
-  #company_data = app_tables.company.search(comp_code='002')
+  company_data = app_tables.company.search(comp_code='002')
   #########################################################
-  company_data = app_tables.company.search(comp_code=comp_code)
+  #company_data = app_tables.company.search(comp_code=comp_code)
   company_columns_to_include = ['comp_earn_head1','comp_earn_head2','comp_earn_head3','comp_earn_head4','comp_earn_head5',
                                 'comp_earn_head6', 'comp_earn_head7', 'comp_earn_head8', 'comp_earn_head9', 'comp_earn_head10',
                                'comp_ded1','comp_ded2','comp_ded3','comp_ded4',
@@ -155,17 +155,6 @@ def get_transaction_columns(comp_details, comp_code):
                            'earn_esi_salary', 'earn_pt_salary', 'earn_ot_salary', 'earn_it_salary', 'earn_bonus_salary', 
                            'pf_amt', 'fpf_amt', 'esi_amt', 'pt_amt', 'ot_amt', 'it_or_tds_amt', 'bonus_amt']
   
-  # display_column_names = ['Sl no','Emp code', 'Emp name', 'Husband / Father', 'Emp gender', 
-  #                          'Date of birth', 'Date join', 'Emp type', 'Department', 'Designation', 
-  #                          'PF contribution', 'PF No', 'PF UAN', 'ESI contribution', 'Esi No', 
-  #                          'Dispensary', 'PT contribution', 'IT contribution', 'PAN', 'Mandays', 
-  #                          'Weekly Off', 'Paid Holiday', 'Lay Off', 'Absent', 'Paid days', 
-  #                          'OT Hrs', 'Incentive Hrs', 'Advance', 'TDS', 
-  #                          'PF Voluantary', 'LIC', 'Arrears esi pt', 'Arrears pf', 'Phone number', 
-  #                          'Alt Phone number', 'Email address', 'Aadhar number', 'Attn bonus', 
-  #                          'Attn bonus earned', 'Fixed Gross', 'PF salary', 'FPF salary', 
-  #                          'ESI salary', 'PT_salary', 'OT salary', 'IT salary', 'Bonus salary', 
-  #                          'PF Amt', 'FPF Amt', 'ESI Amt', 'PT Amt', 'OT Amt', 'TDS repeated', 'Bonus Amt']
   final_selected_records = []
   for record in company_data:
     filtered_row = {}
@@ -227,7 +216,7 @@ def get_transaction_columns(comp_details, comp_code):
     elif row == 'trans_father_husband':
       columns_after_modifying[index] = 'Father/Husband name'
     elif row == 'trans_empsex':
-      columns_after_modifying[index] = 'Emp gender'
+      columns_after_modifying[index] = 'Gender'
     elif row == 'trans_empdob':
       columns_after_modifying[index] = 'Date of birth'
     elif row == 'trans_empdoj':
@@ -239,21 +228,21 @@ def get_transaction_columns(comp_details, comp_code):
     elif row == 'trans_desiname':
       columns_after_modifying[index] = 'Designation' 
     elif row == 'trans_emppfc':
-      columns_after_modifying[index] = 'PF contribution' 
+      columns_after_modifying[index] = 'PF contri' 
     elif row == 'trans_emppfno':
       columns_after_modifying[index] = 'PF No' 
     elif row == 'trans_emp_pfuan':
       columns_after_modifying[index] = 'PF UAN' 
     elif row == 'trans_empesic':
-      columns_after_modifying[index] = 'ESI contribution' 
+      columns_after_modifying[index] = 'ESI contri' 
     elif row == 'trans_empesino':
       columns_after_modifying[index] = 'ESI number' 
     elif row == 'trans_empdispensary':
       columns_after_modifying[index] = 'Dispensary name' 
     elif row == 'trans_empptc':
-      columns_after_modifying[index] = 'PT contribution' 
+      columns_after_modifying[index] = 'PT contri' 
     elif row == 'trans_empitc':
-      columns_after_modifying[index] = 'IT contribution' 
+      columns_after_modifying[index] = 'IT contri' 
     elif row == 'trans_emppan':
       columns_after_modifying[index] = 'PAN' 
     elif row == 'trans_mandays':
@@ -360,15 +349,155 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
   for selected_col in selected_list:
     index = selected_list.index(selected_col)
     print(index, selected_col)
-    print(index, modified_col_names[index])
+    # print(index, modified_col_names[index])
     filtered_col = {}
-    filtered_col['id'] =  selected_col
-    # filtered_col['title'] = modified_col_names[index].capitalize()
-    filtered_col['title'] = modified_col_names[index].upper()
-    filtered_col['data_key'] = selected_col
-    filtered_col['width'] = 175
-    final_filtered_cols_modified.append(filtered_col)
+    if selected_col == "Sl no":
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 75
+      final_filtered_cols_modified.append(filtered_col)
+    elif selected_col == "trans_empid":
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 150
+      final_filtered_cols_modified.append(filtered_col)
+    elif selected_col == 'trans_empname':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 250
+      final_filtered_cols_modified.append(filtered_col)
+    elif selected_col == 'trans_father_husband':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 250
+      final_filtered_cols_modified.append(filtered_col)
+    elif selected_col == 'trans_empsex':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 100
+      final_filtered_cols_modified.append(filtered_col)
+    elif selected_col == 'trans_empdob':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 125
+      final_filtered_cols_modified.append(filtered_col)
+    elif selected_col == 'trans_empdoj':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 125
+      final_filtered_cols_modified.append(filtered_col)
+    elif selected_col == 'trans_emptype':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 100
+      final_filtered_cols_modified.append(filtered_col)
+    elif selected_col == 'trans_deptname':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 250
+      final_filtered_cols_modified.append(filtered_col)
+    elif selected_col == 'trans_desiname':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 250
+      final_filtered_cols_modified.append(filtered_col)
+    elif selected_col == 'trans_emppfc':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 75
+      final_filtered_cols_modified.append(filtered_col)
+    elif selected_col == 'trans_emppfno':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 100
+      final_filtered_cols_modified.append(filtered_col)
+    elif selected_col == 'trans_emp_pfuan':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 100
+      final_filtered_cols_modified.append(filtered_col)      
+    elif selected_col == 'trans_empesic':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 75
+      final_filtered_cols_modified.append(filtered_col)    
+    elif selected_col == 'trans_empesino':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 100
+      final_filtered_cols_modified.append(filtered_col) 
+    elif selected_col == 'trans_empdispensary':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 150
+      final_filtered_cols_modified.append(filtered_col) 
+    elif selected_col == 'trans_empptc':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 75
+      final_filtered_cols_modified.append(filtered_col)   
+    elif selected_col == 'trans_empitc':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 75
+      final_filtered_cols_modified.append(filtered_col)  
+    elif selected_col == 'trans_emppan':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 100
+      final_filtered_cols_modified.append(filtered_col)  
+    elif selected_col == 'trans_phone_number':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 150
+      final_filtered_cols_modified.append(filtered_col)  
+    elif selected_col == 'trans_alt_phone_number':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 150
+      final_filtered_cols_modified.append(filtered_col)  
+    elif selected_col == 'trans_email_address':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 200
+      final_filtered_cols_modified.append(filtered_col)
+    elif selected_col == 'trans_aadhar_number':
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 200
+      final_filtered_cols_modified.append(filtered_col)
+    else:
+      filtered_col['id'] =  selected_col
+      filtered_col['title'] = modified_col_names[index].upper()
+      filtered_col['data_key'] = selected_col
+      filtered_col['width'] = 150
+      final_filtered_cols_modified.append(filtered_col)
 
+
+  
   print("final filtered cols modified: ", final_filtered_cols_modified)
   
   # return final_filter_records,final_filtered_cols
