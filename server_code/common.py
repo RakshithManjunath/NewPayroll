@@ -337,14 +337,19 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
   for record in trans_records:
     filtered_row = {}
     for selected_col in selected_list:
-      if selected_col != "Sl no" and selected_col != "trans_empdob" and selected_col != "trans_empdoj":
-        filtered_row[selected_col] = record[selected_col]
-      elif selected_col == "pf_amt":
-        formatted_rupees = locale.currency(record[selected_col], grouping=True)
-        filtered_row[selected_col] = record[formatted_rupees]
-      elif selected_col == "trans_empdob" or selected_col == "trans_empdoj":
+      if selected_col == "pf_amt":
+        formatted_rupees = "₹{:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "trans_empdob":
         print("converted_date",record[selected_col].strftime("%d/%m/%Y"))
         filtered_row[selected_col] = record[selected_col].strftime("%d/%m/%Y")
+      elif selected_col == "trans_empdoj":
+        print("converted_date",record[selected_col].strftime("%d/%m/%Y"))
+        filtered_row[selected_col] = record[selected_col].strftime("%d/%m/%Y")
+      elif selected_col == "Sl no":
+        pass
+      else:
+        filtered_row[selected_col] = record[selected_col]
     final_filter_records.append(filtered_row)
   sl_count = 1
   for row in final_filter_records:
