@@ -13,6 +13,7 @@ from reportlab.lib.pagesizes import letter, A4
 from temp_invoice import my_temp # import the template
 from invoice_data import *  # get all data required for invoice
 
+
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
 #
@@ -130,9 +131,9 @@ def get_reportlab_pdf():
 def get_transaction_columns(comp_details, comp_code):
   columns_and_type = app_tables.transaction.list_columns()
   #########################################################
-  #company_data = app_tables.company.search(comp_code='002')
+  company_data = app_tables.company.search(comp_code='002')
   #########################################################
-  company_data = app_tables.company.search(comp_code=comp_code)
+  # company_data = app_tables.company.search(comp_code=comp_code)
   company_columns_to_include = ['comp_earn_head1','comp_earn_head2','comp_earn_head3','comp_earn_head4','comp_earn_head5',
                                 'comp_earn_head6', 'comp_earn_head7', 'comp_earn_head8', 'comp_earn_head9', 'comp_earn_head10',
                                'comp_ded1','comp_ded2','comp_ded3','comp_ded4',
@@ -336,8 +337,14 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
   for record in trans_records:
     filtered_row = {}
     for selected_col in selected_list:
-      if selected_col != "Sl no":
+      if selected_col != "Sl no" and selected_col != "trans_empdob" and selected_col != "trans_empdoj":
         filtered_row[selected_col] = record[selected_col]
+      elif selected_col == "pf_amt":
+        formatted_rupees = locale.currency(record[selected_col], grouping=True)
+        filtered_row[selected_col] = record[formatted_rupees]
+      elif selected_col == "trans_empdob" or selected_col == "trans_empdoj":
+        print("converted_date",record[selected_col].strftime("%d/%m/%Y"))
+        filtered_row[selected_col] = record[selected_col].strftime("%d/%m/%Y")
     final_filter_records.append(filtered_row)
   sl_count = 1
   for row in final_filter_records:
