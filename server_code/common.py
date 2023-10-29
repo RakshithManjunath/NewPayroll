@@ -337,15 +337,163 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
   for record in trans_records:
     filtered_row = {}
     for selected_col in selected_list:
-      if selected_col == "pf_amt":
-        formatted_rupees = "₹{:,.2f}".format(record[selected_col])
+      if selected_col == "trans_earn1":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
         filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "trans_earn2":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees 
+      elif selected_col == "trans_earn3":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "trans_earn4":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "trans_earn5":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees 
+      elif selected_col == "trans_earn6":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "trans_earn7":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "trans_earn8":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "trans_earn9":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees 
+      elif selected_col == "trans_earn10":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees   
+
+      elif selected_col == "trans_earn_earn1":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees       
+      elif selected_col == "trans_earn_earn2":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees 
+      elif selected_col == "trans_earn_earn3":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "trans_earn_earn4":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "trans_earn_earn5":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees 
+      elif selected_col == "trans_earn_earn6":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "trans_earn_earn7":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "trans_earn_earn8":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "trans_earn_earn9":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees 
+      elif selected_col == "trans_earn_earn10":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees 
+
+      elif selected_col == "trans_ded1":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees       
+      elif selected_col == "trans_ded2":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees 
+      elif selected_col == "trans_ded3":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "trans_ded4":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees  
+
+      elif selected_col == "trans_loan1":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees       
+      elif selected_col == "trans_loan2":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees   
+
+      elif selected_col == "trans_attn_bonus":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees       
+      elif selected_col == "trans_earn_attn_bonus":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees  
+
+      elif selected_col == "fxd_earn_gross":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees       
+      elif selected_col == "earn_pf_salary":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees 
+      elif selected_col == "earn_fpf_salary":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees 
+      elif selected_col == "earn_esi_salary":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees
+      elif selected_col == "earn_pt_salary":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees      
+      elif selected_col == "earn_ot_salary":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees  
+      elif selected_col == "earn_it_salary":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees  
+      elif selected_col == "earn_bonus_salary":
+        formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_rupees  
+         
       elif selected_col == "trans_empdob":
         print("converted_date",record[selected_col].strftime("%d/%m/%Y"))
         filtered_row[selected_col] = record[selected_col].strftime("%d/%m/%Y")
       elif selected_col == "trans_empdoj":
         print("converted_date",record[selected_col].strftime("%d/%m/%Y"))
         filtered_row[selected_col] = record[selected_col].strftime("%d/%m/%Y")
+        
+      elif selected_col == "trans_mandays":
+        formatted_only_2decimal = "{:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal  
+      elif selected_col == "trans_wo":
+        formatted_only_2decimal = "{:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal  
+      elif selected_col == "trans_ph":
+        formatted_only_2decimal = "{:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal  
+      elif selected_col == "trans_layoff":
+        formatted_only_2decimal = "{:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal 
+      elif selected_col == "trans_absent":
+        formatted_only_2decimal = "{:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal 
+      elif selected_col == "trans_leave1":
+        formatted_only_2decimal = "{:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal 
+      elif selected_col == "trans_leave2":
+        formatted_only_2decimal = "{:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal 
+      elif selected_col == "trans_leave3":
+        formatted_only_2decimal = "{:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal         
+      elif selected_col == "trans_paid_days":
+        formatted_only_2decimal = "{:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal    
+      elif selected_col == "trans_othrs":
+        formatted_only_2decimal = "{:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal 
+      elif selected_col == "trans_inchrs":
+        formatted_only_2decimal = "{:,.2f}".format(record[selected_col])
+        filtered_row[selected_col] = formatted_only_2decimal 
+
+      
+      
       elif selected_col == "Sl no":
         pass
       else:
