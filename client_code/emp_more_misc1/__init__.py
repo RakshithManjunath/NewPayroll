@@ -14,6 +14,8 @@ class emp_more_misc1(emp_more_misc1Template):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
+  
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     #print(self.parent, self.parent.parent, self.parent.parent.parent)
