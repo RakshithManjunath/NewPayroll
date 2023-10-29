@@ -158,6 +158,20 @@ class comp_new(comp_newTemplate):
     """This method is called when the button is clicked"""
     open_form('menu')
 
+  def date_picker_1_change(self, **event_args):
+    """This method is called when the selected date changes"""
+    extract_month_and_year()
+
+def extract_month_and_year(self, sender, **event_args):
+    selected_date = self.date_panel_1.get_value()  # Replace 'date_panel_1' with the actual name of your DatePanel component.
+    selected_date = self.date_picker_1.get_value()
+    print(selected_date)
+    if selected_date:
+        month = selected_date.month
+        year = selected_date.year
+        result_text = f"Month: {month}, Year: {year}"
+        self.label_1.text = result_text  # Replace 'label_1' with the actual name of your Label component.
+
 
 
 
