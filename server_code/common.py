@@ -130,9 +130,9 @@ def get_reportlab_pdf():
 def get_transaction_columns(comp_details, comp_code):
   columns_and_type = app_tables.transaction.list_columns()
   #########################################################
-  company_data = app_tables.company.search(comp_code='002')
+  #company_data = app_tables.company.search(comp_code='002')
   #########################################################
-  #company_data = app_tables.company.search(comp_code=comp_code)
+  company_data = app_tables.company.search(comp_code=comp_code)
   company_columns_to_include = ['comp_earn_head1','comp_earn_head2','comp_earn_head3','comp_earn_head4','comp_earn_head5',
                                 'comp_earn_head6', 'comp_earn_head7', 'comp_earn_head8', 'comp_earn_head9', 'comp_earn_head10',
                                'comp_ded1','comp_ded2','comp_ded3','comp_ded4',
@@ -225,7 +225,7 @@ def get_transaction_columns(comp_details, comp_code):
     elif row == 'trans_empname':
       columns_after_modifying[index] = 'Emp name'
     elif row == 'trans_father_husband':
-      columns_after_modifying[index] = 'Husband / Father'
+      columns_after_modifying[index] = 'Father/Husband name'
     elif row == 'trans_empsex':
       columns_after_modifying[index] = 'Emp gender'
     elif row == 'trans_empdob':
@@ -307,7 +307,7 @@ def get_transaction_columns(comp_details, comp_code):
     elif row == 'earn_esi_salary':
       columns_after_modifying[index] = 'ESI salary'   
     elif row == 'earn_pt_salary':
-      columns_after_modifying[index] = 'PT_salary'   
+      columns_after_modifying[index] = 'PT salary'   
     elif row == 'earn_ot_salary':
       columns_after_modifying[index] = 'OT salary'   
     elif row == 'earn_it_salary':
@@ -366,7 +366,7 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
     # filtered_col['title'] = modified_col_names[index].capitalize()
     filtered_col['title'] = modified_col_names[index].upper()
     filtered_col['data_key'] = selected_col
-    filtered_col['width'] = 200
+    filtered_col['width'] = 175
     final_filtered_cols_modified.append(filtered_col)
 
   print("final filtered cols modified: ", final_filtered_cols_modified)
