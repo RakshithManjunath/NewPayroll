@@ -114,9 +114,7 @@ class comp_new(comp_newTemplate):
 ###########################################################################
 ###########################################################################
 ###########################################################################
-
-
-
+  
 
   
     
@@ -158,7 +156,13 @@ class comp_new(comp_newTemplate):
     """This method is called when the button is clicked"""
     open_form('menu')
 
-
+  def date_picker_1_change(self, **event_args):
+    """This method is called when the selected date changes"""
+    newdate = self.date_picker_1.date
+    newmonth= newdate.strftime("%B").upper()
+    newyear= newdate.strftime("%Y")    
+    print(newmonth)
+    print(newyear)    
 
 
 
