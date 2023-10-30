@@ -67,7 +67,7 @@ class emp_more1(emp_more1Template):
     self.custom_2.text_box_3.text = self.row['email_address']
     self.custom_2.text_box_4.text = self.row['aadhar_number']
     self.custom_2.text_box_5.text = self.row['attn_bonus']
-    self.custom_2.text_box_6.text = self.row['emp_bank']
+    #self.custom_2.text_box_6.text = self.row['emp_bank']
     self.custom_2.text_box_6.text =  self.row['emp_bank_code']+ " | " +self.row['emp_bank'] 
     self.custom_2.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
 
