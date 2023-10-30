@@ -85,10 +85,10 @@ components:
     underline: false, icon: ''}
   name: label_6
   layout_properties: {grid_position: 'GZUALX,TGRQXF'}
-- type: Link
+- type: TextBox
   properties: {}
-  name: link_1
-  layout_properties: {grid_position: 'GZUALX,MAGLMK'}
+  name: text_box_6
+  layout_properties: {grid_position: 'GZUALX,GPHEKB'}
 - type: DropDown
   properties:
     role: null

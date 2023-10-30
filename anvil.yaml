@@ -11,7 +11,7 @@ services:
 - source: /runtime/services/anvil/files.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: report_new}
+startup: {type: form, module: logform}
 package_name: Payroll
 allow_embedding: false
 name: NewPayroll
@@ -322,14 +322,17 @@ db_schema:
       admin_ui: {width: 200, order: 80}
       type: media
     - name: trans_empbank
-      admin_ui: {width: 200, order: 81}
+      admin_ui: {order: 80.1875, width: 200}
       type: string
     - name: trans_empbank_ifsc
       admin_ui: {width: 200, order: 82}
       type: string
     - name: trans_empbank_acno
-      admin_ui: {width: 200, order: 83}
+      admin_ui: {order: 80.25, width: 200}
       type: number
+    - name: trans_empbank_code
+      admin_ui: {order: 80.125, width: 200}
+      type: string
   test_table:
     client: none
     server: full
@@ -862,6 +865,9 @@ db_schema:
     - name: emp_bank_acno
       admin_ui: {width: 200, order: 33}
       type: number
+    - name: emp_bank_code
+      admin_ui: {order: 30.5, width: 200}
+      type: string
   users:
     client: none
     server: full
