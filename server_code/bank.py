@@ -118,3 +118,8 @@ def bank_name_exists(bank_name,bank_comp_code):
     return False
   else:
     return True
+
+@anvil.server.callable
+def bank_get_details(bankcode,bank_comp_code):
+  row = app_tables.bank.search(bank_code=bankcode,bank_comp_code=bank_comp_code)[0]
+  return row
