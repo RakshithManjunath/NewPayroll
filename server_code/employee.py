@@ -342,7 +342,7 @@ def emp_update_misc1(empcode,phone_number,alt_phone_number,email_address,aadhar_
             email_address=email_address,
             aadhar_number=aadhar_number,
             attn_bonus=attn_bonus,
-            trans_empbank = empbank)
+            emp_bank_code = empbank)
 
   trans_row = app_tables.transaction.get(trans_empid=empcode)
   trans_row.update(trans_phone_number=phone_number,trans_alt_phone_number=alt_phone_number,

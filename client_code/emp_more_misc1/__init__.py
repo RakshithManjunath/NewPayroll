@@ -15,7 +15,7 @@ class emp_more_misc1(emp_more_misc1Template):
 
     # Any code you write here will run before the form opens.
     self.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
-  
+      
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     #print(self.parent, self.parent.parent, self.parent.parent.parent)
@@ -25,6 +25,13 @@ class emp_more_misc1(emp_more_misc1Template):
     split_list_emp = dropdowns[0].selected_value.split("|")
     split_list_emp = [ele.strip() for ele in split_list_emp] 
     emp_code,emp_name = split_list_emp[0],split_list_emp[1]
+
+    if self.drop_down_1.selected_value!=None:
+        split_list_bank = self.drop_down_1.selected_value.split("|")
+        split_list_bank = [ele.strip() for ele in split_list_bank] 
+        bank_code,bank_name = split_list_bank[0],split_list_bank[1]
+        print(bank_code,bank_name) 
+    
     anvil.server.call('emp_update_misc1',emp_code,self.text_box_1.text,
                      self.text_box_2.text,self.text_box_3.text,
                      self.text_box_4.text,self.text_box_5.text)
