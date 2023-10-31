@@ -104,12 +104,18 @@ class emp_more1(emp_more1Template):
                       self.custom_1.text_box_10.text,
                       self.custom_1.text_box_11.text)
 
+    split_list_bank = self.custom_2.drop_down_1.selected_value.split("|")
+    split_list_bank = [ele.strip() for ele in split_list_bank] 
+    bank_code,bank_name = split_list_bank[0],split_list_bank[1]
+    print(bank_code,bank_name)
+
     anvil.server.call('emp_update_misc1',self.emp_code,self.custom_2.text_box_1.text,
                       self.custom_2.text_box_2.text,
                       self.custom_2.text_box_3.text,
                       self.custom_2.text_box_4.text,
                       self.custom_2.text_box_5.text,
-                      self.custom_2.text_box_6.text)
+                      bank_code,
+                      bank_name)
 
     #anvil.server.call('emp_update_misc2',self.emp_code,self.custom_3.image_1.source)   ## to be tested
     #anvil.server.call('emp_update_misc2b',self.emp_code,self.custom_3.image_1.source)   ## to be tested
