@@ -118,7 +118,8 @@ class emp_more1(emp_more1Template):
                       self.custom_2.text_box_4.text,
                       self.custom_2.text_box_5.text,
                       bank_code,
-                      bank_name)
+                      bank_name,
+                      bank_ifsc)
 
     #anvil.server.call('emp_update_misc2',self.emp_code,self.custom_3.image_1.source)   ## to be tested
     #anvil.server.call('emp_update_misc2b',self.emp_code,self.custom_3.image_1.source)   ## to be tested
