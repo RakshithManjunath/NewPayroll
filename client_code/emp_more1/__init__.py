@@ -15,7 +15,8 @@ class emp_more1(emp_more1Template):
     # Any code you write here will run before the form opens.
     self.label_9.text = gvarb.g_comname+' '+(gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
     self.drop_down_1.items = anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode)
-
+    self.custom_2.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
+    
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.custom_1.visible = not self.custom_1.visible
@@ -67,7 +68,7 @@ class emp_more1(emp_more1Template):
     self.custom_2.text_box_3.text = self.row['email_address']
     self.custom_2.text_box_4.text = self.row['aadhar_number']
     self.custom_2.text_box_5.text = self.row['attn_bonus']
-    #self.custom_2.text_box_6.text = self.row['emp_bank']
+    self.custom_2.text_box_6.text = self.row['emp_bank']
     self.custom_2.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
 
     self.custom_3.image_1.source = self.row['emp_photo']
@@ -107,7 +108,9 @@ class emp_more1(emp_more1Template):
     split_list_bank = self.custom_2.drop_down_1.selected_value.split("|")
     split_list_bank = [ele.strip() for ele in split_list_bank] 
     bank_code,bank_name = split_list_bank[0],split_list_bank[1]
-    print(bank_code,bank_name)
+    self.bankrow = anvil.server.call('bank_get_details', bank_code,gvarb.g_comcode)
+    bank_ifsc = self.bankrow['bank_ifsc']
+    print(bank_code,bank_name,bank_ifsc)
 
     anvil.server.call('emp_update_misc1',self.emp_code,self.custom_2.text_box_1.text,
                       self.custom_2.text_box_2.text,
