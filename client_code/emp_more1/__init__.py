@@ -68,9 +68,6 @@ class emp_more1(emp_more1Template):
     self.custom_2.text_box_4.text = self.row['aadhar_number']
     self.custom_2.text_box_5.text = self.row['attn_bonus']
     #self.custom_2.text_box_6.text = self.row['emp_bank']
-
-    self.bank_row = anvil.server.call('bank_get_details',self.emp_code,gvarb.g_comcode)
-    self.custom_2.text_box_6.text =  self.bank_row['bank_code']+ " | " + self.bank_row['emp_bank'] 
     self.custom_2.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
 
     self.custom_3.image_1.source = self.row['emp_photo']
