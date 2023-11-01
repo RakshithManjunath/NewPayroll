@@ -108,13 +108,13 @@ class emp_more1(emp_more1Template):
                       self.custom_1.text_box_10.text,
                       self.custom_1.text_box_11.text)
 
-    if self.custom_2.drop_down_2.selected_value!=None:
-      split_list_bank = self.custom_2.drop_down_1.selected_value.split("|")
-      split_list_bank = [ele.strip() for ele in split_list_bank] 
-      bank_code,bank_name = split_list_bank[0],split_list_bank[1]
-      self.bankrow = anvil.server.call('bank_get_details', bank_code,gvarb.g_comcode)
-      self.custom_2.text_box_7.text = self.bankrow['bank_ifsc']
-      print(bank_code,bank_name,self.custom_2.text_box_7.text)
+ 
+    split_list_bank = self.custom_2.drop_down_1.selected_value.split("|")
+    split_list_bank = [ele.strip() for ele in split_list_bank] 
+    bank_code,bank_name = split_list_bank[0],split_list_bank[1]
+    self.bankrow = anvil.server.call('bank_get_details', bank_code,gvarb.g_comcode)
+    self.custom_2.text_box_7.text = self.bankrow['bank_ifsc']
+    print(bank_code,bank_name,self.custom_2.text_box_7.text)
 
     anvil.server.call('emp_update_misc1',self.emp_code,self.custom_2.text_box_1.text,
                       self.custom_2.text_box_2.text,
