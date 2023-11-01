@@ -11,9 +11,6 @@ class pt_recovery(pt_recoveryTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
-    self.html='<b> This form has been changed </b>'
-
     self.html = """
     <!DOCTYPE html>
     <html>
