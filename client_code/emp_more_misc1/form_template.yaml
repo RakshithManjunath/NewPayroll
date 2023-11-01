@@ -86,9 +86,13 @@ components:
   name: label_6
   layout_properties: {grid_position: 'GZUALX,TGRQXF'}
 - type: TextBox
-  properties: {}
+  properties: {enabled: false}
   name: text_box_6
   layout_properties: {grid_position: 'GZUALX,GPHEKB'}
+- name: text_box_7
+  properties: {enabled: false}
+  type: TextBox
+  layout_properties: {grid_position: 'GZUALX,TAJSNK'}
 - type: DropDown
   properties:
     role: null

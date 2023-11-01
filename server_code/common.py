@@ -131,9 +131,9 @@ def get_reportlab_pdf():
 def get_transaction_columns(comp_details, comp_code):
   columns_and_type = app_tables.transaction.list_columns()
   #########################################################
-  company_data = app_tables.company.search(comp_code='002')
+  #company_data = app_tables.company.search(comp_code='002')
   #########################################################
-  # company_data = app_tables.company.search(comp_code=comp_code)
+  company_data = app_tables.company.search(comp_code=comp_code)
   company_columns_to_include = ['comp_earn_head1','comp_earn_head2','comp_earn_head3','comp_earn_head4','comp_earn_head5',
                                 'comp_earn_head6', 'comp_earn_head7', 'comp_earn_head8', 'comp_earn_head9', 'comp_earn_head10',
                                'comp_ded1','comp_ded2','comp_ded3','comp_ded4',
@@ -165,7 +165,8 @@ def get_transaction_columns(comp_details, comp_code):
   print("Final selected records: ",final_selected_records)
   
   column_names = []
-  columns_to_exclude = ['id','trans_date', 'trans_comp_code', 'trans_deptcode', 'trans_desicode','emp_photo']
+  columns_to_exclude = ['id','trans_date', 'trans_comp_code', 'trans_deptcode', 'trans_desicode','emp_photo',
+                       'trans_empbank_code']
   for column in columns_and_type:
     if column['name'] not in columns_to_exclude:
       column_names.append(column['name'])
