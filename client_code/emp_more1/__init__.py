@@ -83,6 +83,7 @@ class emp_more1(emp_more1Template):
     self.link_3.visible = True
     self.refresh()
     self.custom_1.refresh()
+    self.custom_2.refresh()
 
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
