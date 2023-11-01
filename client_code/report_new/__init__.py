@@ -6,6 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from .. import gvarb
+from .. import reprort_varb
 
 class report_new(report_newTemplate):
   def __init__(self, **properties):
@@ -92,6 +93,7 @@ class report_new(report_newTemplate):
     #grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes,modified_col_names)
     ###################################################################################################################
     grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', gvarb.g_comcode,selected_boxes,modified_col_names)
+    
 
     print("Grid rows: ", grid_rows)
 
