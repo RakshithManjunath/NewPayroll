@@ -6,7 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from .. import gvarb
-from .. import reprort_varb
+from .. import report_varb
 
 class report_new(report_newTemplate):
   def __init__(self, **properties):
@@ -16,9 +16,9 @@ class report_new(report_newTemplate):
     # Any code you write here will run before the form opens.
     self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
     ############################################################
-    #comp_details = anvil.server.call('comp_get_details', '002')  
+    comp_details = anvil.server.call('comp_get_details', '002')  
     ###########################################################
-    comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
+    # comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
 
     self.columns,self.unmodified_cols = anvil.server.call('get_transaction_columns', comp_details,gvarb.g_comcode)
     print("Original cols: ", self.unmodified_cols)
@@ -53,6 +53,16 @@ class report_new(report_newTemplate):
     button_clear.role = 'filled-button'
     self.add_component(button_clear)
     button_clear.set_event_handler('click', self.dynamic_button_clear_click)
+
+    # Dynamically create pdf preview button
+    button_pdf = anvil.Button(text="PDF Preview")
+    button_pdf.role = 'filled-button'
+    self.add_component(button_pdf)
+    button_pdf.set_event_handler('click', self.dynamic_button_pdf_preview_click)
+
+  # Attach a click listener
+  def dynamic_button_pdf_preview_click(self, **event_args):
+    open_form('pt_recovery')
 
   # Attach a click listener
   def dynamic_button_set_click(self, **event_args):
@@ -89,11 +99,11 @@ class report_new(report_newTemplate):
         selected_boxes.append(checkbox.text)
         modified_col_names.append(checkbox.text)
         
-    ###################################################################################################################
-    #grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes,modified_col_names)
-    ###################################################################################################################
-    grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', gvarb.g_comcode,selected_boxes,modified_col_names)
-    
+
+    grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes,modified_col_names)
+    # grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', gvarb.g_comcode,selected_boxes,modified_col_names)
+    report_varb.g_grid_cols = grid_cols
+    report_varb.g_grid_rows = grid_rows
 
     print("Grid rows: ", grid_rows)
 
