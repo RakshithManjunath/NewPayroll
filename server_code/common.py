@@ -12,6 +12,7 @@ from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import letter, A4
 from temp_invoice import my_temp # import the template
 from invoice_data import *  # get all data required for invoice
+from jinja2 import Template
 
 
 # This is a server module. It runs on the Anvil server,
@@ -721,3 +722,14 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
   # return final_filter_records,final_filtered_cols
   return final_filter_records,final_filtered_cols_modified
 
+@anvil.server.callable
+def pt_recovery_html_report(html_template,grid_rows,grid_cols):
+  template = Template(html_template)
+    
+  # Provide data to fill the placeholders
+  data = {'grid_rows':grid_rows, 'grid_cols':grid_cols}
+  
+  # Render the HTML with the data
+  html_content = template.render(data)
+  print("html content",html_content)
+  return html_content

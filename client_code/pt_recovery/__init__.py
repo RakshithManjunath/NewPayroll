@@ -11,7 +11,9 @@ class pt_recovery(pt_recoveryTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.html = """
+    print("pt recovery grid rows: ",report_varb.g_grid_rows)
+    print("pt recovery grid cols: ",report_varb.g_grid_cols)
+    html_template = """
     <!DOCTYPE html>
     <html>
     <head>
@@ -47,42 +49,29 @@ class pt_recovery(pt_recoveryTemplate):
         <p><strong>Name:</strong> [Employee Name]</p>
         <p><strong>Employee ID:</strong> [Employee ID]</p>
         
-        <h2>Recovery Details</h2>
-        <table>
-            <thead>
+        <h1>Grid Report</h1>
+    <table>
+        <thead>
+            <tr>
+                {% for column in grid_cols %}
+                    <th>{{ column.title }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in grid_rows %}
                 <tr>
-                    <th>Month</th>
-                    <th>Contribution</th>
-                    <th>Employer Share</th>
-                    <th>Employee Share</th>
+                    {% for column in grid_cols %}
+                        <td>{{ row[column.data_key] }}</td>
+                    {% endfor %}
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>[Month 1]</td>
-                    <td>[Contribution 1]</td>
-                    <td>[Employer Share 1]</td>
-                    <td>[Employee Share 1]</td>
-                </tr>
-                <tr>
-                    <td>[Month 2]</td>
-                    <td>[Contribution 2]</td>
-                    <td>[Employer Share 2]</td>
-                    <td>[Employee Share 2]</td>
-                </tr>
-                <!-- Add more rows as needed -->
-            </tbody>
-        </table>
-        
-        <h2>Total Recovery</h2>
-        <p><strong>Total Contribution:</strong> [Total Contribution]</p>
-        <p><strong>Total Employer Share:</strong> [Total Employer Share]</p>
-        <p><strong>Total Employee Share:</strong> [Total Employee Share]</p>
+            {% endfor %}
+        </tbody>
+    </table>
     </body>
     </html>
     """
 
-
-    # Any code you write here will run before the form opens.
-    print("pt recovery grid rows: ",report_varb.g_grid_rows)
-    print("pt recovery grid cols: ",report_varb.g_grid_cols)
+    html_content = anvil.server.call('pt_recovery_html_report',html_template,report_varb.g_grid_rows,report_varb.g_grid_cols)
+    self.html = html_content
+  
