@@ -116,6 +116,14 @@ components:
   name: drop_down_1
   layout_properties: {grid_position: 'GZUALX,CNMRKR'}
   event_bindings: {change: drop_down_1_change}
+- name: label_7
+  properties: {text: Bank account number, role: title, bold: true}
+  type: Label
+  layout_properties: {grid_position: 'UHUXTJ,LKZWPD'}
+- name: text_box_8
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'UHUXTJ,GDSUBH'}
 - type: Spacer
   properties: {height: 32}
   name: spacer_2

@@ -336,7 +336,7 @@ def emp_update_earn(empcode, earn1,earn2,earn3,earn4,earn5,earn6,earn7,earn8,ear
 ############# update emp misc1 ################
 @anvil.server.callable
 def emp_update_misc1(empcode,phone_number,alt_phone_number,email_address,aadhar_number,
-                    attn_bonus,bankcode,empbank,bankifsc):
+                    attn_bonus,bankcode,empbank,bankifsc,bankacno):
   row = app_tables.employee.get(emp_code=empcode)
   row.update(phone_number=phone_number,alt_phone_number=alt_phone_number,
             email_address=email_address,
@@ -344,7 +344,8 @@ def emp_update_misc1(empcode,phone_number,alt_phone_number,email_address,aadhar_
             attn_bonus=attn_bonus,
             emp_bank_code = bankcode,
             emp_bank = empbank,
-            emp_bank_ifsc=bankifsc)
+            emp_bank_ifsc=bankifsc,
+            emp_bank_acno = bankacno)
 
   trans_row = app_tables.transaction.get(trans_empid=empcode)
   trans_row.update(trans_phone_number=phone_number,
@@ -354,7 +355,8 @@ def emp_update_misc1(empcode,phone_number,alt_phone_number,email_address,aadhar_
                   trans_attn_bonus=attn_bonus,
                   trans_empbank_code = bankcode,
                   trans_empbank = empbank,
-                  trans_empbank_ifsc = bankifsc)
+                  trans_empbank_ifsc = bankifsc,
+                  trans_empbank_acno = bankacno)
 
 
 ############# update emp misc2 ################
