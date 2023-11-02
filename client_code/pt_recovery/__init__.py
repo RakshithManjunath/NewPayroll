@@ -73,6 +73,15 @@ class pt_recovery(pt_recoveryTemplate):
     </html>
     """
 
-    html_content = anvil.server.call('pt_recovery_html_report',html_template,report_varb.g_grid_rows,report_varb.g_grid_cols)
-    self.html = html_content
+    self.html_content = anvil.server.call('pt_recovery_html_report',html_template,report_varb.g_grid_rows,report_varb.g_grid_cols)
+    self.html = self.html_content
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('report_new')
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pdf = anvil.server.call('download_pt_recovery_pdf',self.html_content)
+    download(pdf)
   

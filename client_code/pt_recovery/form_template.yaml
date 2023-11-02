@@ -3,5 +3,15 @@ container:
   properties: {html: "<center style=\"font-style:italic; color:#888; margin: 3em;\"\
       >\n  (Insert your custom HTML here)\n</center>\n<div anvil-slot=\"default\"\
       ></div>"}
-components: []
+components:
+- name: button_1
+  properties: {text: 'Back '}
+  type: Button
+  layout_properties: {slot: default}
+  event_bindings: {click: button_1_click}
+- name: button_2
+  properties: {text: Download pdf}
+  type: Button
+  layout_properties: {slot: default}
+  event_bindings: {click: button_2_click}
 is_package: true

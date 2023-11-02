@@ -13,6 +13,8 @@ from reportlab.lib.pagesizes import letter, A4
 from temp_invoice import my_temp # import the template
 from invoice_data import *  # get all data required for invoice
 from jinja2 import Template
+from xhtml2pdf import pisa
+from io import BytesIO
 
 
 # This is a server module. It runs on the Anvil server,
@@ -733,3 +735,24 @@ def pt_recovery_html_report(html_template,grid_rows,grid_cols):
   html_content = template.render(data)
   print("html content",html_content)
   return html_content
+
+@anvil.server.callable
+def download_pt_recovery_pdf(html_content):
+  # Create a file-like buffer to receive PDF data
+  buffer = BytesIO()
+  
+  # Convert HTML to PDF
+  pisa.CreatePDF(html_content, dest=buffer)
+  
+  # Retrieve the PDF content from the buffer
+  pdf_data = buffer.getvalue()
+  
+  # Close the buffer
+  buffer.close()
+  
+  # Save the PDF to a file or return it as needed
+  with open("output.pdf", "wb") as output_file:
+      output_file.write(pdf_data)
+
+  pdf_media = anvil.media.from_file('output.pdf', 'application/pdf', 'output.pdf')
+  return pdf_media
