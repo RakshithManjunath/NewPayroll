@@ -41,6 +41,7 @@ class pt_recovery(pt_recoveryTemplate):
         </style>
     </head>
     <body>
+        <button>
         <h1>PF Recovery Statement</h1>
         
         <p>Date: [Date]</p>
