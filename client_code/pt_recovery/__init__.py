@@ -41,7 +41,6 @@ class pt_recovery(pt_recoveryTemplate):
         </style>
     </head>
     <body>
-        <button>
         <h1>PF Recovery Statement</h1>
         
         <p>Date: [Date]</p>
@@ -84,4 +83,11 @@ class pt_recovery(pt_recoveryTemplate):
     """This method is called when the button is clicked"""
     pdf = anvil.server.call('download_pt_recovery_pdf',self.html_content)
     download(pdf)
+
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    excel = anvil.server.call('download_pt_recovery_excel',self.html_content)
+    download(excel)
+
+  
   

@@ -15,6 +15,7 @@ from invoice_data import *  # get all data required for invoice
 from jinja2 import Template
 from xhtml2pdf import pisa
 from io import BytesIO
+from bs4 import BeautifulSoup
 
 
 # This is a server module. It runs on the Anvil server,
@@ -755,4 +756,25 @@ def download_pt_recovery_pdf(html_content):
       output_file.write(pdf_data)
 
   pdf_media = anvil.media.from_file('output.pdf', 'application/pdf', 'output.pdf')
+  return pdf_media
+
+@anvil.server.callable
+def download_pt_recovery_excel(html_content):
+  # Parse the HTML content
+  soup = BeautifulSoup(html_content, 'html.parser')
+  
+  # Extract data from the HTML table
+  data = []
+  table = soup.find('table')
+  for row in table.find_all('tr'):
+      columns = row.find_all(['th', 'td'])
+      data.append([column.get_text(strip=True) for column in columns])
+  
+  # Create a pandas DataFrame from the extracted data
+  df = pd.DataFrame(data)
+  
+  # Export the DataFrame to an Excel file
+  df.to_excel('output.xlsx', index=False, header=False)
+
+  pdf_media = anvil.media.from_file('output.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'output.xlsx')
   return pdf_media

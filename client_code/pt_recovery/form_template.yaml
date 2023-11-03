@@ -18,4 +18,13 @@ components:
   type: Button
   layout_properties: {slot: default}
   event_bindings: {click: button_2_click}
+- name: button_3
+  properties: {text: Download excel}
+  type: Button
+  layout_properties: {slot: default}
+  event_bindings: {click: button_3_click}
+- name: button_4
+  properties: {text: Download csv}
+  type: Button
+  layout_properties: {slot: default}
 is_package: true
