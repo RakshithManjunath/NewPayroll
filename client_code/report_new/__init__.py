@@ -60,10 +60,29 @@ class report_new(report_newTemplate):
     self.add_component(button_pdf)
     button_pdf.set_event_handler('click', self.dynamic_button_pdf_preview_click)
 
+    # Dynamically create Excel export button
+    button_excel = anvil.Button(text="Download as Excel")
+    button_excel.role = 'filled-button'
+    self.add_component(button_excel)
+    button_excel.set_event_handler('click', self.dynamic_button_excel_download_click)
+
+   # Dynamically create Excel export button
+    button_csv = anvil.Button(text="Download as CSV")
+    button_csv.role = 'filled-button'
+    self.add_component(button_csv)
+    button_csv.set_event_handler('click', self.dynamic_button_csv_download_click)
+    
+  
   # Attach a click listener
   def dynamic_button_pdf_preview_click(self, **event_args):
     open_form('pt_recovery')
 
+  def dynamic_button_excel_download_click(self, **event_args):  
+    pass
+
+  def dynamic_button_csv_download_click(self, **event_args):  
+    pass  
+  
   # Attach a click listener
   def dynamic_button_set_click(self, **event_args):
     all_components = self.get_components()
