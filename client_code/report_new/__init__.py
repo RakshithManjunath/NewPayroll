@@ -75,13 +75,13 @@ class report_new(report_newTemplate):
   
   # Attach a click listener
   def dynamic_button_pdf_preview_click(self, **event_args):
-    open_form('pt_recovery')
+    open_form('pt_recovery_pdf')
 
   def dynamic_button_excel_download_click(self, **event_args):  
-    pass
+    open_form('pt_recovery_xldownload')
 
   def dynamic_button_csv_download_click(self, **event_args):  
-    pass  
+   open_form('pt_recovery_csvdownload')
   
   # Attach a click listener
   def dynamic_button_set_click(self, **event_args):

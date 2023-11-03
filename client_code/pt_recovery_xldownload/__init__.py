@@ -1,4 +1,4 @@
-from ._anvil_designer import pt_recoveryTemplate
+from ._anvil_designer import pt_recovery_xldownloadTemplate
 from anvil import *
 import anvil.server
 import anvil.users
@@ -8,9 +8,14 @@ from anvil.tables import app_tables
 from .. import report_varb
 from .. import gvarb
 
-class pt_recovery(pt_recoveryTemplate):
+class pt_recovery_xldownload(pt_recovery_xldownloadTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
+    self.init_components(**properties)
+
+    # Any code you write here will run before the form opens.
+
+      # Set Form properties and Data Bindings.
     self.init_components(**properties)
     print("pt recovery grid rows: ",report_varb.g_grid_rows)
     print("pt recovery grid cols: ",report_varb.g_grid_cols)
@@ -77,24 +82,12 @@ class pt_recovery(pt_recoveryTemplate):
                                           gvarb.g_comname,gvarb.g_transdate)
     self.html = self.html_content
 
+  
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('report_new')
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pdf = anvil.server.call('download_pt_recovery_pdf',self.html_content)
-    download(pdf)
-
-  def button_3_click(self, **event_args):
-    """This method is called when the button is clicked"""
     excel = anvil.server.call('download_pt_recovery_excel',self.html_content,gvarb.g_comcode,gvarb.g_transdate)
     download(excel)
-
-  def button_4_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    csv = anvil.server.call('download_pt_recovery_csv',self.html_content)
-    download(csv)
-
-  
-  

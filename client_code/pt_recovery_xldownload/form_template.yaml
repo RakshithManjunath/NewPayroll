@@ -1,0 +1,21 @@
+container:
+  type: HtmlTemplate
+  properties: {html: "<center style=\"font-style:italic; color:#888; margin: 3em;\"\
+      >\n  (Insert your custom HTML here)\n</center>\n<div anvil-slot=\"default\"\
+      ></div>"}
+components:
+- name: button_1
+  properties: {text: Back, role: filled-button}
+  type: Button
+  layout_properties: {slot: default}
+  event_bindings: {click: button_1_click}
+- name: spacer_1
+  properties: {height: 32}
+  type: Spacer
+  layout_properties: {slot: default}
+- name: button_2
+  properties: {text: Excel download, role: filled-button}
+  type: Button
+  layout_properties: {slot: default}
+  event_bindings: {click: button_2_click}
+is_package: true
