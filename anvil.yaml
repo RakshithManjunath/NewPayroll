@@ -11,7 +11,7 @@ services:
 - source: /runtime/services/anvil/files.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: report_new}
+startup: {type: form, module: logform}
 package_name: Payroll
 allow_embedding: false
 name: NewPayroll

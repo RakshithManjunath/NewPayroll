@@ -726,11 +726,11 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
   return final_filter_records,final_filtered_cols_modified
 
 @anvil.server.callable
-def pt_recovery_html_report(html_template,grid_rows,grid_cols):
+def pt_recovery_html_report(html_template,grid_rows,grid_cols,g_comname,g_transdate):
   template = Template(html_template)
     
   # Provide data to fill the placeholders
-  data = {'grid_rows':grid_rows, 'grid_cols':grid_cols}
+  data = {'grid_rows':grid_rows, 'grid_cols':grid_cols, 'company_name':g_comname, 'trans_date':g_transdate}
   
   # Render the HTML with the data
   html_content = template.render(data)
@@ -759,22 +759,39 @@ def download_pt_recovery_pdf(html_content):
   return pdf_media
 
 @anvil.server.callable
-def download_pt_recovery_excel(html_content):
+def download_pt_recovery_excel(html_content,company_name,date):
   # Parse the HTML content
   soup = BeautifulSoup(html_content, 'html.parser')
   
+  # Extract content within the <div class="content"> tag
+  content_div = soup.find('div', class_='content')
+  
+  # Extract the date
+  date = content_div.find('p').get_text(strip=True)
+  
+  # Extract the company name
+  company_name = content_div.find_all('h1')[1].get_text(strip=True)
+  
   # Extract data from the HTML table
   data = []
-  table = soup.find('table')
-  for row in table.find_all('tr'):
+  for row in soup.find_all(['tr']):
       columns = row.find_all(['th', 'td'])
       data.append([column.get_text(strip=True) for column in columns])
   
-  # Create a pandas DataFrame from the extracted data
-  df = pd.DataFrame(data)
+  # Create a pandas DataFrame for the table data
+  table_df = pd.DataFrame(data)
   
-  # Export the DataFrame to an Excel file
-  df.to_excel('output.xlsx', index=False, header=False)
+  # Create a DataFrame for Date and Company Name
+  header_data = {
+      'Date': [date],
+      'Company Name': [company_name],
+  }
+  
+  # Concatenate the DataFrames
+  combined_df = pd.concat([pd.DataFrame(header_data), table_df], ignore_index=True)
+  
+  # Export the combined DataFrame to an Excel file
+  combined_df.to_excel('output.xlsx', index=False, header=False)
 
   pdf_media = anvil.media.from_file('output.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'output.xlsx')
   return pdf_media

@@ -6,6 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from .. import report_varb
+from .. import gvarb
 
 class pt_recovery(pt_recoveryTemplate):
   def __init__(self, **properties):
@@ -41,15 +42,14 @@ class pt_recovery(pt_recoveryTemplate):
         </style>
     </head>
     <body>
+    <div class="content">
         <h1>PF Recovery Statement</h1>
         
-        <p>Date: [Date]</p>
-        
-        <h2>Employee Details</h2>
-        <p><strong>Name:</strong> [Employee Name]</p>
-        <p><strong>Employee ID:</strong> [Employee ID]</p>
-        
-        <h1>Grid Report</h1>
+        <p>Date: {{ trans_date }}</p>
+
+        <h1>{{ company_name }}</h1>
+     </div>
+
     <table>
         <thead>
             <tr>
@@ -72,7 +72,9 @@ class pt_recovery(pt_recoveryTemplate):
     </html>
     """
 
-    self.html_content = anvil.server.call('pt_recovery_html_report',html_template,report_varb.g_grid_rows,report_varb.g_grid_cols)
+    self.html_content = anvil.server.call('pt_recovery_html_report',html_template,
+                                          report_varb.g_grid_rows,report_varb.g_grid_cols,
+                                          gvarb.g_comname,gvarb.g_transdate)
     self.html = self.html_content
 
   def button_1_click(self, **event_args):
@@ -86,7 +88,7 @@ class pt_recovery(pt_recoveryTemplate):
 
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
-    excel = anvil.server.call('download_pt_recovery_excel',self.html_content)
+    excel = anvil.server.call('download_pt_recovery_excel',self.html_content,gvarb.g_comcode,gvarb.g_transdate)
     download(excel)
 
   def button_4_click(self, **event_args):
