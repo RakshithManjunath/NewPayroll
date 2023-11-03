@@ -27,4 +27,5 @@ components:
   properties: {text: Download csv}
   type: Button
   layout_properties: {slot: default}
+  event_bindings: {click: button_4_click}
 is_package: true

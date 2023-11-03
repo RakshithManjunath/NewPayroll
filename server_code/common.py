@@ -778,3 +778,24 @@ def download_pt_recovery_excel(html_content):
 
   pdf_media = anvil.media.from_file('output.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'output.xlsx')
   return pdf_media
+
+@anvil.server.callable
+def download_pt_recovery_csv(html_content):
+  # Parse the HTML content
+  soup = BeautifulSoup(html_content, 'html.parser')
+  
+  # Extract data from the HTML table
+  data = []
+  table = soup.find('table')
+  for row in table.find_all('tr'):
+      columns = row.find_all(['th', 'td'])
+      data.append([column.get_text(strip=True) for column in columns])
+  
+  # Create a pandas DataFrame from the extracted data
+  df = pd.DataFrame(data)
+  
+  # Export the DataFrame to an Excel file
+  df.to_csv('output.csv', index=False, header=False)
+
+  pdf_media = anvil.media.from_file('output.csv', 'csv', 'output.csv')
+  return pdf_media

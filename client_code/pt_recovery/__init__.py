@@ -89,5 +89,10 @@ class pt_recovery(pt_recoveryTemplate):
     excel = anvil.server.call('download_pt_recovery_excel',self.html_content)
     download(excel)
 
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    csv = anvil.server.call('download_pt_recovery_csv',self.html_content)
+    download(csv)
+
   
   
