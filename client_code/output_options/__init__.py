@@ -7,6 +7,8 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from .. import report_varb
 from .. import gvarb
+  
+#self.label_1.text = gvarb.g_comname+' '+(gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
 
 class output_options(output_optionsTemplate):
   def __init__(self, **properties):

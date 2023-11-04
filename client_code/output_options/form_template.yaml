@@ -4,6 +4,10 @@ container:
       >\n  (Insert your custom HTML here)\n</center>\n<div anvil-slot=\"default\"\
       ></div>"}
 components:
+- name: label_1
+  properties: {}
+  type: Label
+  layout_properties: {slot: default}
 - name: button_1
   properties: {text: 'Back ', role: filled-button}
   type: Button
@@ -14,7 +18,7 @@ components:
   type: Spacer
   layout_properties: {slot: default}
 - name: button_2
-  properties: {text: Download pdf, role: filled-button}
+  properties: {text: Download as pdf, role: filled-button}
   type: Button
   layout_properties: {slot: default}
   event_bindings: {click: button_2_click}
