@@ -27,6 +27,10 @@ class emp_change(emp_changeTemplate):
     split_list_emp = [ele.strip() for ele in split_list_emp] 
     self.emp_code,self.emp_name = split_list_emp[0],split_list_emp[1]
 
+    # refresh department and designation when emplee changes drop down 1 changed
+    self.drop_down_2.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode) 
+    self.drop_down_3.items = anvil.server.call('desi_change_name_and_code',gvarb.g_comcode)
+
     self.row = anvil.server.call('emp_get_details',self.emp_code,gvarb.g_comcode)
     
     self.text_box_1.text = self.emp_name
