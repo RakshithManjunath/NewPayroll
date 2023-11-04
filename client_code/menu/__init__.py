@@ -66,3 +66,6 @@ class menu(menuTemplate):
 
   def open_complete(self, **kwargs):
     open_form('report_new')
+
+  def open_trans(self, **kwargs):
+    open_form('trans')
