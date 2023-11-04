@@ -1,4 +1,4 @@
-from ._anvil_designer import pt_recovery_pdfTemplate
+from ._anvil_designer import output_optionsTemplate
 from anvil import *
 import anvil.server
 import anvil.users
@@ -8,7 +8,7 @@ from anvil.tables import app_tables
 from .. import report_varb
 from .. import gvarb
 
-class pt_recovery_pdf(pt_recovery_pdfTemplate):
+class output_options(output_optionsTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
