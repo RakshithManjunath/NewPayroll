@@ -36,12 +36,6 @@ class report_new(report_newTemplate):
         flow_panel.add_component(checkbox)
     self.add_component(flow_panel)
 
-    # Dynamically create sellect button
-    button = anvil.Button(text="Preview")
-    button.role = 'filled-button'
-    self.add_component(button)
-    button.set_event_handler('click', self.dynamic_button_click)
-
     # Dynamically create set all button
     button_set = anvil.Button(text="set all sellection")
     button_set.role = 'filled-button'
@@ -54,9 +48,11 @@ class report_new(report_newTemplate):
     self.add_component(button_clear)
     button_clear.set_event_handler('click', self.dynamic_button_clear_click)
 
-  # Attach a click listener
-  def dynamic_button_pdf_preview_click(self, **event_args):
-    open_form('output_options')
+    # Dynamically create sellect button
+    button = anvil.Button(text="Preview")
+    button.role = 'filled-button'
+    self.add_component(button)
+    button.set_event_handler('click', self.dynamic_button_click)
 
   # Attach a click listener
   def dynamic_button_set_click(self, **event_args):
@@ -69,11 +65,10 @@ class report_new(report_newTemplate):
 
   # Attach a click listener
   def dynamic_button_clear_click(self, **event_args):
-    self.dynamic_button_click()
     open_form('report_new')
 
   # Attach a click listener
-  def dynamic_button_click(self):
+  def dynamic_button_click(self, **event_args):
     # Your code to be executed when the button is clicked
     all_components = self.get_components()
     if isinstance(all_components[-1], anvil.DataGrid):
@@ -100,6 +95,8 @@ class report_new(report_newTemplate):
     # grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', gvarb.g_comcode,selected_boxes,modified_col_names)
     report_varb.g_grid_cols = grid_cols
     report_varb.g_grid_rows = grid_rows
+
+    open_form('output_options')
 
     # print("Grid rows: ", grid_rows)
 
