@@ -36,12 +36,6 @@ class report_new(report_newTemplate):
         flow_panel.add_component(checkbox)
     self.add_component(flow_panel)
 
-    # Dynamically create sellect button
-    button = anvil.Button(text="Preview")
-    button.role = 'filled-button'
-    self.add_component(button)
-    button.set_event_handler('click', self.dynamic_button_click)
-
     # Dynamically create set all button
     button_set = anvil.Button(text="set all sellection")
     button_set.role = 'filled-button'
@@ -53,6 +47,12 @@ class report_new(report_newTemplate):
     button_clear.role = 'filled-button'
     self.add_component(button_clear)
     button_clear.set_event_handler('click', self.dynamic_button_clear_click)
+
+    # Dynamically create sellect button
+    button = anvil.Button(text="Preview")
+    button.role = 'filled-button'
+    self.add_component(button)
+    button.set_event_handler('click', self.dynamic_button_click)
 
   # Attach a click listener
   def dynamic_button_set_click(self, **event_args):
@@ -95,6 +95,8 @@ class report_new(report_newTemplate):
     # grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', gvarb.g_comcode,selected_boxes,modified_col_names)
     report_varb.g_grid_cols = grid_cols
     report_varb.g_grid_rows = grid_rows
+
+    open_form('output_options')
 
     # print("Grid rows: ", grid_rows)
 
