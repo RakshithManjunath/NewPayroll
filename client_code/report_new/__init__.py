@@ -55,10 +55,6 @@ class report_new(report_newTemplate):
     button_clear.set_event_handler('click', self.dynamic_button_clear_click)
 
   # Attach a click listener
-  def dynamic_button_pdf_preview_click(self, **event_args):
-    open_form('output_options')
-
-  # Attach a click listener
   def dynamic_button_set_click(self, **event_args):
     all_components = self.get_components()
     all_flow_components = [component for component in all_components if isinstance(component, anvil.FlowPanel)]
@@ -69,11 +65,10 @@ class report_new(report_newTemplate):
 
   # Attach a click listener
   def dynamic_button_clear_click(self, **event_args):
-    self.dynamic_button_click()
     open_form('report_new')
 
   # Attach a click listener
-  def dynamic_button_click(self):
+  def dynamic_button_click(self, **event_args):
     # Your code to be executed when the button is clicked
     all_components = self.get_components()
     if isinstance(all_components[-1], anvil.DataGrid):
