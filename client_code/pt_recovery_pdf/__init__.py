@@ -85,4 +85,14 @@ class pt_recovery_pdf(pt_recovery_pdfTemplate):
     """This method is called when the button is clicked"""
     pdf = anvil.server.call('download_pt_recovery_pdf',self.html_content)
     download(pdf)
+
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    excel = anvil.server.call('download_pt_recovery_excel',self.html_content,gvarb.g_comcode,gvarb.g_transdate)
+    download(excel)
+
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    csv = anvil.server.call('download_pt_recovery_csv',self.html_content)
+    download(csv)
   

@@ -18,4 +18,22 @@ components:
   type: Button
   layout_properties: {slot: default}
   event_bindings: {click: button_2_click}
+- name: spacer_1_copy_1
+  properties: {height: 32}
+  type: Spacer
+  layout_properties: {slot: default}
+- name: button_3
+  properties: {text: Download as excel, role: filled-button}
+  type: Button
+  layout_properties: {slot: default}
+  event_bindings: {click: button_3_click}
+- name: spacer_1_copy_1_copy_1
+  properties: {height: 32}
+  type: Spacer
+  layout_properties: {slot: default}
+- name: button_4
+  properties: {text: Download as csv, role: filled-button}
+  type: Button
+  layout_properties: {slot: default}
+  event_bindings: {click: button_4_click}
 is_package: true
