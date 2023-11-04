@@ -63,3 +63,6 @@ class menu(menuTemplate):
 
   def open_report1_page(self, **kwargs):
     open_form('report_new')
+
+  def open_complete(self, **kwargs):
+    open_form('report_new')

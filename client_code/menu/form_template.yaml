@@ -126,8 +126,8 @@ container:
       \             <ul class=\"submanu\">\n                <li>\n               \
       \   <a href=\"#\" class=\"sub-sub-drop\" id=\"change_trans\">Transaction</span></a>\n\
       \                </li>\n                <li>\n                  <a href=\"#\"\
-      \ class=\"sub-sub-drop\" id=\"view_trans\">View</span></a>\n               \
-      \ </li>\n              </ul>\n           </li>\n\n            <li><a href=\"\
+      \ class=\"sub-sub-drop\" id=\"complete_view\">View</span></a>\n            \
+      \    </li>\n              </ul>\n           </li>\n\n            <li><a href=\"\
       #\" id=\"update_form\">Update</a></li>\n            <li><a href=\"#\" class=\"\
       const_page\">Report</a></li>\n\n             <li>\n             <a href=\"#\"\
       \ class=\"droptoggle\">Utilities <span class=\"down-arrow\">\ud83e\udc93</span></a>\n\
@@ -158,8 +158,10 @@ container:
       \  anvil.call(linkElement, \"open_emp_chg\");\n  e.preventDefault();\n});  \
       \ \n\n$('#emp_more').on('click', function(e) {\n  var linkElement = this;\n\
       \  anvil.call(linkElement, \"open_emp_more\");\n  e.preventDefault();\n});\n\
-      \             \n\n\n\n  $('.const_page').on('click', function(e) {\n  var linkElement\
-      \ = this;\n  anvil.call(linkElement, \"open_report1_page\");\n  e.preventDefault();\n\
+      \n$('#complete_view').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_complete\");\n  e.preventDefault();\n});\n\
+      \n\n  $('.const_page').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_report1_page\");\n  e.preventDefault();\n\
       });\n    \n\n                     \n\n $('#login_page').on('click', function(e)\
       \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_login_page\"\
       );\n  e.preventDefault();\n});    \n\n$('#update_form').on('click', function(e)\

@@ -13,7 +13,7 @@ class emp_more1(emp_more1Template):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_9.text = gvarb.g_comname+' '+(gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
+    self.label_9.text = (gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
     self.drop_down_1.items = anvil.server.call('comp_wise_emp_code_and_name', gvarb.g_comcode)
     self.custom_2.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
     
