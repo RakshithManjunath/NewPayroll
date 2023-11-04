@@ -121,7 +121,7 @@ components:
   type: Label
   layout_properties: {grid_position: 'UHUXTJ,LKZWPD'}
 - name: text_box_8
-  properties: {}
+  properties: {type: number}
   type: TextBox
   layout_properties: {grid_position: 'UHUXTJ,GDSUBH'}
 - type: Spacer
