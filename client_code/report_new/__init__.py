@@ -54,35 +54,10 @@ class report_new(report_newTemplate):
     self.add_component(button_clear)
     button_clear.set_event_handler('click', self.dynamic_button_clear_click)
 
-    # Dynamically create pdf preview button
-    button_pdf = anvil.Button(text="PDF Preview")
-    button_pdf.role = 'filled-button'
-    self.add_component(button_pdf)
-    button_pdf.set_event_handler('click', self.dynamic_button_pdf_preview_click)
-
-    # Dynamically create Excel export button
-    button_excel = anvil.Button(text="Download as Excel")
-    button_excel.role = 'filled-button'
-    self.add_component(button_excel)
-    button_excel.set_event_handler('click', self.dynamic_button_excel_download_click)
-
-   # Dynamically create Excel export button
-    button_csv = anvil.Button(text="Download as CSV")
-    button_csv.role = 'filled-button'
-    self.add_component(button_csv)
-    button_csv.set_event_handler('click', self.dynamic_button_csv_download_click)
-    
-  
   # Attach a click listener
   def dynamic_button_pdf_preview_click(self, **event_args):
-    open_form('pt_recovery_pdf')
+    open_form('output_options')
 
-  def dynamic_button_excel_download_click(self, **event_args):  
-    open_form('pt_recovery_xldownload')
-
-  def dynamic_button_csv_download_click(self, **event_args):  
-   open_form('pt_recovery_csvdownload')
-  
   # Attach a click listener
   def dynamic_button_set_click(self, **event_args):
     all_components = self.get_components()
@@ -94,10 +69,11 @@ class report_new(report_newTemplate):
 
   # Attach a click listener
   def dynamic_button_clear_click(self, **event_args):
+    self.dynamic_button_click()
     open_form('report_new')
 
   # Attach a click listener
-  def dynamic_button_click(self, **event_args):
+  def dynamic_button_click(self):
     # Your code to be executed when the button is clicked
     all_components = self.get_components()
     if isinstance(all_components[-1], anvil.DataGrid):
@@ -125,21 +101,21 @@ class report_new(report_newTemplate):
     report_varb.g_grid_cols = grid_cols
     report_varb.g_grid_rows = grid_rows
 
-    print("Grid rows: ", grid_rows)
+    # print("Grid rows: ", grid_rows)
 
-    print("Selected boxes:, ", selected_boxes)
-    grid = anvil.DataGrid()
-    grid.role = 'wide'
-    self.add_component(grid)
-    print(grid.get_components())
-    grid.columns = grid_cols
-    # grid.columns = selected_boxes
+    # print("Selected boxes:, ", selected_boxes)
+    # grid = anvil.DataGrid()
+    # grid.role = 'wide'
+    # self.add_component(grid)
+    # print(grid.get_components())
+    # grid.columns = grid_cols
+    # # grid.columns = selected_boxes
 
-    rp = anvil.RepeatingPanel(item_template=anvil.DataRowPanel)
-    rp.items = grid_rows
-    # Add the repeating panel to your data grid
-    grid.add_component(rp)
-    all_components = self.get_components()
+    # rp = anvil.RepeatingPanel(item_template=anvil.DataRowPanel)
+    # rp.items = grid_rows
+    # # Add the repeating panel to your data grid
+    # grid.add_component(rp)
+    # all_components = self.get_components()
 
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
