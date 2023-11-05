@@ -336,6 +336,12 @@ db_schema:
     - name: trans_emp_otc
       admin_ui: {width: 200, order: 83}
       type: bool
+    - name: trans_emp_otrate
+      admin_ui: {width: 200, order: 84}
+      type: number
+    - name: trans_emp_incrate
+      admin_ui: {width: 200, order: 85}
+      type: number
   test_table:
     client: none
     server: full
@@ -874,6 +880,12 @@ db_schema:
     - name: emp_otc
       admin_ui: {width: 200, order: 34}
       type: bool
+    - name: emp_ot_rate
+      admin_ui: {width: 200, order: 35}
+      type: number
+    - name: emp_inc_rate
+      admin_ui: {width: 200, order: 36}
+      type: number
   users:
     client: none
     server: full

@@ -89,12 +89,59 @@ class emp_more1(emp_more1Template):
     self.button_2.enabled = True
 
     self.emp_otc = self.row['emp_otc']
+    self.emp_otrate = self.row['emp_ot_rate']
+    self.emp_incrate = self.row['emp_inc_rate']
+    
     if self.emp_otc == True:
       self.custom_4.radio_button_1.selected = True
       self.custom_4.radio_button_2.selected = False
     else:
       self.custom_4.radio_button_2.selected = True
       self.custom_4.radio_button_1.selected = False
+
+    if self.emp_otrate == 1.0:
+      self.custom_4.radio_button_3.selected = True
+      self.custom_4.radio_button_4.selected = False
+      self.custom_4.radio_button_5.selected = False
+      self.custom_4.radio_button_10.selected = False
+    if self.emp_otrate == 1.5:
+      self.custom_4.radio_button_3.selected = False
+      self.custom_4.radio_button_4.selected = True
+      self.custom_4.radio_button_5.selected = False
+      self.custom_4.radio_button_10.selected = False  
+    if self.emp_otrate == 2.0:
+      self.custom_4.radio_button_3.selected = False
+      self.custom_4.radio_button_4.selected = False
+      self.custom_4.radio_button_5.selected = True
+      self.custom_4.radio_button_10.selected = False 
+    if self.emp_otrate == 0.0:
+      self.custom_4.radio_button_3.selected = False
+      self.custom_4.radio_button_4.selected = False
+      self.custom_4.radio_button_5.selected = False
+      self.custom_4.radio_button_10.selected = True  
+
+    if self.emp_incrate == 1.0:
+      self.custom_4.radio_button_6.selected = True
+      self.custom_4.radio_button_7.selected = False
+      self.custom_4.radio_button_8.selected = False
+      self.custom_4.radio_button_9.selected = False
+    if self.emp_incrate == 1.5:
+      self.custom_4.radio_button_6.selected = False
+      self.custom_4.radio_button_7.selected = True
+      self.custom_4.radio_button_8.selected = False
+      self.custom_4.radio_button_9.selected = False  
+    if self.emp_incrate == 2.0:
+      self.custom_4.radio_button_6.selected = False
+      self.custom_4.radio_button_7.selected = False
+      self.custom_4.radio_button_8.selected = True
+      self.custom_4.radio_button_9.selected = False 
+    if self.emp_incrate == 0.0:
+      self.custom_4.radio_button_6.selected = False
+      self.custom_4.radio_button_7.selected = False
+      self.custom_4.radio_button_8.selected = False
+      self.custom_4.radio_button_9.selected = True       
+
+  
   
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
@@ -161,20 +208,25 @@ class emp_more1(emp_more1Template):
     else:
       self.emp_otc = False
 
-    # def radio_button_option1_change(self, **event_args):
-    #   if self.custom_4.radio_button_option1.checked:
-    #     self.otrate = 1.0
-    # def radio_button_option2_change(self, **event_args):
-    #   if self.custom_4.radio_button_option2.checked:
-    #     self.otrate = 1.5
-    # def radio_button_option3_change(self, **event_args):
-    #   if self.custom_4.radio_button_option3.checked:
-    #     self.otrate = 2.0
-    # def radio_button_option4_change(self, **event_args):
-    #   if self.custom_4.radio_button_option4.checked:
-    #     self.otrate = 0.0
+    if self.custom_4.radio_button_3.selected == True:
+      self.otrate = 1.0
+    if self.custom_4.radio_button_4.selected == True:
+      self.otrate = 1.5
+    if self.custom_4.radio_button_5.selected == True:
+      self.otrate = 2.0
+    if self.custom_4.radio_button_10.selected == True:
+     self.otrate = 0.0 
 
+    if self.custom_4.radio_button_6.selected == True:
+      self.incrate = 1.0
+    if self.custom_4.radio_button_7.selected == True:
+      self.incrate = 1.5
+    if self.custom_4.radio_button_8.selected == True:
+      self.incrate = 2.0
+    if self.custom_4.radio_button_9.selected == True:
+     self.incrate = 0.0   
+      
     
-    anvil.server.call('emp_update_misc3',self.emp_code,self.emp_otc,self.otrate)
+    anvil.server.call('emp_update_misc3',self.emp_code,self.emp_otc,self.otrate,self.incrate)
 
  

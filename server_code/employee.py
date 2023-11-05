@@ -386,10 +386,14 @@ def get_last_emp_code(emp_comp_code):
 
 ############# update emp misc3 ################
 @anvil.server.callable
-def emp_update_misc3(empcode,emp_otc):
+def emp_update_misc3(empcode,emp_otc,otrate,incrate):
   row = app_tables.employee.get(emp_code=empcode)
-  row.update(emp_otc = emp_otc)
+  row.update(emp_otc = emp_otc,
+            emp_ot_rate=otrate,
+            emp_inc_rate=incrate)
 
   trans_row = app_tables.transaction.get(trans_empid=empcode)
-  trans_row.update(trans_emp_otc=emp_otc)
+  trans_row.update(trans_emp_otc=emp_otc,
+                  trans_emp_otrate=otrate,
+                  trans_emp_incrate=incrate)
  
