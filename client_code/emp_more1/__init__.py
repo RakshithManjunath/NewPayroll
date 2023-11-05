@@ -160,6 +160,21 @@ class emp_more1(emp_more1Template):
       self.emp_otc = True
     else:
       self.emp_otc = False
-    anvil.server.call('emp_update_misc3',self.emp_code,self.emp_otc)
+
+    # def radio_button_option1_change(self, **event_args):
+    #   if self.custom_4.radio_button_option1.checked:
+    #     self.otrate = 1.0
+    # def radio_button_option2_change(self, **event_args):
+    #   if self.custom_4.radio_button_option2.checked:
+    #     self.otrate = 1.5
+    # def radio_button_option3_change(self, **event_args):
+    #   if self.custom_4.radio_button_option3.checked:
+    #     self.otrate = 2.0
+    # def radio_button_option4_change(self, **event_args):
+    #   if self.custom_4.radio_button_option4.checked:
+    #     self.otrate = 0.0
+
+    
+    anvil.server.call('emp_update_misc3',self.emp_code,self.emp_otc,self.otrate)
 
  
