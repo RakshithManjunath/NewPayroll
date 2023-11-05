@@ -34,61 +34,16 @@ components:
       underline: false, icon: ''}
     name: label_2
     layout_properties: {grid_position: 'BRGOIZ,RJHAXC'}
-  - type: DropDown
-    properties:
-      role: null
-      align: full
-      tooltip: ''
-      placeholder: Select month
-      border: ''
-      enabled: true
-      foreground: ''
-      items: []
-      visible: true
-      font_size: null
-      font: ''
-      spacing_above: small
-      spacing_below: small
-      italic: false
-      background: ''
-      bold: false
-      underline: false
-      include_placeholder: true
-    name: drop_down_1
-    layout_properties: {grid_position: 'BRGOIZ,WBXZVS'}
-    event_bindings: {}
-  - type: DropDown
-    properties:
-      role: null
-      align: full
-      tooltip: ''
-      placeholder: Select year
-      border: ''
-      enabled: true
-      foreground: ''
-      items: []
-      visible: true
-      font_size: null
-      font: ''
-      spacing_above: small
-      spacing_below: small
-      italic: false
-      background: ''
-      bold: false
-      underline: false
-      include_placeholder: true
-    name: drop_down_2
-    layout_properties: {grid_position: 'BRGOIZ,XOTXBR'}
+  - type: DatePicker
+    properties: {format: '%d/%m/Y'}
+    name: date_picker_1
+    layout_properties: {grid_position: 'BRGOIZ,HUTFVG'}
+    event_bindings: {change: date_picker_1_change}
+    data_bindings: []
   - type: Spacer
     properties: {height: 32}
     name: spacer_2
     layout_properties: {grid_position: 'WKUYYF,MHHHXN'}
-  - type: DatePicker
-    properties: {format: '%d/%m/Y'}
-    name: date_picker_1
-    layout_properties: {grid_position: 'WKUYYF,EPWEFA'}
-    event_bindings: {change: date_picker_1_change}
-    data_bindings: []
   - type: Label
     properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: User name, font_size: null, font: '', spacing_above: small,
