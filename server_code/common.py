@@ -135,9 +135,9 @@ def get_reportlab_pdf():
 def get_transaction_columns(comp_details, comp_code):
   columns_and_type = app_tables.transaction.list_columns()
   #########################################################
-  #company_data = app_tables.company.search(comp_code='002')
+  company_data = app_tables.company.search(comp_code='002')
   #########################################################
-  company_data = app_tables.company.search(comp_code=comp_code)
+  # company_data = app_tables.company.search(comp_code=comp_code)
   company_columns_to_include = ['comp_earn_head1','comp_earn_head2','comp_earn_head3','comp_earn_head4','comp_earn_head5',
                                 'comp_earn_head6', 'comp_earn_head7', 'comp_earn_head8', 'comp_earn_head9', 'comp_earn_head10',
                                'comp_ded1','comp_ded2','comp_ded3','comp_ded4',
@@ -504,10 +504,13 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
         
       elif selected_col == "trans_empdob":
         print("converted_date",record[selected_col].strftime("%d/%m/%Y"))
-        filtered_row[selected_col] = record[selected_col].strftime("%d/%m/%Y")
+        if record[selected_col].strftime("%d/%m/%Y") != "01/01/2000":
+          print("Date is not 1752")
+          filtered_row[selected_col] = record[selected_col].strftime("%d/%m/%Y")
       elif selected_col == "trans_empdoj":
         print("converted_date",record[selected_col].strftime("%d/%m/%Y"))
-        filtered_row[selected_col] = record[selected_col].strftime("%d/%m/%Y")
+        if record[selected_col].strftime("%d/%m/%Y") != "01/01/2000":
+          filtered_row[selected_col] = record[selected_col].strftime("%d/%m/%Y")
         
       elif selected_col == "trans_mandays":
         formatted_only_2decimal = "{:,.2f}".format(record[selected_col])

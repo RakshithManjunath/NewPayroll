@@ -140,7 +140,7 @@ def get_default_value_for_type(column_type):
   elif column_type == 'number':
       return 0
   elif column_type == 'date':
-      return date(2000, 1, 1)  # Current UTC date and time
+      return date(1752, 1, 1)  # Current UTC date and time
   elif column_type == 'true/false':
       return False
   return None

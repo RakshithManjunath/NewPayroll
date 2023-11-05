@@ -88,12 +88,12 @@ class emp_more1(emp_more1Template):
     self.button_1.enabled = True
     self.button_2.enabled = True
 
-    if self.emp_otc == True:
-      self.custom_3.radio_button_1.selected = True
-      self.custom_3.radio_button_2.selected = False
-    else:
-      self.custom_3.radio_button_2.selected = True
-      self.custom_3.radio_button_1.selected = False
+    # if self.emp_otc == True:
+    #   self.custom_3.radio_button_1.selected = True
+    #   self.custom_3.radio_button_2.selected = False
+    # else:
+    #   self.custom_3.radio_button_2.selected = True
+    #   self.custom_3.radio_button_1.selected = False
   
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
@@ -148,8 +148,8 @@ class emp_more1(emp_more1Template):
                       self.custom_2.text_box_7.text,
                       self.custom_2.text_box_8.text)
 
-    #anvil.server.call('emp_update_misc2',self.emp_code,self.custom_3.image_1.source)   ## to be tested
-    #anvil.server.call('emp_update_misc2b',self.emp_code,self.custom_3.image_1.source)   ## to be tested
+    anvil.server.call('emp_update_misc2',self.emp_code,self.custom_3.image_1.source)   ## to be tested
+    anvil.server.call('emp_update_misc2b',self.emp_code,self.custom_3.image_1.source)   ## to be tested
     self.button_1.enabled = False
     Notification(self.emp_name+' [ '+self.emp_code+' ]' + " data saved successfully").show()
 

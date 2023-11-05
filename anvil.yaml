@@ -11,7 +11,7 @@ services:
 - source: /runtime/services/anvil/files.yml
   client_config: {}
   server_config: {}
-startup: {type: form, module: logform}
+startup: {type: form, module: report_new}
 package_name: Payroll
 allow_embedding: false
 name: NewPayroll
@@ -851,7 +851,7 @@ db_schema:
       admin_ui: {width: 200}
       type: number
     - name: emp_photo
-      admin_ui: {width: 200, order: 30}
+      admin_ui: {order: 30, width: 339}
       type: media
     - name: emp_comp_code
       admin_ui: {order: 0.5, width: 200}
