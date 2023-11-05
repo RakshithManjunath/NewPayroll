@@ -88,12 +88,13 @@ class emp_more1(emp_more1Template):
     self.button_1.enabled = True
     self.button_2.enabled = True
 
-    # if self.emp_otc == True:
-    #   self.custom_3.radio_button_1.selected = True
-    #   self.custom_3.radio_button_2.selected = False
-    # else:
-    #   self.custom_3.radio_button_2.selected = True
-    #   self.custom_3.radio_button_1.selected = False
+    self.emp_otc = self.row['emp_otc']
+    if self.emp_otc == True:
+      self.custom_3.radio_button_1.selected = True
+      self.custom_3.radio_button_2.selected = False
+    else:
+      self.custom_3.radio_button_2.selected = True
+      self.custom_3.radio_button_1.selected = False
   
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
@@ -153,5 +154,10 @@ class emp_more1(emp_more1Template):
     self.button_1.enabled = False
     Notification(self.emp_name+' [ '+self.emp_code+' ]' + " data saved successfully").show()
 
+    if self.custom_4.radio_button_1.selected == True:
+      self.emp_otc = True
+    else:
+      self.emp_otc = False
+    anvil.server.call('emp_update_misc3',self.emp_code,self.emp_otc)
 
  
