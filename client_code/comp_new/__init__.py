@@ -159,10 +159,12 @@ class comp_new(comp_newTemplate):
   def date_picker_1_change(self, **event_args):
     """This method is called when the selected date changes"""
     newdate = self.date_picker_1.date
+    print(newdate)
     newmonth= newdate.strftime("%B").upper()
     newyear= newdate.strftime("%Y")    
     print(newmonth)
-    print(newyear)    
+    print(newyear)
+    
 
 
 

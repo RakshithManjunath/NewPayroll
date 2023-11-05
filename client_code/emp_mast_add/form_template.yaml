@@ -85,6 +85,7 @@ components:
     name: date_picker_1
     layout_properties: {grid_position: 'HTXEQL,XDGIKZ'}
     event_bindings: {}
+    data_bindings: []
   - type: DatePicker
     properties: {role: null, align: left, max_date: '', pick_time: false, tooltip: '',
       placeholder: Date of  Joining, border: '', enabled: false, foreground: '', visible: true,

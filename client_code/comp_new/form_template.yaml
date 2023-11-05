@@ -84,10 +84,11 @@ components:
     name: spacer_2
     layout_properties: {grid_position: 'WKUYYF,MHHHXN'}
   - type: DatePicker
-    properties: {}
+    properties: {format: '%d/%m/Y'}
     name: date_picker_1
     layout_properties: {grid_position: 'WKUYYF,EPWEFA'}
     event_bindings: {change: date_picker_1_change}
+    data_bindings: []
   - type: Label
     properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
       visible: true, text: User name, font_size: null, font: '', spacing_above: small,

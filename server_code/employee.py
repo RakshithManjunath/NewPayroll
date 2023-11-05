@@ -382,3 +382,29 @@ def get_last_emp_code(emp_comp_code):
   else:
     last_string_value = "Start"
   return last_string_value
+
+
+############# update emp misc3 ################
+@anvil.server.callable
+def emp_update_misc3(empcode,phone_number,alt_phone_number,email_address,aadhar_number,
+                    attn_bonus,bankcode,empbank,bankifsc,bankacno):
+  row = app_tables.employee.get(emp_code=empcode)
+  row.update(phone_number=phone_number,alt_phone_number=alt_phone_number,
+            email_address=email_address,
+            aadhar_number=aadhar_number,
+            attn_bonus=attn_bonus,
+            emp_bank_code = bankcode,
+            emp_bank = empbank,
+            emp_bank_ifsc=bankifsc,
+            emp_bank_acno = bankacno)
+
+  trans_row = app_tables.transaction.get(trans_empid=empcode)
+  trans_row.update(trans_phone_number=phone_number,
+                   trans_alt_phone_number=alt_phone_number,
+                  trans_email_address=email_address,
+                  trans_aadhar_number=aadhar_number,
+                  trans_attn_bonus=attn_bonus,
+                  trans_empbank_code = bankcode,
+                  trans_empbank = empbank,
+                  trans_empbank_ifsc = bankifsc,
+                  trans_empbank_acno = bankacno)

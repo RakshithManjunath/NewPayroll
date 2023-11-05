@@ -12,3 +12,7 @@ class emp_more_misc3(emp_more_misc3Template):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    split_list_emp = dropdowns[0].selected_value.split("|")
+    split_list_emp = [ele.strip() for ele in split_list_emp] 
+    emp_code,emp_name = split_list_emp[0],split_list_emp[1]
+    anvil.server.call('emp_update_misc3',emp_code,self.image_1.source) 

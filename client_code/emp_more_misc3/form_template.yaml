@@ -11,11 +11,11 @@ components:
   type: Label
   layout_properties: {grid_position: 'RPQGEE,LRJCNM'}
 - name: radio_button_1
-  properties: {text: 'Yes'}
+  properties: {text: 'Yes', group_name: otc, selected: true}
   type: RadioButton
   layout_properties: {grid_position: 'RPQGEE,BXNVIR'}
 - name: radio_button_2
-  properties: {text: 'No'}
+  properties: {text: 'No', group_name: otc}
   type: RadioButton
   layout_properties: {grid_position: 'RPQGEE,SNWQOQ'}
 - name: label_2
@@ -23,19 +23,19 @@ components:
   type: Label
   layout_properties: {grid_position: 'CULFKT,XZGUGE'}
 - name: radio_button_3
-  properties: {text: Single}
+  properties: {text: Single, group_name: otrate}
   type: RadioButton
   layout_properties: {grid_position: 'CULFKT,ANOOZM'}
 - name: radio_button_4
-  properties: {text: One & half}
+  properties: {text: One & half, group_name: otrate, selected: true}
   type: RadioButton
   layout_properties: {grid_position: 'CULFKT,XAIBWH'}
 - name: radio_button_5
-  properties: {text: Double}
+  properties: {text: Double, group_name: otrate}
   type: RadioButton
   layout_properties: {grid_position: 'CULFKT,ZEHFAS'}
 - name: radio_button_10
-  properties: {text: No OT}
+  properties: {text: No OT, group_name: otrate}
   type: RadioButton
   layout_properties: {grid_position: 'CULFKT,BOXTHJ'}
 - name: label_3
@@ -43,19 +43,19 @@ components:
   type: Label
   layout_properties: {grid_position: 'KZZOCF,FHEHDG'}
 - name: radio_button_6
-  properties: {text: Single}
+  properties: {text: Single, group_name: incrate}
   type: RadioButton
   layout_properties: {grid_position: 'KZZOCF,IAEQLT'}
 - name: radio_button_7
-  properties: {text: One & half}
+  properties: {text: One & half, group_name: incrate, selected: true}
   type: RadioButton
   layout_properties: {grid_position: 'KZZOCF,YKQPLN'}
 - name: radio_button_8
-  properties: {text: Double}
+  properties: {text: Double, group_name: incrate}
   type: RadioButton
   layout_properties: {grid_position: 'KZZOCF,VSEPSO'}
 - name: radio_button_9
-  properties: {text: No Incentive}
+  properties: {text: No Incentive, group_name: incrate}
   type: RadioButton
   layout_properties: {grid_position: 'KZZOCF,ZHUMBG'}
 - name: spacer_2
