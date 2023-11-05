@@ -333,6 +333,9 @@ db_schema:
     - name: trans_empbank_code
       admin_ui: {order: 80.125, width: 200}
       type: string
+    - name: trans_emp_otc
+      admin_ui: {width: 200, order: 83}
+      type: bool
   test_table:
     client: none
     server: full
@@ -868,6 +871,9 @@ db_schema:
     - name: emp_bank_code
       admin_ui: {order: 30.5, width: 200}
       type: string
+    - name: emp_otc
+      admin_ui: {width: 200, order: 34}
+      type: bool
   users:
     client: none
     server: full
