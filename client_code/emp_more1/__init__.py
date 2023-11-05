@@ -90,11 +90,11 @@ class emp_more1(emp_more1Template):
 
     self.emp_otc = self.row['emp_otc']
     if self.emp_otc == True:
-      self.custom_3.radio_button_1.selected = True
-      self.custom_3.radio_button_2.selected = False
+      self.custom_4.radio_button_1.selected = True
+      self.custom_4.radio_button_2.selected = False
     else:
-      self.custom_3.radio_button_2.selected = True
-      self.custom_3.radio_button_1.selected = False
+      self.custom_4.radio_button_2.selected = True
+      self.custom_4.radio_button_1.selected = False
   
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
