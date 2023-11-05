@@ -164,7 +164,7 @@ class comp_new(comp_newTemplate):
     newyear= newdate.strftime("%Y")    
     print(newmonth)
     print(newyear)
-    
+    print(newdate, type(newdate))
 
 
 
