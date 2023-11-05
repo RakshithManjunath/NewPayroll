@@ -5,7 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from datetime import datetime
+from datetime import datetime,date
 import calendar
 
 class comp_new(comp_newTemplate):
@@ -14,12 +14,12 @@ class comp_new(comp_newTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.month_names_alphabets = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    self.month_names_numeric = ["01","02","03","04","05","06","07","08","09","10","11","12"]
-    self.year_names = ["2023", "2024", "2025", "2026"]
+    # self.month_names_alphabets = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    # self.month_names_numeric = ["01","02","03","04","05","06","07","08","09","10","11","12"]
+    # self.year_names = ["2023", "2024", "2025", "2026"]
 
-    self.drop_down_1.items = self.month_names_alphabets
-    self.drop_down_2.items = self.year_names
+    # self.drop_down_1.items = self.month_names_alphabets
+    # self.drop_down_2.items = self.year_names
 
   def update(self, initial_date):
     # Get the current month and year
@@ -165,6 +165,8 @@ class comp_new(comp_newTemplate):
     print(newmonth)
     print(newyear)
     print(newdate, type(newdate))
+    modified_new_date = date(newdate.year,newdate.month, 1)
+    print(modified_new_date)
 
 
 
