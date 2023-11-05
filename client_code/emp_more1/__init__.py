@@ -81,7 +81,7 @@ class emp_more1(emp_more1Template):
     self.custom_2.text_box_6.text = self.row['emp_bank']
     self.custom_2.text_box_7.text = self.row['emp_bank_ifsc']
     self.custom_2.text_box_8.text = self.row['emp_bank_acno']
-    bank_code = self.row['emp_bank_code']
+    self.bank_code = self.row['emp_bank_code']
     self.custom_2.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
 
     self.custom_3.image_1.source = self.row['emp_photo']
@@ -118,6 +118,9 @@ class emp_more1(emp_more1Template):
                       self.custom_1.text_box_9.text,
                       self.custom_1.text_box_10.text,
                       self.custom_1.text_box_11.text)
+
+    bank_code = self.bank_code
+    bank_name = self.custom_2.text_box_6.text
 
     if self.custom_2.drop_down_1.selected_value != None:
       split_list_bank = self.custom_2.drop_down_1.selected_value.split("|")

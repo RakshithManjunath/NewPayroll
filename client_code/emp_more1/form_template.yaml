@@ -99,19 +99,19 @@ components:
     layout_properties: {grid_position: 'DDWODI,JYDNCZ'}
     event_bindings: {click: link_3_click}
   - name: link_4
-    properties: {text: Misc 3, border: dotted}
+    properties: {text: Misc 3, border: dotted, visible: false}
     type: Link
     layout_properties: {grid_position: 'DDWODI,SEUUYD'}
     event_bindings: {click: link_4_click}
-  - name: emp_more_misc3_1
-    properties: {}
-    type: form:emp_more_misc3
-    layout_properties: {grid_position: 'FSGOPM,DDNZOR'}
   - type: ColumnPanel
     properties: {col_widths: '{}'}
     name: column_panel_1
     layout_properties: {grid_position: 'ZTLGEB,CUEDPH'}
     components:
+    - name: custom_4
+      properties: {}
+      type: form:emp_more_misc3
+      layout_properties: {grid_position: 'TIQPLH,QTXSLK'}
     - type: form:emp_more_misc2
       properties: {}
       name: custom_3

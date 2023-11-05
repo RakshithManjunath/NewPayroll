@@ -1,6 +1,6 @@
 container:
   type: ColumnPanel
-  properties: {visible: false}
+  properties: {visible: true}
 components:
 - name: label_1
   properties: {text: 'Over Time [ OT ] eligibility', role: title, bold: true}
