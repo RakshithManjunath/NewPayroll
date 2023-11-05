@@ -22,6 +22,7 @@ class emp_more1(emp_more1Template):
     self.custom_1.visible = not self.custom_1.visible
     self.custom_2.visible = False
     self.custom_3.visible = False
+    self.custom_4.visible = False         
     self.refresh()
 
   def link_2_click(self, **event_args):
@@ -29,6 +30,7 @@ class emp_more1(emp_more1Template):
     self.custom_1.visible = False
     self.custom_2.visible = not self.custom_2.visible
     self.custom_3.visible = False
+    self.custom_4.visible = False      
     self.refresh()
 
   def link_3_click(self, **event_args):
@@ -36,7 +38,15 @@ class emp_more1(emp_more1Template):
     self.custom_1.visible = False
     self.custom_2.visible = False
     self.custom_3.visible = not self.custom_3.visible
+    self.custom_4.visible = False      
 
+  def link_4_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    self.custom_1.visible = False
+    self.custom_2.visible = False
+    self.custom_3.visible = False  
+    self.custom_4.visible = not self.custom_4.visible  
+    
   def refresh(self):
     split_list_emp = self.drop_down_1.selected_value.split("|")
     split_list_emp = [ele.strip() for ele in split_list_emp] 
