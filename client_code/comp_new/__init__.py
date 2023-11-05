@@ -14,12 +14,6 @@ class comp_new(comp_newTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    # self.month_names_alphabets = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    # self.month_names_numeric = ["01","02","03","04","05","06","07","08","09","10","11","12"]
-    # self.year_names = ["2023", "2024", "2025", "2026"]
-
-    # self.drop_down_1.items = self.month_names_alphabets
-    # self.drop_down_2.items = self.year_names
 
   def update(self, initial_date):
     # Get the current month and year
@@ -57,19 +51,12 @@ class comp_new(comp_newTemplate):
       row = anvil.server.call('new_comp_add',id,compcode, self.text_box_1.text)
       anvil.server.call('comp_default_values',row)
       Notification(self.text_box_1.text + " data added successfully").show()
-      self.clear_inputs()
-    dp_month = self.drop_down_1.selected_value
-    dp_year = self.drop_down_2.selected_value
+      self.clear_inputs() 
 
-    month_in_num = self.month_names_numeric[self.month_names_alphabets.index(dp_month)]
-    start_date_str = "01" + "/" + month_in_num + "/" + dp_year
-    print(start_date_str)
-
-    date_format = "%d/%m/%Y"
-    # Convert the string to a datetime object
-    datetime_obj = datetime.strptime(start_date_str, date_format)
-    # Extract the date part from the datetime object
-    start_date = datetime_obj.date()
+    newdate = self.date_picker_1.date
+    modified_new_date = date(newdate.year,newdate.month, 1)
+    
+    start_date = modified_new_date
     print("start date: ", start_date)
 
     current_days, num_of_sundays, end_date = self.update(start_date)
