@@ -93,6 +93,7 @@ class emp_more1(emp_more1Template):
     self.link_1.visible = True
     self.link_2.visible = True
     self.link_3.visible = True
+    self.link_4.visible = True    
     self.refresh()
     self.custom_1.refresh()
     self.custom_2.refresh()
