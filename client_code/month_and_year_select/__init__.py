@@ -18,7 +18,7 @@ class month_and_year_select(month_and_year_selectTemplate):
 
     self.label_2.text = (gvarb.g_comname+' '+gvarb.g_mode).upper()
 
-    self.cur_trans_date = anvil.server.call('cur_trans_date')
+    self.cur_trans_date = anvil.server.call('cur_trans_date',gvarb.g_comcode)
 
     self.month_names_alphabets = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     self.month_names_numeric = ["01","02","03","04","05","06","07","08","09","10","11","12"]

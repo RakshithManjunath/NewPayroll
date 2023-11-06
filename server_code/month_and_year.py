@@ -8,8 +8,8 @@ import anvil.server
 
 ####### trans date #######
 @anvil.server.callable
-def cur_trans_date():
-    return [(r["tr_date"]) for r in app_tables.trans_date.search()]
+def cur_trans_date(trdate_comp_code):
+    return [(r["tr_date"]) for r in app_tables.trans_date.search(trdate_comp_code=trdate_comp_code)]
 
 @anvil.server.callable
 def cur_trans_date_update(next_initial_date, next_days, next_num_of_sundays, next_end_date):
