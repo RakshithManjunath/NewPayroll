@@ -201,8 +201,6 @@ class emp_more1(emp_more1Template):
     if isinstance(self.custom_3.image_1.source, anvil.FileMedia):    
       anvil.server.call('emp_update_misc2',self.emp_code,self.custom_3.image_1.source)   ## to be tested
       anvil.server.call('emp_update_misc2b',self.emp_code,self.custom_3.image_1.source)   ## to be tested
-    self.button_1.enabled = False
-    Notification(self.emp_name+' [ '+self.emp_code+' ]' + " data saved successfully").show()
 
     if self.custom_4.radio_button_1.selected == True:
       self.emp_otc = True
@@ -226,8 +224,8 @@ class emp_more1(emp_more1Template):
       self.incrate = 2.0
     if self.custom_4.radio_button_9.selected == True:
      self.incrate = 0.0   
-      
-    
     anvil.server.call('emp_update_misc3',self.emp_code,self.emp_otc,self.otrate,self.incrate)
+    self.button_1.enabled = False
+    Notification(self.emp_name+' [ '+self.emp_code+' ]' + " data saved successfully").show()
 
  
