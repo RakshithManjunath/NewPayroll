@@ -135,9 +135,9 @@ def get_reportlab_pdf():
 def get_transaction_columns(comp_details, comp_code):
   columns_and_type = app_tables.transaction.list_columns()
   #########################################################
-  company_data = app_tables.company.search(comp_code='002')
+  #company_data = app_tables.company.search(comp_code='002')
   #########################################################
-  # company_data = app_tables.company.search(comp_code=comp_code)
+  company_data = app_tables.company.search(comp_code=comp_code)
   company_columns_to_include = ['comp_earn_head1','comp_earn_head2','comp_earn_head3','comp_earn_head4','comp_earn_head5',
                                 'comp_earn_head6', 'comp_earn_head7', 'comp_earn_head8', 'comp_earn_head9', 'comp_earn_head10',
                                'comp_ded1','comp_ded2','comp_ded3','comp_ded4',
@@ -158,7 +158,9 @@ def get_transaction_columns(comp_details, comp_code):
                            'trans_alt_phone_number', 'trans_email_address', 'trans_aadhar_number', 'trans_attn_bonus', 
                            'trans_earn_attn_bonus', 'fxd_earn_gross', 'earn_pf_salary', 'earn_fpf_salary', 
                            'earn_esi_salary', 'earn_pt_salary', 'earn_ot_salary', 'earn_it_salary', 'earn_bonus_salary', 
-                           'pf_amt', 'fpf_amt', 'esi_amt', 'pt_amt', 'ot_amt', 'it_or_tds_amt', 'bonus_amt']
+                           'pf_amt', 'fpf_amt', 'esi_amt', 'pt_amt', 'ot_amt', 'it_or_tds_amt', 'bonus_amt','trans_empbank_code',
+                           'trans_empbank','trans_empbank_acno','trans_empbank_ifsc','trans_emp_otc','trans_emp_otrate',
+                           'trans_emp_incrate']
   
   final_selected_records = []
   for record in company_data:
@@ -329,7 +331,12 @@ def get_transaction_columns(comp_details, comp_code):
       columns_after_modifying[index] = 'IFSC'
     elif row == 'trans_empbank_acno':
       columns_after_modifying[index] = 'Account no'
-
+    elif row == 'trans_emp_otc':
+      columns_after_modifying[index] = 'OT eligibility'
+    elif row == 'trans_emp_otrate':
+      columns_after_modifying[index] = 'OT rate' 
+    elif row == 'trans_emp_incrate':
+      columns_after_modifying[index] = 'Incentive rate' 
   
   # column_names.insert(0,'Sl no')
   unmodified_cols.insert(0,'Sl no')
