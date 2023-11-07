@@ -25,7 +25,7 @@ components:
     layout_properties: {grid_position: 'HREUQA,TOTJZO'}
   - type: Label
     properties: {role: title, align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Current month & year, font_size: null, font: '', spacing_above: small,
+      visible: true, text: Transaction month & year, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
     name: select_month_lbl
@@ -45,7 +45,7 @@ components:
     name: year_db_lbl
     layout_properties: {grid_position: 'JESDLO,ERTJPE BRQFXD,NEEYHD'}
   - name: date_picker_1
-    properties: {format: '%d/%m/Y'}
+    properties: {format: '%d/%m/Y', placeholder: Change transaction month & year}
     type: DatePicker
     layout_properties: {grid_position: 'JESDLO,ERTJPE ZDHEVS,FJMDZY'}
     event_bindings: {change: date_picker_1_change}
