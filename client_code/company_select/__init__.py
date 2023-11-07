@@ -27,7 +27,7 @@ class company_select(company_selectTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('company_select')
+    open_form('logform')
     #anvil.users.login_with_form()
 
   def company_select_dp_change(self, **event_args):

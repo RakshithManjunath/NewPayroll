@@ -18,9 +18,9 @@ class mode_select(mode_selectTemplate):
   
   def exit_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.users.logout()
+    #anvil.users.logout()
     alert(f"You have logged out  successfully...!")
-    open_form('company_select')
+    open_form('logform')
 
   def payroll_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
