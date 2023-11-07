@@ -75,23 +75,40 @@ class pass_add(pass_addTemplate):
 
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.label_2.visible = True
-    self.label_3.visible = True
-    self.label_4.visible = True
+    self.label_6.visible = True
+    self.text_box_4.visible = True
+    # self.label_2.visible = True
+    # self.label_3.visible = True
+    # self.label_4.visible = True
 
-    self.text_box_1.visible = True
-    self.text_box_2.visible = True
-    self.text_box_3.visible = True
+    # self.text_box_1.visible = True
+    # self.text_box_2.visible = True
+    # self.text_box_3.visible = True
 
-    self.button_1.visible = True
+    # self.button_1.visible = True
+
+
+    self.button_5.visible = True    
     self.button_2.visible = True
-
     self.button_3.visible = False
     self.button_4.visible = False
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('comp_new')
+
+  def text_box_4_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    if self.text_box_4.text == "":
+      Notification("login password cannot be blank").show()
+      self.button_5.enabled = False
+    else:
+      self.button_5.enabled = True
+
+  def button_5_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    value,row = anvil.server.call('check_password', self.text_box_4.text)
+
 
 
     

@@ -34,6 +34,15 @@ components:
     name: text_box_1
     layout_properties: {grid_position: 'HLFTNR,MUBMLN'}
     event_bindings: {change: text_box_1_change}
+  - name: label_6
+    properties: {text: Login password, role: title, visible: false, bold: true}
+    type: Label
+    layout_properties: {grid_position: 'KNWXQK,YORPDF'}
+  - name: text_box_4
+    properties: {hide_text: true, visible: false}
+    type: TextBox
+    layout_properties: {grid_position: 'KNWXQK,IZCVQD'}
+    event_bindings: {change: text_box_4_change}
   - type: Spacer
     properties: {height: 18}
     name: spacer_5
@@ -100,21 +109,34 @@ components:
     properties: {height: 32}
     name: spacer_3
     layout_properties: {grid_position: 'IIFYKG,LOETFA'}
+  - name: button_5
+    properties: {text: Submit, visible: false, role: filled-button, enabled: false}
+    type: Button
+    layout_properties: {grid_position: 'POPEVM,HWNJJX'}
+    event_bindings: {click: button_5_click}
+  - name: spacer_7
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'HZLWWQ,JIITIU'}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: false,
       foreground: '', visible: false, text: Submit, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: button_1
-    layout_properties: {grid_position: 'BXLHAB,FJPXNH'}
+    layout_properties: {grid_position: 'CMEKVX,MTZQFC'}
     event_bindings: {click: button_1_click}
+  - name: spacer_8
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'SRDKOL,JVYHFD'}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
       foreground: '', visible: false, text: Cancel, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
       underline: false, icon: ''}
     name: button_2
-    layout_properties: {grid_position: 'BXLHAB,PTSAHR'}
+    layout_properties: {grid_position: 'VSKDNG,VSPTSV'}
     event_bindings: {click: button_2_click}
 - type: FlowPanel
   properties: {}
