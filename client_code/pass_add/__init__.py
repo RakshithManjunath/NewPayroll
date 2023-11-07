@@ -77,17 +77,6 @@ class pass_add(pass_addTemplate):
     """This method is called when the button is clicked"""
     self.label_6.visible = True
     self.text_box_4.visible = True
-    # self.label_2.visible = True
-    # self.label_3.visible = True
-    # self.label_4.visible = True
-
-    # self.text_box_1.visible = True
-    # self.text_box_2.visible = True
-    # self.text_box_3.visible = True
-
-    # self.button_1.visible = True
-
-
     self.button_5.visible = True    
     self.button_2.visible = True
     self.button_3.visible = False
@@ -107,7 +96,25 @@ class pass_add(pass_addTemplate):
 
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
-    value,row = anvil.server.call('check_password', self.text_box_4.text)
+    value,row = anvil.server.call('check_username_and_password', gvarb.g_username, self.text_box_4.text)
+    if value == True:
+      self.label_6.visible = False
+      self.text_box_4.visible = False
+      self.button_5.visible = False  
+      
+      self.label_2.visible = True
+      self.label_3.visible = True
+      self.label_4.visible = True
+  
+      self.text_box_1.visible = True
+      self.text_box_2.visible = True
+      self.text_box_3.visible = True
+  
+      self.button_1.visible = True
+    else:
+      result = confirm("Invalid crdentials, login again !", buttons=["Yes"])
+      if result == "Yes":
+        open_form('logform')
 
 
 

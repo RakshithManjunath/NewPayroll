@@ -33,6 +33,7 @@ class logform(logformTemplate):
         value,row = anvil.server.call('check_username_and_password', self.text_box_1.text, self.text_box_2.text)
         if value == True:
           gvarb.g_comcode = row
+          gvarb.g_username = self.text_box_1.text
           print(gvarb.g_comcode)
           open_form('company_select')
         else:
