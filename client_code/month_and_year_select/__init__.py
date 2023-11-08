@@ -15,7 +15,7 @@ class month_and_year_select(month_and_year_selectTemplate):
     self.month = ""
     self.year = ""
     self.encoded_month = ""
-
+    
     self.label_2.text = (gvarb.g_comname+' '+gvarb.g_mode).upper()
 
     self.cur_trans_date = anvil.server.call('cur_trans_date',gvarb.g_comcode)
@@ -47,8 +47,8 @@ class month_and_year_select(month_and_year_selectTemplate):
     """This method is called when the selected date changes"""
     newdate = self.date_picker_1.date
     print(newdate)
-    if (newdate > self.cur_trans_date[0]):
-      print('you cant set date later than trans date')
+    if (newdate >= self.cur_trans_date[0]):
+      print('you cant set future or same transaction date than current transaction date')
       result = confirm(" you can not select future month & year than current transaction month & year  ! ok  ", buttons=["Yes"])
       if result == "Yes":
           open_form('month_and_year_select')
@@ -60,3 +60,7 @@ class month_and_year_select(month_and_year_selectTemplate):
         month = str(modified_new_date.month).zfill(2)
         self.month_db_lbl.text = self.month_names_alphabets[self.month_names_numeric.index(str(month))]
         self.year_db_lbl.text = modified_new_date.year
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('logform')
