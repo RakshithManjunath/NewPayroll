@@ -29,6 +29,9 @@ class pass_add(pass_addTemplate):
     if is_duplicate:
       # Handle duplicate case (e.g., show an error message)
       print("Username and password exists")
+      is_duplicate = confirm(" Username and password already exist, try different username and password  ! ok ", buttons=["Yes"])
+      if is_duplicate == "Yes":
+        open_form('pass_add')
     else:
       # Add the new record to the database
       print("Username and password doesnt exist")
