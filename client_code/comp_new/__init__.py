@@ -65,46 +65,46 @@ class comp_new(comp_newTemplate):
     print("end date: ", end_date)
     anvil.server.call('new_trans_date', start_date,current_days,num_of_sundays,end_date,compcode)
     #open_form('logform')
-
 ###########################################################################
 ###########################################################################
 ###########################################################################
-
-
-
     if self.text_box_2.text == "":
       Notification("User name cannot be blank").show()
     else:
       id= anvil.server.call('pass_get_next_string_value')
       passcode= anvil.server.call('next_pass_code_value')
-      row = anvil.server.call('pass_add',id,passcode, self.text_box_2.text,
-                        self.text_box_3.text,compcode)
-      #anvil.server.call('comp_default_values',row)
-      if  ((self.text_box_3.text ) == (self.text_box_4.text )):
-        result = confirm(self.text_box_1.text+"Company added successfully ! continue to login  ?", buttons=["Yes"])
-        if result == "Yes":
-          self.clear_inputs()
-          open_form('logform')
+      
+      is_duplicate = anvil.server.call('duplicate_username_password_check', self.text_box_2.text,self.text_box_3.text)
+      if is_duplicate:  
+        print("Username and password exists")
+        is_duplicate = confirm(" Username and password already exist, try different username and password  ! ok ", buttons=["Yes"])
+        if is_duplicate == "Yes":
+            open_form('comp_new')
       else:
-        result = confirm(" Password re-confirmation failed !  ", buttons=["Yes"])
-        if result == "Yes":
-          self.clear_inputs()
-          open_form('logform')
+        print("Username and password doesnt exist")
+        row = anvil.server.call('pass_add',id,passcode, self.text_box_2.text,
+                        self.text_box_3.text,compcode)
+        #anvil.server.call('comp_default_values',row)
+        if  ((self.text_box_3.text ) == (self.text_box_4.text )):
+          result = confirm(self.text_box_1.text+"Company added successfully ! continue to login  ?", buttons=["Yes"])
+          if result == "Yes":
+            self.clear_inputs()
+            open_form('logform')
+        else:
+          result = confirm(" Password re-confirmation failed !  ", buttons=["Yes"])
+          if result == "Yes":
+            self.clear_inputs()
+            open_form('logform')
     
   def clear_inputs(self):
     # Clear our three text boxes
     self.text_box_2.text = ""
     self.text_box_3.text = ""
     self.text_box_4.text = ""
-
-
 ###########################################################################
 ###########################################################################
 ###########################################################################
   
-
-  
-    
   def clear_inputs(self):
     # Clear our three text boxes
     self.text_box_1.text = ""
