@@ -64,3 +64,9 @@ class month_and_year_select(month_and_year_selectTemplate):
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('logform')
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.date_picker_1.visible = True
+    self.button_1.visible = False
+    self.date_picker_1.date = self.cur_trans_date[0]

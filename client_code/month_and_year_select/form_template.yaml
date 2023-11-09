@@ -42,12 +42,17 @@ components:
     layout_properties: {grid_position: 'JESDLO,ERTJPE BRQFXD,NEEYHD'}
   - name: date_picker_1
     properties: {format: '%d/%m/Y', placeholder: Change transaction month & year,
-      date: null}
+      date: null, visible: false}
     type: DatePicker
     layout_properties: {grid_position: 'JESDLO,ERTJPE ZDHEVS,FJMDZY'}
     event_bindings: {change: date_picker_1_change}
     data_bindings:
     - {property: date, code: '', writeback: false}
+  - name: button_2
+    properties: {text: button_2}
+    type: Button
+    layout_properties: {grid_position: 'JESDLO,ERTJPE ROQOTG,EVHDHN'}
+    event_bindings: {click: button_2_click}
   - type: Spacer
     properties: {height: 32}
     name: spacer_3

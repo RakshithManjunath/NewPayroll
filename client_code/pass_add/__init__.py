@@ -25,25 +25,32 @@ class pass_add(pass_addTemplate):
     open_form('pass_add')
 
   def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    if self.text_box_1.text == "":
-      Notification("User name cannot be blank").show()
+    is_duplicate = anvil.server.call('duplicate_username_password_check', self.text_box_1.text,self.text_box_2.text)
+    if is_duplicate:
+      # Handle duplicate case (e.g., show an error message)
+      print("Username and password exists")
     else:
-      id= anvil.server.call('pass_get_next_string_value')
-      passcode= anvil.server.call('next_pass_code_value')
-      row = anvil.server.call('pass_add',id,passcode, self.text_box_1.text,
-                        self.text_box_2.text,gvarb.g_comcode)
-      #anvil.server.call('comp_default_values',row)
-      if  ((self.text_box_2.text ) == (self.text_box_3.text )):
-        result = confirm(self.text_box_1.text+" user successfully added ! continue to login  ?", buttons=["Yes"])
-        if result == "Yes":
-          self.clear_inputs()
-          open_form('logform')
-      else:
-        result = confirm(" Password re-confirmation failed !  ", buttons=["Yes"])
-        if result == "Yes":
-          self.clear_inputs()
-          open_form('logform')
+      # Add the new record to the database
+      print("Username and password doesnt exist")
+    # """This method is called when the button is clicked"""
+    # if self.text_box_1.text == "":
+    #   Notification("User name cannot be blank").show()
+    # else:
+    #   id= anvil.server.call('pass_get_next_string_value')
+    #   passcode= anvil.server.call('next_pass_code_value')
+    #   row = anvil.server.call('pass_add',id,passcode, self.text_box_1.text,
+    #                     self.text_box_2.text,gvarb.g_comcode)
+    #   #anvil.server.call('comp_default_values',row)
+    #   if  ((self.text_box_2.text ) == (self.text_box_3.text )):
+    #     result = confirm(self.text_box_1.text+" user successfully added ! continue to login  ?", buttons=["Yes"])
+    #     if result == "Yes":
+    #       self.clear_inputs()
+    #       open_form('logform')
+    #   else:
+    #     result = confirm(" Password re-confirmation failed !  ", buttons=["Yes"])
+    #     if result == "Yes":
+    #       self.clear_inputs()
+    #       open_form('logform')
     
   def clear_inputs(self):
     # Clear our three text boxes

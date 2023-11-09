@@ -54,10 +54,6 @@ def pass_add(pass_id,passcode,username,passwrd,comcode):
                                      password=passwrd,
                                      pass_comp_code=comcode)
 
-
-
-
-
 @anvil.server.callable
 def check_username_and_password(username, password):
   row = app_tables.password.get(username=username)
@@ -79,4 +75,7 @@ def check_username_and_password(username, password):
 def check_password_and_confirm_password(username, password):
   return app_tables.password.search()
 
-
+@anvil.server.callable
+def duplicate_username_password_check(username,password):
+  existing_records = app_tables.password.search(username=username, password=password)
+  return len(existing_records) > 0
