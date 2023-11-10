@@ -7,6 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import calendar
 from datetime import datetime
+from .. import gvarb
 
 class update_trans_date(update_trans_dateTemplate):
   def __init__(self, **properties):
@@ -16,7 +17,8 @@ class update_trans_date(update_trans_dateTemplate):
     # Any code you write here will run before the form opens.
     self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
 
-    cur_trans_date = anvil.server.call('cur_trans_date')
+   # cur_trans_date = anvil.server.call('cur_trans_date')
+    cur_trans_date = anvil.server.call('cur_trans_date',gvarb.g_comcode)
 
     month_names_alphabets = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
     month_names_numeric = ["01","02","03","04","05","06","07","08","09","10","11","12"]
@@ -78,5 +80,14 @@ class update_trans_date(update_trans_dateTemplate):
     """This method is called when the button is clicked"""
     open_form('update_trans_date')
 
+  def form_show(self, **event_args):
+    """This method is called when the form is shown on the page"""
+    if (gvarb.g_curmonyear == False):
+      print('you can not update')
+    result = confirm("You can update to next month only from current month ! ok", buttons=["Yes"])
+    if result == "Yes":
+     open_form('menu')
+    else:
+      print('you can update')
 
 
