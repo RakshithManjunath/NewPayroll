@@ -13,6 +13,8 @@ class pass_add(pass_addTemplate):
     self.init_components(**properties)
   
     # Any code you write here will run before the form opens.
+    if (gvarb.g_curmonyear == False):
+      self.label_5.foreground = "#FF0000" 
     self.label_5.text = gvarb.g_comname+' '+(gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
   
     

@@ -29,7 +29,7 @@ class emp_trans_view(emp_trans_viewTemplate):
     
     if (gvarb.g_curmonyear == False):
       self.label_2.foreground = "#FF0000" 
-    self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
+    self.label_2.text = (gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
 
   def populate_custom_data_grid(self):
     # col = self.data_grid_1.columns
