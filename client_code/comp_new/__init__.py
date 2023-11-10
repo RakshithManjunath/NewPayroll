@@ -14,7 +14,9 @@ class comp_new(comp_newTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-
+    self.passbool = False
+    self.compbool = False
+    
   def update(self, initial_date):
     # Get the current month and year
     current_month = initial_date.month
@@ -46,24 +48,14 @@ class comp_new(comp_newTemplate):
     if self.text_box_1.text == "":
       Notification("Company name cannot be blank").show()
     else:
-      # id= anvil.server.call('comp_get_next_string_value')
-      # compcode= anvil.server.call('next_comp_id_value')
+      self.compid= anvil.server.call('comp_get_next_string_value')
+      self.compcode= anvil.server.call('next_comp_id_value')
+      self.compbool = True
       # row = anvil.server.call('new_comp_add',id,compcode, self.text_box_1.text)
       # anvil.server.call('comp_default_values',row)
       # Notification(self.text_box_1.text + " data added successfully").show()
-      self.clear_inputs() 
+      # self.clear_inputs() 
 
-    newdate = self.date_picker_1.date
-    modified_new_date = date(newdate.year,newdate.month, 1)
-    
-    start_date = modified_new_date
-    print("start date: ", start_date)
-
-    current_days, num_of_sundays, end_date = self.update(start_date)
-    print("current days: " + str(current_days))
-    print("Num of sundays: " + str(num_of_sundays))
-    print("end date: ", end_date)
-    anvil.server.call('new_trans_date', start_date,current_days,num_of_sundays,end_date,compcode)
     #open_form('logform')
 ###########################################################################
 ###########################################################################
@@ -89,15 +81,36 @@ class comp_new(comp_newTemplate):
         if  ((self.text_box_3.text ) == (self.text_box_4.text )):
           result = confirm(self.text_box_1.text+"Company added successfully ! continue to login  ?", buttons=["Yes"])
           if result == "Yes":
-            self.clear_inputs()
+            # self.clear_inputs()
             open_form('logform')
         else:
           result = confirm(" Password re-confirmation failed !  ", buttons=["Yes"])
           if result == "Yes":
-            self.clear_inputs()
+            # self.clear_inputs()
             open_form('logform')
 
+    if self.compbool == True and self.passbool == True:
+      print('Both company and password table are ok')
+      comp_row = anvil.server.call('new_comp_add',self.compid,self.compcode, self.text_box_1.text)
+      anvil.server.call('comp_default_values',comp_row)
+
+      pass_row = anvil.server.call('pass_add',self.passid,self.passcode, self.text_box_2.text,
+                      self.text_box_3.text,self.compcode)
+
+      newdate = self.date_picker_1.date
+      modified_new_date = date(newdate.year,newdate.month, 1)
+      
+      start_date = modified_new_date
+      print("start date: ", start_date)
   
+      current_days, num_of_sundays, end_date = self.update(start_date)
+      print("current days: " + str(current_days))
+      print("Num of sundays: " + str(num_of_sundays))
+      print("end date: ", end_date)
+      anvil.server.call('new_trans_date', start_date,current_days,num_of_sundays,end_date,self.compcode)
+
+      Notification(self.text_box_1.text + " new company added succesfully!").show()
+      self.clear_inputs()
     
   def clear_inputs(self):
     # Clear our three text boxes
