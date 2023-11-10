@@ -46,11 +46,11 @@ class comp_new(comp_newTemplate):
     if self.text_box_1.text == "":
       Notification("Company name cannot be blank").show()
     else:
-      id= anvil.server.call('comp_get_next_string_value')
-      compcode= anvil.server.call('next_comp_id_value')
-      row = anvil.server.call('new_comp_add',id,compcode, self.text_box_1.text)
-      anvil.server.call('comp_default_values',row)
-      Notification(self.text_box_1.text + " data added successfully").show()
+      # id= anvil.server.call('comp_get_next_string_value')
+      # compcode= anvil.server.call('next_comp_id_value')
+      # row = anvil.server.call('new_comp_add',id,compcode, self.text_box_1.text)
+      # anvil.server.call('comp_default_values',row)
+      # Notification(self.text_box_1.text + " data added successfully").show()
       self.clear_inputs() 
 
     newdate = self.date_picker_1.date
@@ -71,8 +71,8 @@ class comp_new(comp_newTemplate):
     if self.text_box_2.text == "":
       Notification("User name cannot be blank").show()
     else:
-      id= anvil.server.call('pass_get_next_string_value')
-      passcode= anvil.server.call('next_pass_code_value')
+      self.passid= anvil.server.call('pass_get_next_string_value')
+      self.passcode= anvil.server.call('next_pass_code_value')
       
       is_duplicate = anvil.server.call('duplicate_username_password_check', self.text_box_2.text,self.text_box_3.text)
       if is_duplicate:  
@@ -82,8 +82,9 @@ class comp_new(comp_newTemplate):
             open_form('comp_new')
       else:
         print("Username and password doesnt exist")
-        row = anvil.server.call('pass_add',id,passcode, self.text_box_2.text,
-                        self.text_box_3.text,compcode)
+        self.passbool = True
+        # row = anvil.server.call('pass_add',id,passcode, self.text_box_2.text,
+        #                 self.text_box_3.text,compcode)
         #anvil.server.call('comp_default_values',row)
         if  ((self.text_box_3.text ) == (self.text_box_4.text )):
           result = confirm(self.text_box_1.text+"Company added successfully ! continue to login  ?", buttons=["Yes"])
@@ -95,6 +96,8 @@ class comp_new(comp_newTemplate):
           if result == "Yes":
             self.clear_inputs()
             open_form('logform')
+
+  
     
   def clear_inputs(self):
     # Clear our three text boxes
