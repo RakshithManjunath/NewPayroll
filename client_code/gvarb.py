@@ -19,6 +19,7 @@ g_empname = ""
 g_mode = ""
 g_transdate=datetime.date(2023, 5, 1)
 g_username = ""
+g_curmonyear = True
 
 
 

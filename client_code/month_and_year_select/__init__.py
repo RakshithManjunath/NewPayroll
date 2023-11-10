@@ -41,6 +41,14 @@ class month_and_year_select(month_and_year_selectTemplate):
       month_in_int = int(month)
     gvarb.g_transdate = date(self.year_db_lbl.text, month_in_int, 1)
     print("gvarb transdate", gvarb.g_transdate)
+
+    if (self.cur_trans_date[0] != gvarb.g_transdate):
+      print('date changed')
+      gvarb.g_curmonyear = False
+    else:
+      print('same date')
+      gvarb.g_curmonyear = True
+    
     open_form('menu')
      
   def date_picker_1_change(self, **event_args):
