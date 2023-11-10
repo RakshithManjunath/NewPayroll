@@ -14,7 +14,9 @@ class report_new(report_newTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
+    if (gvarb.g_curmonyear == False):
+      self.label_2.foreground = "#FF0000"
+    self.label_2.text = (gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
     ############################################################
     #comp_details = anvil.server.call('comp_get_details', '002')  
     ###########################################################

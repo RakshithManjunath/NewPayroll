@@ -27,7 +27,8 @@ class emp_trans_view(emp_trans_viewTemplate):
     #   self.repeating_panel.items.append(row_data)
     self.repeating_panel_1.items = anvil.server.call('trans_get_all_details',gvarb.g_comcode)
     
-    
+    if (gvarb.g_curmonyear == False):
+      self.label_2.foreground = "#FF0000" 
     self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
 
   def populate_custom_data_grid(self):
