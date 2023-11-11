@@ -37,9 +37,9 @@ class logform(logformTemplate):
           print(gvarb.g_comcode)
           open_form('company_select')
         else:
-            result = confirm("Invalid crdentials, login again !", buttons=["Yes"])
-            if result == "Yes":
-              open_form('logform')
+          result = confirm("Invalid crdentials, login again !", buttons=["Yes"])
+          if result == "Yes":
+            open_form('logform')
 
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""

@@ -924,7 +924,7 @@ db_schema:
       admin_ui: {width: 200}
       type: string
     - name: password
-      admin_ui: {width: 200}
+      admin_ui: {order: 1, width: 374}
       type: string
     - name: pass_comp_code
       admin_ui: {order: -1, width: 200}

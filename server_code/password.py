@@ -5,6 +5,8 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+import bcrypt 
+import base64
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -48,10 +50,12 @@ def next_pass_code_value():
 
 @anvil.server.callable
 def pass_add(pass_id,passcode,username,passwrd,comcode):
+  hashed_password = bcrypt.hashpw(passwrd.encode('utf-8'), bcrypt.gensalt())
+  hashed_password_str = base64.b64encode(hashed_password).decode('utf-8')
   return app_tables.password.add_row(pass_id=pass_id,
                                      pass_code=passcode,
                                     username=username,
-                                     password=passwrd,
+                                     password=hashed_password_str,
                                      pass_comp_code=comcode)
 
 @anvil.server.callable
@@ -59,7 +63,12 @@ def check_username_and_password(username, password):
   row = app_tables.password.get(username=username)
   if row:
     #print(f"User {username} exists")
-    if row['password'] == password:
+    hashed_password = base64.b64decode(row['password'].encode('utf-8'))
+    decrypted_password = bcrypt.checkpw(password.encode('utf-8'), hashed_password)
+    print("actual password", password)
+    print("hashed password", hashed_password)
+    print("decrypted password", decrypted_password)
+    if decrypted_password:
       #print(f"Correct password for {username}")
       return True, row['pass_comp_code']
     else:
@@ -77,5 +86,5 @@ def check_password_and_confirm_password(username, password):
 
 @anvil.server.callable
 def duplicate_username_password_check(username,password):
-  existing_records = app_tables.password.search(username=username, password=password)
+  existing_records = app_tables.password.search(username=username, password=password.encode('utf-8'))
   return len(existing_records) > 0

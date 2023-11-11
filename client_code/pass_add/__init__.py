@@ -43,6 +43,7 @@ class pass_add(pass_addTemplate):
     else:
       id= anvil.server.call('pass_get_next_string_value')
       passcode= anvil.server.call('next_pass_code_value')
+      
       row = anvil.server.call('pass_add',id,passcode, self.text_box_1.text,
                         self.text_box_2.text,gvarb.g_comcode)
       #anvil.server.call('comp_default_values',row)
