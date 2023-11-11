@@ -82,12 +82,8 @@ class comp_new(comp_newTemplate):
         # row = anvil.server.call('pass_add',id,passcode, self.text_box_2.text,
         #                 self.text_box_3.text,compcode)
         #anvil.server.call('comp_default_values',row)
-        if  ((self.text_box_3.text ) == (self.text_box_4.text )):
-          result = confirm(self.text_box_1.text+"Company added successfully ! continue to login  ?", buttons=["Yes"])
-          if result == "Yes":
-            # self.clear_inputs()
-            open_form('logform')
-        else:
+        
+        if self.text_box_3.text != self.text_box_4.text:
           result = confirm(" Password re-confirmation failed !  ", buttons=["Yes"])
           if result == "Yes":
             # self.clear_inputs()

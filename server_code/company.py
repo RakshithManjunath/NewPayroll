@@ -377,5 +377,5 @@ def stat_bonus_update(comp_code, comp_bonus_from, comp_bonus_to, comp_bonus_perc
 
 @anvil.server.callable
 def check_duplicate_company(comp_name):
-  row = app_tables.company.get(comp_name=comp_name)
+  row = app_tables.company.search(comp_name=comp_name)
   return len(row) > 0
