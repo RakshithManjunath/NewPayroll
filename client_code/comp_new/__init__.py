@@ -52,9 +52,11 @@ class comp_new(comp_newTemplate):
       self.compcode= anvil.server.call('next_comp_id_value')
       is_duplicate = anvil.server.call('check_duplicate_company',self.text_box_1.text)
       if is_duplicate:
+        is_duplicate = confirm(" Company name already exist, try different company name  ! ok ", buttons=["Yes"])
+        open_form('comp_new')   
         print('Company name is duplicate')
       else:
-        self.compbool = True
+          self.compbool = True
       # row = anvil.server.call('new_comp_add',id,compcode, self.text_box_1.text)
       # anvil.server.call('comp_default_values',row)
       # Notification(self.text_box_1.text + " data added successfully").show()
