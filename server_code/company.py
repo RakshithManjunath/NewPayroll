@@ -185,9 +185,9 @@ def comp_default_values(row):
   }
 
   for column_name, column_type in columns_and_types.items():
-    print(column_name, column_type)
+    #print(column_name, column_type)
     if row[column_name] is None:
-      print(row[column_name])
+      #print(row[column_name])
       default_value = get_default_value_for_type(column_type)
       row[column_name] = default_value
 
