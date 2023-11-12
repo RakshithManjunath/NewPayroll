@@ -65,17 +65,17 @@ def check_username_and_password(username, password):
     #print(f"User {username} exists")
     hashed_password = base64.b64decode(row['password'].encode('utf-8'))
     decrypted_password = bcrypt.checkpw(password.encode('utf-8'), hashed_password)
-    print("actual password", password)
-    print("hashed password", hashed_password)
-    print("decrypted password", decrypted_password)
+    #print("actual password", password)
+    #print("hashed password", hashed_password)
+    #print("decrypted password", decrypted_password)
     if decrypted_password:
       #print(f"Correct password for {username}")
       return True, row['pass_comp_code']
     else:
-      print(f"Incorrect password for {username}")
+      #print(f"Incorrect password for {username}")
       return False,False
   else:
-    print(f"User {username} doesn't exist")
+    #print(f"User {username} doesn't exist")
     return False,False
   # password_table = app_tables.password.search()
   # db_username, db_password = password[username], password_table[password]
@@ -91,7 +91,7 @@ def duplicate_username_password_check(username,password):
   if row:
     hashed_password = base64.b64decode(row['password'].encode('utf-8'))
     compare_password = bcrypt.checkpw(password.encode('utf-8'), hashed_password)
-    print("Compare password", compare_password)
+    #print("Compare password", compare_password)
     return compare_password
   return compare_password
   # return len(existing_records) > 0

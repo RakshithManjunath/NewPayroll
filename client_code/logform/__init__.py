@@ -34,7 +34,7 @@ class logform(logformTemplate):
         if value == True:
           gvarb.g_comcode = row
           gvarb.g_username = self.text_box_1.text
-          print(gvarb.g_comcode)
+          #print(gvarb.g_comcode)
           open_form('company_select')
         else:
           result = confirm("Invalid crdentials, login again !", buttons=["Yes"])
