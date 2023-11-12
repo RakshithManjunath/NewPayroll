@@ -39,7 +39,7 @@ class month_and_year_select(month_and_year_selectTemplate):
       month_in_int = int(month[-1])
     else:
       month_in_int = int(month)
-    gvarb.g_transdate = date(self.year_db_lbl.text, month_in_int, 1)
+      gvarb.g_transdate = date(self.year_db_lbl.text, month_in_int, 1)
     #print("gvarb transdate", gvarb.g_transdate)
 
     print(self.cur_trans_date[0])
@@ -69,8 +69,8 @@ class month_and_year_select(month_and_year_selectTemplate):
       month = str(modified_new_date.month)
       if modified_new_date.month <=9:
         month = str(modified_new_date.month).zfill(2)
-        self.month_db_lbl.text = self.month_names_alphabets[self.month_names_numeric.index(str(month))]
-        self.year_db_lbl.text = modified_new_date.year
+      self.month_db_lbl.text = self.month_names_alphabets[self.month_names_numeric.index(str(month))]
+      self.year_db_lbl.text = modified_new_date.year
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
