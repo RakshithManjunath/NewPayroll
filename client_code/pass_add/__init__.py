@@ -11,6 +11,8 @@ class pass_add(pass_addTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.password_duplicate_check = False
+    self.password_blank_check = False
   
     # Any code you write here will run before the form opens.
     if (gvarb.g_curmonyear == False):
@@ -38,25 +40,32 @@ class pass_add(pass_addTemplate):
     else:
       # Add the new record to the database
       print("Username and password doesnt exist")
+      self.password_duplicate_check = True
     if self.text_box_1.text == "":
       Notification("User name cannot be blank").show()
     else:
+      # id= anvil.server.call('pass_get_next_string_value')
+      # passcode= anvil.server.call('next_pass_code_value')
+      
+      # row = anvil.server.call('pass_add',id,passcode, self.text_box_1.text,
+      #                   self.text_box_2.text,gvarb.g_comcode)
+      if self.text_box_2.text != self.text_box_3.text:
+        result = confirm(" Password re-confirmation failed !  ", buttons=["Yes"])
+        if result == "Yes":
+          # self.clear_inputs()
+          open_form('logform')
+      else:
+        self.password_blank_check = True
+
+    if self.password_duplicate_check == True and self.password_blank_check == True:
       id= anvil.server.call('pass_get_next_string_value')
       passcode= anvil.server.call('next_pass_code_value')
       
       row = anvil.server.call('pass_add',id,passcode, self.text_box_1.text,
                         self.text_box_2.text,gvarb.g_comcode)
-      #anvil.server.call('comp_default_values',row)
-      if  ((self.text_box_2.text ) == (self.text_box_3.text )):
-        result = confirm(self.text_box_1.text+" user successfully added ! continue to login  ?", buttons=["Yes"])
-        if result == "Yes":
-          self.clear_inputs()
-          open_form('logform')
-      else:
-        result = confirm(" Password re-confirmation failed !  ", buttons=["Yes"])
-        if result == "Yes":
-          self.clear_inputs()
-          open_form('logform')
+      print("created username and password successfully")
+      open_form('logform')
+        
     
   def clear_inputs(self):
     # Clear our three text boxes

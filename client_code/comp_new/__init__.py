@@ -112,7 +112,8 @@ class comp_new(comp_newTemplate):
       anvil.server.call('new_trans_date', start_date,current_days,num_of_sundays,end_date,self.compcode)
 
       Notification(self.text_box_1.text + " new company added succesfully!").show()
-      self.clear_inputs()
+      open_form('logform')
+      #self.clear_inputs()
     
   def clear_inputs(self):
     # Clear our three text boxes

@@ -86,5 +86,12 @@ def check_password_and_confirm_password(username, password):
 
 @anvil.server.callable
 def duplicate_username_password_check(username,password):
-  existing_records = app_tables.password.search(username=username, password=password.encode('utf-8'))
-  return len(existing_records) > 0
+  row = app_tables.password.get(username=username)
+  compare_password = False
+  if row:
+    hashed_password = base64.b64decode(row['password'].encode('utf-8'))
+    compare_password = bcrypt.checkpw(password.encode('utf-8'), hashed_password)
+    print("Compare password", compare_password)
+    return compare_password
+  return compare_password
+  # return len(existing_records) > 0
