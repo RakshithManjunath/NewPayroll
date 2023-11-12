@@ -82,11 +82,11 @@ class update_trans_date(update_trans_dateTemplate):
 
   def form_show(self, **event_args):
     """This method is called when the form is shown on the page"""
+    print(gvarb.g_curmonyear)
     if (gvarb.g_curmonyear == False):
       print('you can not update')
-    result = confirm("You can update to next month only from current month ! ok", buttons=["Yes"])
-    if result == "Yes":
-     open_form('menu')
+      result = confirm("You can update to next month only from current month ! ok", buttons=["Yes"])
+      open_form(menu)
     else:
       print('you can update')
 
