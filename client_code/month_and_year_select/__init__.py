@@ -40,13 +40,16 @@ class month_and_year_select(month_and_year_selectTemplate):
     else:
       month_in_int = int(month)
     gvarb.g_transdate = date(self.year_db_lbl.text, month_in_int, 1)
-    print("gvarb transdate", gvarb.g_transdate)
+    #print("gvarb transdate", gvarb.g_transdate)
 
+    print(self.cur_trans_date[0])
+    print(gvarb.g_transdate)
+    
     if (self.cur_trans_date[0] != gvarb.g_transdate):
-      #print('date changed')
+      print('date changed')
       gvarb.g_curmonyear = False
     else:
-      #print('same date')
+      print('same date')
       gvarb.g_curmonyear = True
     
     open_form('menu')
@@ -62,7 +65,7 @@ class month_and_year_select(month_and_year_selectTemplate):
           open_form('month_and_year_select')
     else:
       modified_new_date = date(newdate.year,newdate.month, 1)
-      print(modified_new_date)
+      #print(modified_new_date)
       month = str(modified_new_date.month)
       if modified_new_date.month <=9:
         month = str(modified_new_date.month).zfill(2)
