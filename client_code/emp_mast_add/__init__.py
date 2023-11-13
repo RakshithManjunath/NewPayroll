@@ -117,7 +117,7 @@ class emp_mast_add(emp_mast_addTemplate):
                     pt_contribution,it_contribution, self.custom_3.text_box_1.text,dept_code,dept_name,
                     desi_code,desi_name,default_photo,gvarb.g_comcode)
       anvil.server.call('emp_default_values',row)
-      date = anvil.server.call('cur_trans_date')
+      date = anvil.server.call('cur_trans_date',gvarb.g_comcode)
       # print(emp_id,date,self.text_box_1.text,self.text_box_2.text,self.text_box_3.text,emp_sex,
       #                  self.date_picker_1.date,self.date_picker_2.date,emp_type,dept_code,dept_name,desi_code,desi_name,
       #                  pf_contribution,self.custom_1.text_box_1.text,self.custom_1.text_box_2.text,
