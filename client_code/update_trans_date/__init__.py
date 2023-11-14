@@ -15,7 +15,9 @@ class update_trans_date(update_trans_dateTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.label_2.text = gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")
+    if (gvarb.g_curmonyear == False):
+      self.label_2.foreground = "#FF0000"
+    self.label_2.text = gvarb.g_comname+' '+(gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
 
    # cur_trans_date = anvil.server.call('cur_trans_date')
     cur_trans_date = anvil.server.call('cur_trans_date',gvarb.g_comcode)
@@ -82,12 +84,10 @@ class update_trans_date(update_trans_dateTemplate):
 
   def form_show(self, **event_args):
     """This method is called when the form is shown on the page"""
-    print(gvarb.g_curmonyear)
+    #print(gvarb.g_curmonyear)
     if (gvarb.g_curmonyear == False):
-      print('you can not update')
+      #print('you can not update')
       result = confirm("You can update to next month only from current month ! ok", buttons=["Yes"])
-      open_form(menu)
-    else:
-      print('you can update')
+      open_form('menu')
 
 
