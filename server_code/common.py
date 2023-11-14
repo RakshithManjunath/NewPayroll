@@ -700,8 +700,6 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
       filtered_col['width'] = 150
       final_filtered_cols_modified.append(filtered_col)
 
-
-  
   print("final filtered cols modified: ", final_filtered_cols_modified)
   
   # return final_filter_records,final_filtered_cols
