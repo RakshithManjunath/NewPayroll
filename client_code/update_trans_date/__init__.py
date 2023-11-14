@@ -89,4 +89,34 @@ class update_trans_date(update_trans_dateTemplate):
       result = confirm("You can update to next month only from current month ! ok", buttons=["Yes"])
       open_form('menu')
 
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    value,row = anvil.server.call('check_username_and_password', gvarb.g_username, self.text_box_1.text)
+    if value == True:
+      self.label_3.visible = False
+      self.text_box_1.visible = False
+      self.button_2.visible = False
+      self.button_3.visible = False
+      
+      self.trans_info_lbl.visible = True
+      self.update_btn.visible = True
+      self.button_1.visible = True
+    else:
+      result = confirm("Invalid crdentials, login again !", buttons=["Yes"])
+      if result == "Yes":
+        open_form('update_trans_date')
+
+  def text_box_1_change(self, **event_args):
+    """This method is called when the text in this text box is edited"""
+    if self.text_box_1.text == "":
+      Notification("login password cannot be blank").show()
+      self.button_2.enabled = False
+    else:
+      self.button_2.enabled = True
+
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('update_trans_date')
+
+
 

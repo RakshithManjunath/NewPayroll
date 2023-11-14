@@ -20,16 +20,29 @@ components:
     properties: {height: 32}
     name: spacer_1
     layout_properties: {grid_position: 'CGCQWZ,DTMLHA'}
+  - name: label_3
+    properties: {text: Login password, role: title, bold: true}
+    type: Label
+    layout_properties: {grid_position: 'RYKPVX,IZZJOV'}
+  - name: text_box_1
+    properties: {hide_text: true}
+    type: TextBox
+    layout_properties: {grid_position: 'RYKPVX,EWFSKB'}
+    event_bindings: {change: text_box_1_change}
   - type: Label
     properties: {role: title, align: center, tooltip: '', border: '', foreground: '',
-      visible: true, text: to enter transaction for next month click update, font_size: null,
+      visible: false, text: to enter transaction for next month click update, font_size: null,
       font: '', spacing_above: small, icon_align: left, spacing_below: small, italic: false,
       background: '', bold: true, underline: false, icon: ''}
     name: trans_info_lbl
     layout_properties: {grid_position: 'WYHYHE,YOJCOS'}
+  - name: spacer_2
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'ZMHPCU,NDCMIE'}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Update, font_size: null, font: '', spacing_above: small,
+      foreground: '', visible: false, text: Update, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
     name: update_btn
@@ -37,12 +50,22 @@ components:
     event_bindings: {click: update_btn_click}
   - type: Button
     properties: {role: filled-button, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: Cancel, font_size: null, font: '', spacing_above: small,
+      foreground: '', visible: false, text: Cancel, font_size: null, font: '', spacing_above: small,
       icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
       underline: false, icon: ''}
     name: button_1
     layout_properties: {grid_position: 'TARIYG,SQPEDS'}
     event_bindings: {click: button_1_click}
+  - name: button_2
+    properties: {text: Ok, role: filled-button, enabled: false}
+    type: Button
+    layout_properties: {grid_position: 'CHBNVI,ZLCPDK'}
+    event_bindings: {click: button_2_click}
+  - name: button_3
+    properties: {text: Cancel, role: filled-button}
+    type: Button
+    layout_properties: {grid_position: 'CHBNVI,NSBOIC'}
+    event_bindings: {click: button_3_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links
