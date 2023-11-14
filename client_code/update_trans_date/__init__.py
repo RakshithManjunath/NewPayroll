@@ -66,11 +66,10 @@ class update_trans_date(update_trans_dateTemplate):
     """This method is called when the button is clicked"""
     result = confirm("Do you really want to proceed ?", buttons=["Yes", "No"])
     if result == "Yes":
-        initial_date = anvil.server.call('cur_trans_date')
+        initial_date = anvil.server.call('cur_trans_date',gvarb.g_comcode)
         next_initial_date, next_days, next_num_of_sundays, next_end_date = self.update(initial_date[0])
         anvil.server.call('cur_trans_date_update', next_initial_date, next_days, next_num_of_sundays, next_end_date)
-        anvil.users.logout()
-        open_form('menu')
+        open_form('logform')
     else:
         open_form('menu')
 
