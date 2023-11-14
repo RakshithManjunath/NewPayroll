@@ -15,6 +15,7 @@ class month_and_year_select(month_and_year_selectTemplate):
     self.month = ""
     self.year = ""
     self.encoded_month = ""
+    self.date_button = False
     
     self.label_2.text = (gvarb.g_comname+' '+gvarb.g_mode).upper()
 
@@ -34,16 +35,20 @@ class month_and_year_select(month_and_year_selectTemplate):
 
   def submit_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    month = self.month_names_numeric[self.month_names_alphabets.index(self.month_db_lbl.text)]
-    if month[0] == '0':
-      month_in_int = int(month[-1])
-    else:
-      month_in_int = int(month)
+    # month = self.month_names_numeric[self.month_names_alphabets.index(self.month_db_lbl.text)]
+    # if month[0] == '0':
+    #   month_in_int = int(month[-1])
+    # else:
+    #   month_in_int = int(month)
       # gvarb.g_transdate = date(self.year_db_lbl.text, month_in_int, 1)
     #print("gvarb transdate", gvarb.g_transdate)
 
-    print(self.cur_trans_date[0])
-    print(gvarb.g_transdate)
+    # if self.date_picker_1.date == 
+    if self.date_button == False:
+      gvarb.g_transdate = self.cur_trans_date[0]
+
+    # print(self.cur_trans_date[0])
+    # print(gvarb.g_transdate)
     
     if (self.cur_trans_date[0] != gvarb.g_transdate):
       #print('date changed')
@@ -71,6 +76,13 @@ class month_and_year_select(month_and_year_selectTemplate):
         month = str(modified_new_date.month).zfill(2)
       self.month_db_lbl.text = self.month_names_alphabets[self.month_names_numeric.index(str(month))]
       self.year_db_lbl.text = modified_new_date.year
+      month = self.month_names_numeric[self.month_names_alphabets.index(self.month_db_lbl.text)]
+      if month[0] == '0':
+        month_in_int = int(month[-1])
+        gvarb.g_transdate = date(self.year_db_lbl.text, month_in_int, 1)
+      else:
+        month_in_int = int(month)
+        gvarb.g_transdate = date(self.year_db_lbl.text, month_in_int, 1)
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -81,3 +93,4 @@ class month_and_year_select(month_and_year_selectTemplate):
     self.date_picker_1.visible = True
     self.button_2.visible = False
     self.date_picker_1.date = self.cur_trans_date[0]
+    self.date_button = True
