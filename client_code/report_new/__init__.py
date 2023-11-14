@@ -28,7 +28,10 @@ class report_new(report_newTemplate):
 
     # self.add_component(anvil.CheckBox(text="slno",checked=True,visible=False))
 
+    col_panel = anvil.ColumnPanel()
+
     flow_panel = anvil.FlowPanel()
+    col_panel.add_component(flow_panel)
     for i in range(len(self.columns)):
       if self.columns[i] == 'Emp code' or self.columns[i] == 'Emp name' or self.columns[i] == 'Sl no':
         checkbox = CheckBox(text=self.columns[i], checked=True)  
@@ -36,7 +39,8 @@ class report_new(report_newTemplate):
       else:
         checkbox = CheckBox(text=self.columns[i], checked=False)  
         flow_panel.add_component(checkbox)
-    self.add_component(flow_panel)
+    # self.add_component(flow_panel)
+    self.add_component(col_panel)
 
     # Dynamically create set all button
     button_set = anvil.Button(text="set all sellection")
@@ -59,7 +63,10 @@ class report_new(report_newTemplate):
   # Attach a click listener
   def dynamic_button_set_click(self, **event_args):
     all_components = self.get_components()
-    all_flow_components = [component for component in all_components if isinstance(component, anvil.FlowPanel)]
+    
+    col_panel = [component for component in all_components if isinstance(component, anvil.ColumnPanel)]
+    flow_panel_with_boxes = col_panel[-1].get_components()
+    all_flow_components = [component for component in flow_panel_with_boxes if isinstance(component, anvil.FlowPanel)]
     flow_component_with_checkboxes = all_flow_components[-1].get_components()
     only_checkboxes = [component for component in flow_component_with_checkboxes if isinstance(component, anvil.CheckBox)]
     for checkbox in only_checkboxes:
@@ -75,7 +82,9 @@ class report_new(report_newTemplate):
     all_components = self.get_components()
     if isinstance(all_components[-1], anvil.DataGrid):
       all_components[-1].remove_from_parent()
-    all_flow_components = [component for component in all_components if isinstance(component, anvil.FlowPanel)]
+    col_panel = [component for component in all_components if isinstance(component, anvil.ColumnPanel)]
+    flow_panel_with_boxes = col_panel[-1].get_components()
+    all_flow_components = [component for component in flow_panel_with_boxes if isinstance(component, anvil.FlowPanel)]
     flow_component_with_checkboxes = all_flow_components[-1].get_components()
     only_checkboxes = [component for component in flow_component_with_checkboxes if isinstance(component, anvil.CheckBox)]
     selected_boxes = []
