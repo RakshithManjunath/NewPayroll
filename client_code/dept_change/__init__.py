@@ -35,21 +35,25 @@ class dept_change(dept_changeTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    if self.text_box_1.text == "":
-      Notification("Department name cannot be blank").show()
+    if (gvarb.g_curmonyear == False):
+      result = confirm("You can modify department in current month only ! ok", buttons=["Yes"])
+      open_form('dept')
     else:
-      dept_name_exists = anvil.server.call('dept_name_exists', self.text_box_1.text,gvarb.g_comcode)
-      if dept_name_exists:
-        anvil.server.call('dept_update_row', self.cur_deptcode, 
-                                       self.text_box_1.text)
-        Notification(self.text_box_1.text + " data modified successfully").show()
-        self.clear_inputs()
-        self.drop_down_1.visible=True
-        self.drop_down_1.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
-        self.button_1.enabled = False
+      if self.text_box_1.text == "":
+        Notification("Department name cannot be blank").show()
       else:
-        alert(f"{self.text_box_1.text} already exists,data not saved ")
-        open_form('dept')
+        dept_name_exists = anvil.server.call('dept_name_exists', self.text_box_1.text,gvarb.g_comcode)
+        if dept_name_exists:
+          anvil.server.call('dept_update_row', self.cur_deptcode, 
+                                       self.text_box_1.text)
+          Notification(self.text_box_1.text + " data modified successfully").show()
+          self.clear_inputs()
+          self.drop_down_1.visible=True
+          self.drop_down_1.items = anvil.server.call('dept_change_name_and_code',gvarb.g_comcode)
+          self.button_1.enabled = False
+        else:
+          alert(f"{self.text_box_1.text} already exists,data not saved ")
+          open_form('dept')
 
   def clear_inputs(self):
     # Clear our three text boxes

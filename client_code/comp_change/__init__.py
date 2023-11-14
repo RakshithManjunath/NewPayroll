@@ -17,7 +17,7 @@ class comp_change(comp_changeTemplate):
     if (gvarb.g_curmonyear == False):
       self.label_7.foreground = "#FF0000"
       
-    self.label_7.text = gvarb.g_comname+' '+(gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
+    self.label_7.text = (gvarb.g_comname+' '+gvarb.g_mode+" for the month of "+gvarb.g_transdate.strftime("%B %Y")).upper()
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
     
     self.text_box_7.text = comp_details['comp_name']
@@ -32,18 +32,20 @@ class comp_change(comp_changeTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    if self.text_box_7.text == "":
-      Notification("Company name cannot be blank").show()
+    if (gvarb.g_curmonyear == False):
+      result = confirm("You can do company modifications in current month only ! ok", buttons=["Yes"])
+      open_form('comp_change')
     else:
-      anvil.server.call('comp_update',gvarb.g_comcode,
-      self.text_box_1.text, self.text_box_2.text,
-      self.text_box_3.text,self.text_box_4.text,
-      self.text_box_5.text,self.text_box_6.text,self.text_box_7.text)
-      Notification(self.text_box_1.text + " data modifed successfully").show()
-      # result = confirm(self.text_box_7.text+" modified successfully ! to continue relogin  ?", buttons=["Yes"])
-      # if result == "Yes":
-      #    open_form('logform')
-      
+      if self.text_box_7.text == "":
+        Notification("Company name cannot be blank").show()
+      else:
+        anvil.server.call('comp_update',gvarb.g_comcode,
+        self.text_box_1.text, self.text_box_2.text,
+        self.text_box_3.text,self.text_box_4.text,
+        self.text_box_5.text,self.text_box_6.text,self.text_box_7.text)
+        Notification(self.text_box_7.text + " data modifed successfully").show()
+        self.button_1.enabled = False
+        
   def outlined_button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('menu')
