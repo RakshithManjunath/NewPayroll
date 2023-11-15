@@ -37,7 +37,7 @@ class desi_change(desi_changeTemplate):
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     if (gvarb.g_curmonyear == False):
-      result = confirm("You can modify designation in current month only ! ok", buttons=["Yes"])
+      result = confirm("You can add designation in current month only ! ok", buttons=["Yes"])
       open_form('desi')
     else:
       if self.text_box_1.text == "":

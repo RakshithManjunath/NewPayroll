@@ -41,9 +41,13 @@ class bank_change(bank_changeTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    if self.text_box_5.text == "":
-      Notification("Bank name cannot be blank").show()
+    if (gvarb.g_curmonyear == False):
+      result = confirm("You can add bank in current month only ! ok", buttons=["Yes"])
+      open_form('bank_add_change')
     else:
+      if self.text_box_5.text == "":
+        Notification("Bank name cannot be blank").show()
+      else:
       # bank_name_exists = anvil.server.call('bank_name_exists', self.text_box_1.text,gvarb.g_comcode)
       bank_name_exists = anvil.server.call('bank_name_exists', self.text_box_5.text,gvarb.g_comcode)
       if bank_name_exists:
