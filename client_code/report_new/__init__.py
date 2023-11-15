@@ -28,10 +28,10 @@ class report_new(report_newTemplate):
 
     # self.add_component(anvil.CheckBox(text="slno",checked=True,visible=False))
 
-    col_panel = anvil.ColumnPanel()
+    self.col_panel = anvil.ColumnPanel()
 
     flow_panel = anvil.FlowPanel()
-    col_panel.add_component(flow_panel)
+    self.col_panel.add_component(flow_panel)
     for i in range(len(self.columns)):
       if self.columns[i] == 'Emp code' or self.columns[i] == 'Emp name' or self.columns[i] == 'Sl no':
         checkbox = CheckBox(text=self.columns[i], checked=True)  
@@ -40,7 +40,7 @@ class report_new(report_newTemplate):
         checkbox = CheckBox(text=self.columns[i], checked=False)  
         flow_panel.add_component(checkbox)
     # self.add_component(flow_panel)
-    self.add_component(col_panel)
+    self.add_component(self.col_panel)
 
     # Dynamically create set all button
     button_set = anvil.Button(text="set all sellection")
@@ -108,6 +108,8 @@ class report_new(report_newTemplate):
     report_varb.g_grid_rows = grid_rows
 
     open_form('output_options')
+
+    # self.add_component(output_options())
 
     # print("Grid rows: ", grid_rows)
 
