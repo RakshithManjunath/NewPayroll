@@ -53,7 +53,11 @@ class comp_more(comp_moreTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('comp_more_update_earnhead', gvarb.g_comcode,
+    if (gvarb.g_curmonyear == False):
+      result = confirm("You can do company modification in current month only ! ok", buttons=["Yes"])
+      open_form('comp_more')
+    else:    
+      anvil.server.call('comp_more_update_earnhead', gvarb.g_comcode,
                       self.custom_1.text_box_1.text,
                       self.custom_1.text_box_3.text,
                       self.custom_1.text_box_5.text,
@@ -65,7 +69,7 @@ class comp_more(comp_moreTemplate):
                       self.custom_1.text_box_17.text,
                       self.custom_1.text_box_19.text)
 
-    anvil.server.call('comp_earnhead1',gvarb.g_comcode,self.custom_2.check_box_1.checked,
+      anvil.server.call('comp_earnhead1',gvarb.g_comcode,self.custom_2.check_box_1.checked,
                       self.custom_2.check_box_2.checked,self.custom_2.check_box_3.checked,
                       self.custom_2.check_box_4.checked,self.custom_2.check_box_5.checked,
                       self.custom_2.check_box_6.checked,self.custom_2.check_box_7.checked,
@@ -97,7 +101,7 @@ class comp_more(comp_moreTemplate):
                       self.custom_2.check_box_58.checked,self.custom_2.check_box_59.checked,
                       self.custom_2.check_box_60.checked)
 
-    anvil.server.call('comp_misc_leave_loan_update', gvarb.g_comcode, 
+      anvil.server.call('comp_misc_leave_loan_update', gvarb.g_comcode, 
                       self.custom_3.text_box_1.text,
                       self.custom_3.text_box_2.text, 
                       self.custom_3.text_box_3.text, 
