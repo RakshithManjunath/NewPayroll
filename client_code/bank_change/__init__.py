@@ -23,7 +23,7 @@ class bank_change(bank_changeTemplate):
       split_list_bank = [ele.strip() for ele in split_list_bank] 
       self.bank_code,self.bank_name = split_list_bank[0],split_list_bank[1]
   
-      self.row = anvil.server.call('bank_get_details',self.bank_code)
+      self.row = anvil.server.call('bank_get_details',self.bank_code,gvarb.g_comcode)
   
       self.text_box_1.text = self.row['bank_addr1']
       self.text_box_2.text = self.row['bank_addr2']
@@ -42,7 +42,7 @@ class bank_change(bank_changeTemplate):
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     if (gvarb.g_curmonyear == False):
-      result = confirm("You can add bank in current month only ! ok", buttons=["Yes"])
+      result = confirm("You can modify bank in current month only ! ok", buttons=["Yes"])
       open_form('bank_add_change')
     else:
       if self.text_box_5.text == "":
@@ -57,7 +57,7 @@ class bank_change(bank_changeTemplate):
                      self.text_box_1.text, self.text_box_2.text,
                      self.text_box_3.text, self.text_box_4.text,
                      self.text_box_5.text)
-              Notification(self.text_box_1.text + " data modified successfully").show()
+              Notification(self.text_box_5.text + " Bank modified successfully").show()
               self.clear_inputs()
               self.drop_down_1.visible=True
               self.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
