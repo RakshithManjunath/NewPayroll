@@ -48,25 +48,25 @@ class bank_change(bank_changeTemplate):
       if self.text_box_5.text == "":
         Notification("Bank name cannot be blank").show()
       else:
-      # bank_name_exists = anvil.server.call('bank_name_exists', self.text_box_1.text,gvarb.g_comcode)
-      bank_name_exists = anvil.server.call('bank_name_exists', self.text_box_5.text,gvarb.g_comcode)
-      if bank_name_exists:
-        bank_ifsc_exists = anvil.server.call('bank_ifsc_exists', self.text_box_5.text)
-        if not bank_ifsc_exists:
-          anvil.server.call('bank_update', self.bank_code,
+        # bank_name_exists = anvil.server.call('bank_name_exists', self.text_box_1.text,gvarb.g_comcode)
+        bank_name_exists = anvil.server.call('bank_name_exists', self.text_box_5.text,gvarb.g_comcode)
+        if bank_name_exists:
+          bank_ifsc_exists = anvil.server.call('bank_ifsc_exists', self.text_box_5.text)
+          if not bank_ifsc_exists:
+              anvil.server.call('bank_update', self.bank_code,
                      self.text_box_1.text, self.text_box_2.text,
                      self.text_box_3.text, self.text_box_4.text,
                      self.text_box_5.text)
-          Notification(self.text_box_1.text + " data modified successfully").show()
-          self.clear_inputs()
-          self.drop_down_1.visible=True
-          self.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
+              Notification(self.text_box_1.text + " data modified successfully").show()
+              self.clear_inputs()
+              self.drop_down_1.visible=True
+              self.drop_down_1.items = anvil.server.call('bank_change_name_and_code',gvarb.g_comcode)
+          else:
+            alert(f"{self.text_box_5.text} already exists,data not saved ")
+            open_form('bank_add_change')
         else:
-          alert(f"{self.text_box_5.text} already exists,data not saved ")
-          open_form('bank_add_change')
-      else:
-        alert(f"{self.text_box_5.text} already exists,data not saved ")
-        open_form('bank_add_change')
+            alert(f"{self.text_box_5.text} already exists,data not saved ")
+            open_form('bank_add_change')
         
   def clear_inputs(self):
     # Clear our three text boxes
