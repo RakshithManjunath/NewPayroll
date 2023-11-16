@@ -105,9 +105,6 @@ class emp_change(emp_changeTemplate):
     """This method is called when the button is clicked"""
     if (gvarb.g_curmonyear == False):
       result = confirm("You can modify employee in current month only ! ok", buttons=["Yes"])
-      anvil.Notification("This is line 1").show()
-      anvil.Notification("This is line 2").show()
-      anvil.Notification("This is line 3").show()
       open_form('emp_change')
     else:
       if self.text_box_1.text == "":

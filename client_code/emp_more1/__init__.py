@@ -161,11 +161,18 @@ class emp_more1(emp_more1Template):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    split_list_emp = self.drop_down_1.selected_value.split("|")
-    split_list_emp = [ele.strip() for ele in split_list_emp] 
-    self.emp_code,self.emp_name = split_list_emp[0],split_list_emp[1]
+    if (gvarb.g_curmonyear == False):
+      result = confirm("You can modify employee in current month only ! ok", buttons=["Yes"])
+      # anvil.Notification("This is line 1").show()
+      # anvil.Notification("This is line 2").show()
+      # anvil.Notification("This is line 3").show()
+      open_form('emp_more1')
+    else:    
+      split_list_emp = self.drop_down_1.selected_value.split("|")
+      split_list_emp = [ele.strip() for ele in split_list_emp] 
+      self.emp_code,self.emp_name = split_list_emp[0],split_list_emp[1]
 
-    anvil.server.call('emp_update_earn',self.emp_code,self.custom_1.text_box_1.text,
+      anvil.server.call('emp_update_earn',self.emp_code,self.custom_1.text_box_1.text,
                       self.custom_1.text_box_2.text,
                       self.custom_1.text_box_3.text,
                       self.custom_1.text_box_4.text,
@@ -177,18 +184,18 @@ class emp_more1(emp_more1Template):
                       self.custom_1.text_box_10.text,
                       self.custom_1.text_box_11.text)
 
-    bank_code = self.bank_code
-    bank_name = self.custom_2.text_box_6.text
+      bank_code = self.bank_code
+      bank_name = self.custom_2.text_box_6.text
 
-    if self.custom_2.drop_down_1.selected_value != None:
-      split_list_bank = self.custom_2.drop_down_1.selected_value.split("|")
-      split_list_bank = [ele.strip() for ele in split_list_bank] 
-      bank_code,bank_name = split_list_bank[0],split_list_bank[1]
-      # self.bankrow = anvil.server.call('bank_get_details', bank_code,gvarb.g_comcode)
-      # self.custom_2.text_box_7.text = self.bankrow['bank_ifsc']
-      # print(bank_code,bank_name,self.custom_2.text_box_7.text)
+      if self.custom_2.drop_down_1.selected_value != None:
+        split_list_bank = self.custom_2.drop_down_1.selected_value.split("|")
+        split_list_bank = [ele.strip() for ele in split_list_bank] 
+        bank_code,bank_name = split_list_bank[0],split_list_bank[1]
+        # self.bankrow = anvil.server.call('bank_get_details', bank_code,gvarb.g_comcode)
+        # self.custom_2.text_box_7.text = self.bankrow['bank_ifsc']
+        # print(bank_code,bank_name,self.custom_2.text_box_7.text)
 
-    anvil.server.call('emp_update_misc1',self.emp_code,self.custom_2.text_box_1.text,
+      anvil.server.call('emp_update_misc1',self.emp_code,self.custom_2.text_box_1.text,
                       self.custom_2.text_box_2.text,
                       self.custom_2.text_box_3.text,
                       self.custom_2.text_box_4.text,
@@ -198,36 +205,36 @@ class emp_more1(emp_more1Template):
                       self.custom_2.text_box_7.text,
                       self.custom_2.text_box_8.text)
 
-    print(self.emp_code,self.custom_3.image_1.source)
+      print(self.emp_code,self.custom_3.image_1.source)
 
-    if isinstance(self.custom_3.image_1.source, anvil.FileMedia):    
-      anvil.server.call('emp_update_misc2',self.emp_code,self.custom_3.image_1.source)   ## to be tested
-      anvil.server.call('emp_update_misc2b',self.emp_code,self.custom_3.image_1.source)   ## to be tested
+      if isinstance(self.custom_3.image_1.source, anvil.FileMedia):    
+        anvil.server.call('emp_update_misc2',self.emp_code,self.custom_3.image_1.source)   ## to be tested
+        anvil.server.call('emp_update_misc2b',self.emp_code,self.custom_3.image_1.source)   ## to be tested
 
-    if self.custom_4.radio_button_1.selected == True:
-      self.emp_otc = True
-    else:
-      self.emp_otc = False
+      if self.custom_4.radio_button_1.selected == True:
+        self.emp_otc = True
+      else:
+        self.emp_otc = False
 
-    if self.custom_4.radio_button_3.selected == True:
-      self.otrate = 1.0
-    if self.custom_4.radio_button_4.selected == True:
-      self.otrate = 1.5
-    if self.custom_4.radio_button_5.selected == True:
-      self.otrate = 2.0
-    if self.custom_4.radio_button_10.selected == True:
-     self.otrate = 0.0 
+      if self.custom_4.radio_button_3.selected == True:
+        self.otrate = 1.0
+      if self.custom_4.radio_button_4.selected == True:
+        self.otrate = 1.5
+      if self.custom_4.radio_button_5.selected == True:
+        self.otrate = 2.0
+      if self.custom_4.radio_button_10.selected == True:
+        self.otrate = 0.0 
 
-    if self.custom_4.radio_button_6.selected == True:
-      self.incrate = 1.0
-    if self.custom_4.radio_button_7.selected == True:
-      self.incrate = 1.5
-    if self.custom_4.radio_button_8.selected == True:
-      self.incrate = 2.0
-    if self.custom_4.radio_button_9.selected == True:
-     self.incrate = 0.0   
-    anvil.server.call('emp_update_misc3',self.emp_code,self.emp_otc,self.otrate,self.incrate)
-    self.button_1.enabled = False
-    Notification(self.emp_name+' [ '+self.emp_code+' ]' + " data saved successfully").show()
+      if self.custom_4.radio_button_6.selected == True:
+        self.incrate = 1.0
+      if self.custom_4.radio_button_7.selected == True:
+        self.incrate = 1.5
+      if self.custom_4.radio_button_8.selected == True:
+        self.incrate = 2.0
+      if self.custom_4.radio_button_9.selected == True:
+        self.incrate = 0.0   
+      anvil.server.call('emp_update_misc3',self.emp_code,self.emp_otc,self.otrate,self.incrate)
+      self.button_1.enabled = False
+      Notification(self.emp_name+' [ '+self.emp_code+' ]' + " data saved successfully").show()
 
  
