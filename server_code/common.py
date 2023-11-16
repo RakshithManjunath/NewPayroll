@@ -187,16 +187,25 @@ def get_transaction_columns(comp_details, comp_code):
   columns_after_modifying = column_names.copy()
   print("columns after modifying", columns_after_modifying)
 
-
+  emp_details_list = []
+  general_details_list = []
+  earnings_list = []
+  attendance_list = []
+  extra_hours_list = []
+  deductions_list = []
   for index,row in enumerate(columns_after_modifying):
     if row == 'trans_empid':
       columns_after_modifying[index] = 'Emp code'
+      emp_details_list.append('Emp code')
     elif row == 'trans_empname':
       columns_after_modifying[index] = 'Emp name'
+      emp_details_list.append('Emp name')
     elif row == 'trans_father_husband':
       columns_after_modifying[index] = 'Father/Husband name'
+      general_details_list.append('Father/Husband name')
     elif row == 'trans_empsex':
       columns_after_modifying[index] = 'Gender'
+      general_details_list.append('Gender')
     elif row == 'trans_empdob':
       columns_after_modifying[index] = 'Date of birth'
     elif row == 'trans_empdoj':
