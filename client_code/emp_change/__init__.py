@@ -103,75 +103,78 @@ class emp_change(emp_changeTemplate):
   
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    if self.text_box_1.text == "":
-      Notification("Employee name cannot be blank").show()
+    if (gvarb.g_curmonyear == False):
+      result = confirm("You can modify employee in current month only ! ok", buttons=["Yes"])
+      anvil.Notification("This is line 1").show()
+      anvil.Notification("This is line 2").show()
+      anvil.Notification("This is line 3").show()
+      open_form('emp_change')
     else:
-      if self.radio_button_1.selected == True:
-        self.emp_sex = "Male"
+      if self.text_box_1.text == "":
+        Notification("Employee name cannot be blank").show()
       else:
-        self.emp_sex = "Female"
+        if self.radio_button_1.selected == True:
+          self.emp_sex = "Male"
+        else:
+          self.emp_sex = "Female"
 
-      if self.radio_button_3.selected == True:
-        self.emp_type = "Staff"
-      else:
-        self.emp_type = "Worker"
+        if self.radio_button_3.selected == True:
+          self.emp_type = "Staff"
+        else:
+          self.emp_type = "Worker"
 
-      if self.custom_1.radio_button_1.selected == True:
-        self.emp_pfc = True
-      else:
-        self.emp_pfc = False
+        if self.custom_1.radio_button_1.selected == True:
+          self.emp_pfc = True
+        else:
+          self.emp_pfc = False
 
-      if self.custom_2.radio_button_1.selected == True:
-        self.emp_esic = True
-      else:
-        self.emp_esic = False
+        if self.custom_2.radio_button_1.selected == True:
+          self.emp_esic = True
+        else:
+          self.emp_esic = False
 
-      if self.custom_3.radio_button_1.selected == True:
-        self.emp_ptc = True
-      else:
-        self.emp_ptc = False
+        if self.custom_3.radio_button_1.selected == True:
+          self.emp_ptc = True
+        else:
+          self.emp_ptc = False
 
-      if self.custom_3.radio_button_3.selected == True:
-        self.emp_itc = True
-      else:
-        self.emp_itc = False
+        if self.custom_3.radio_button_3.selected == True:
+          self.emp_itc = True
+        else:
+          self.emp_itc = False
 
-      tb3_text = self.text_box_3.text
-      tb4_text = self.text_box_4.text
+        tb3_text = self.text_box_3.text
+        tb4_text = self.text_box_4.text
 
-      split_list_dept = tb3_text.split("|")
-      split_list_dept = [ele.strip() for ele in split_list_dept] 
-      dept_code,dept_name = split_list_dept[0],split_list_dept[1]
-      self.dept_code = dept_code
-
-      split_list_desi = tb4_text.split("|")
-      split_list_desi = [ele.strip() for ele in split_list_desi] 
-      desi_code,desi_name = split_list_desi[0],split_list_desi[1]
-      self.desi_code = desi_code
-      
-      if self.drop_down_2.selected_value != None:
-        split_list_dept = self.drop_down_2.selected_value.split("|")
+        split_list_dept = tb3_text.split("|")
         split_list_dept = [ele.strip() for ele in split_list_dept] 
         dept_code,dept_name = split_list_dept[0],split_list_dept[1]
+        self.dept_code = dept_code
 
-      if self.drop_down_3.selected_value != None:
-        split_list_desi = self.drop_down_3.selected_value.split("|")
+        split_list_desi = tb4_text.split("|")
         split_list_desi = [ele.strip() for ele in split_list_desi] 
         desi_code,desi_name = split_list_desi[0],split_list_desi[1]
-
-
-
-
-      
-      if self.row['emp_dept_code'] != dept_code:
-        self.dept_code = dept_code
-        self.text_box_3.text = dept_name
-
-      if self.row['emp_desi_code'] != desi_code:
         self.desi_code = desi_code
-        self.text_box_4.text = desi_name
+      
+        if self.drop_down_2.selected_value != None:
+          split_list_dept = self.drop_down_2.selected_value.split("|")
+          split_list_dept = [ele.strip() for ele in split_list_dept] 
+          dept_code,dept_name = split_list_dept[0],split_list_dept[1]
 
-      anvil.server.call('emp_update2_row', self.emp_code, 
+        if self.drop_down_3.selected_value != None:
+          split_list_desi = self.drop_down_3.selected_value.split("|")
+          split_list_desi = [ele.strip() for ele in split_list_desi] 
+          desi_code,desi_name = split_list_desi[0],split_list_desi[1]
+      
+        if self.row['emp_dept_code'] != dept_code:
+          self.dept_code = dept_code
+          self.text_box_3.text = dept_name
+
+        if self.row['emp_desi_code'] != desi_code:
+          self.desi_code = desi_code
+          self.text_box_4.text = desi_name
+
+        anvil.server.call('emp_update2_row', self.emp_code, 
                                       self.text_box_1.text,
                                       self.text_box_2.text,
                     self.date_picker_1.date,
@@ -193,13 +196,13 @@ class emp_change(emp_changeTemplate):
                     self.text_box_4.text
                     )
 
-      # print(self.dept_code,self.text_box_3.text)
-      # print(self.desi_code,self.text_box_4.text)
-      # print(self.emp_esic,self.custom_2.text_box_1.text,self.custom_2.text_box_2.text)
+        # print(self.dept_code,self.text_box_3.text)
+        # print(self.desi_code,self.text_box_4.text)
+        # print(self.emp_esic,self.custom_2.text_box_1.text,self.custom_2.text_box_2.text)
             
-      Notification(self.text_box_1.text+' [ '+self.emp_code+' ]' + " data saved successfully").show()
-      self.drop_down_1.visible=True
-      open_form('emp_change')
+        Notification(self.text_box_1.text+' [ '+self.emp_code+' ]' + " data saved successfully").show()
+        self.drop_down_1.visible=True
+        open_form('emp_change')
 
   def link_1_click(self, **event_args):
     """This method is called when the link is clicked"""
