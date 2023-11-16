@@ -283,7 +283,6 @@ def get_transaction_columns(comp_details, comp_code):
       columns_after_modifying[index] = 'Attn bonus rate' 
       general_details_list.append('Attn bonus rate')  
 
-    
     elif row == 'trans_mandays':
       columns_after_modifying[index] = 'Mandays'
       attendance_list.append('Mandays')      
@@ -309,21 +308,38 @@ def get_transaction_columns(comp_details, comp_code):
       columns_after_modifying[index] = 'Incentive Hrs' 
       attendance_list.append('Incentive Hrs')
 
-    
+    elif row == 'pf_amt':
+      columns_after_modifying[index] = 'PF Amt'
+      deductions_list.append('PF Amt')
+    elif row == 'fpf_amt':
+      columns_after_modifying[index] = 'FPF Amt' 
+      deductions_list.append('FPF Amt')      
+    elif row == 'esi_amt':
+      columns_after_modifying[index] = 'ESI Amt'
+      deductions_list.append('ESI Amt')
+    elif row == 'pt_amt':
+      columns_after_modifying[index] = 'PT Amt'   
+      deductions_list.append('PT Amt')     
     elif row == 'trans_adv':
-      columns_after_modifying[index] = 'Advance' 
+      columns_after_modifying[index] = 'Advance'
+      deductions_list.append('Advance')
     elif row == 'trans_tds':
       columns_after_modifying[index] = 'TDS' 
+      deductions_list.append('TDS')
     elif row == 'trans_pfvol':
       columns_after_modifying[index] = 'PF Voluantary' 
+      deductions_list.append('PF Voluantary')
     elif row == 'trans_lic':
-      columns_after_modifying[index] = 'LIC' 
+      columns_after_modifying[index] = 'LIC'
+      deductions_list.append('LIC')
+
+ 
+
+
     elif row == 'trans_arr_esipt':
       columns_after_modifying[index] = 'Arrears esi pt' 
     elif row == 'trans_arr_pf':
       columns_after_modifying[index] = 'Arrears pf' 
-
-
     elif row == 'trans_earn_attn_bonus':
       columns_after_modifying[index] = 'Attn bonus earned' 
     elif row == 'fxd_earn_gross':
@@ -344,16 +360,6 @@ def get_transaction_columns(comp_details, comp_code):
       columns_after_modifying[index] = 'IT salary'   
     elif row == 'earn_bonus_salary':
       columns_after_modifying[index] = 'Bonus salary'   
-    elif row == 'pf_amt':
-      columns_after_modifying[index] = 'PF Amt'
-      deductions_list.append('PF Amt')
-    elif row == 'fpf_amt':
-      columns_after_modifying[index] = 'FPF Amt'   
-    elif row == 'esi_amt':
-      columns_after_modifying[index] = 'ESI Amt'
-      deductions_list.append('ESI Amt')
-    elif row == 'pt_amt':
-      columns_after_modifying[index] = 'PT Amt'   
     elif row == 'ot_amt':
       columns_after_modifying[index] = 'OT Amt'   
     elif row == 'it_or_tds_amt':

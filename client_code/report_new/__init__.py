@@ -55,8 +55,6 @@ class report_new(report_newTemplate):
     for name in general_details_list:
       checkbox = anvil.CheckBox(text=name,checked=True)
       flow_panel_general_details.add_component(checkbox)
-    
-
 
     flow_panel_attendance_details = anvil.FlowPanel()
     flow_panel_attendance_details.add_component(anvil.Label(text="Attendance"))
@@ -65,6 +63,14 @@ class report_new(report_newTemplate):
     for name in attendance_list:
       checkbox = anvil.CheckBox(text=name,checked=True)
       flow_panel_attendance_details.add_component(checkbox)
+
+    flow_panel_deduction_details = anvil.FlowPanel()
+    flow_panel_deduction_details.add_component(anvil.Label(text="Deductions"))
+    flow_panel_deduction_details.add_component(anvil.Spacer())
+    self.col_panel.add_component(flow_panel_deduction_details)
+    for name in deductions_list:
+      checkbox = anvil.CheckBox(text=name,checked=True)
+      flow_panel_deduction_details.add_component(checkbox)
     self.add_component(self.col_panel)
 
     
