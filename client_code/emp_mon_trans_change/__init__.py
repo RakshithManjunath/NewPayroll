@@ -181,8 +181,15 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    transid = anvil.server.call('trans_get_next_string_value')
-    # date = anvil.server.call('cur_trans_date')
+    if (gvarb.g_curmonyear == False):
+      result = confirm("You can modify transaction in current month only ! ok", buttons=["Yes"])
+      # anvil.Notification("This is line 1").show()
+      # anvil.Notification("This is line 2").show()
+      # anvil.Notification("This is line 3").show()
+      open_form('emp_mon_trans_change')
+    else:    
+      transid = anvil.server.call('trans_get_next_string_value')
+      # date = anvil.server.call('cur_trans_date')
     
     # anvil.server.call('emp_to_trans_transfer', transid, date[0],
     #                   self.emp_code,self.emp_name,self.fat_has_na,
@@ -203,7 +210,7 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
     #                  self.custom_2.text_box_10.text,
     #                  self.custom_3.text_box_1.text,self.custom_3.text_box_2.text)
 
-    anvil.server.call('trans_change_update', self.row['trans_empid'],
+      anvil.server.call('trans_change_update', self.row['trans_empid'],
                      self.custom_1.text_box_1.text,self.custom_1.text_box_2.text,self.custom_1.text_box_3.text,
                      self.custom_1.text_box_4.text,self.custom_1.text_box_5.text,self.custom_1.text_box_6.text,
                      self.custom_1.text_box_7.text,self.custom_1.text_box_8.text,self.custom_1.text_box_9.text,
@@ -214,33 +221,33 @@ class emp_mon_trans_change(emp_mon_trans_changeTemplate):
                      self.custom_2.text_box_10.text,
                      self.custom_3.text_box_1.text,self.custom_3.text_box_2.text,self.custom_1.text_box_11.text)
 
-    earn1,earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10 = anvil.server.call('earn_cal',self.row['trans_comp_code'],self.row['trans_empid'])
-    anvil.server.call('update_earn',self.row['trans_comp_code'],self.row['trans_empid'],earn1,
+      earn1,earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10 = anvil.server.call('earn_cal',self.row['trans_comp_code'],self.row['trans_empid'])
+      anvil.server.call('update_earn',self.row['trans_comp_code'],self.row['trans_empid'],earn1,
                      earn2,earn3,earn4,earn5,earn6,earn7,earn8,earn9,earn10)
     
-    eattn_bonus = anvil.server.call('attn_bonus',self.row['trans_comp_code'],self.row['trans_empid'])
-    anvil.server.call('update_earn_att_bonus',self.row['trans_comp_code'],self.row['trans_empid'],eattn_bonus)
+      eattn_bonus = anvil.server.call('attn_bonus',self.row['trans_comp_code'],self.row['trans_empid'])
+      anvil.server.call('update_earn_att_bonus',self.row['trans_comp_code'],self.row['trans_empid'],eattn_bonus)
    
-    pfsal,pfamt,fpfamt = anvil.server.call('pf_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
-    anvil.server.call('update_pfsalary',self.row['trans_comp_code'],self.row['trans_empid'],pfsal,pfamt,fpfamt)   
+      pfsal,pfamt,fpfamt = anvil.server.call('pf_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
+      anvil.server.call('update_pfsalary',self.row['trans_comp_code'],self.row['trans_empid'],pfsal,pfamt,fpfamt)   
 
-    esisal = anvil.server.call('esi_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
-    anvil.server.call('update_esisalary',self.row['trans_comp_code'],self.row['trans_empid'],esisal)  
+      esisal = anvil.server.call('esi_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
+      anvil.server.call('update_esisalary',self.row['trans_comp_code'],self.row['trans_empid'],esisal)  
 
-    ptsal = anvil.server.call('pt_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
-    anvil.server.call('update_ptsalary',self.row['trans_comp_code'],self.row['trans_empid'],ptsal) 
+      ptsal = anvil.server.call('pt_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
+      anvil.server.call('update_ptsalary',self.row['trans_comp_code'],self.row['trans_empid'],ptsal) 
 
-    otsal,ot_amt = anvil.server.call('ot_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
-    anvil.server.call('update_otsalary',self.row['trans_comp_code'],self.row['trans_empid'],otsal,ot_amt) 
+      otsal,ot_amt = anvil.server.call('ot_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
+      anvil.server.call('update_otsalary',self.row['trans_comp_code'],self.row['trans_empid'],otsal,ot_amt) 
 
-    itsal = anvil.server.call('it_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
-    anvil.server.call('update_itsalary',self.row['trans_comp_code'],self.row['trans_empid'],itsal) 
+      itsal = anvil.server.call('it_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
+      anvil.server.call('update_itsalary',self.row['trans_comp_code'],self.row['trans_empid'],itsal) 
 
-    bns_sal,bonus_amt = anvil.server.call('bonus_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
-    anvil.server.call('update_bonus_salary',self.row['trans_comp_code'],self.row['trans_empid'],bns_sal,bonus_amt) 
+      bns_sal,bonus_amt = anvil.server.call('bonus_calculaton',self.row['trans_comp_code'],self.row['trans_empid'])
+      anvil.server.call('update_bonus_salary',self.row['trans_comp_code'],self.row['trans_empid'],bns_sal,bonus_amt) 
     
-    #Notification(self.emp_name + " transaction data modified successfully").show()
-    Notification(self.emp_name+' [ '+self.emp_code+' ]' + " data saved successfully").show()
+      #Notification(self.emp_name + " transaction data modified successfully").show()
+      Notification(self.emp_name+' [ '+self.emp_code+' ]' + " data saved successfully").show()
 
     
    
