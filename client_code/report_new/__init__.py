@@ -55,7 +55,7 @@ class report_new(report_newTemplate):
     for name in general_details_list:
       checkbox = anvil.CheckBox(text=name,checked=True)
       flow_panel_general_details.add_component(checkbox)
-    self.add_component(self.col_panel)
+    
 
 
     flow_panel_attendance_details = anvil.FlowPanel()
