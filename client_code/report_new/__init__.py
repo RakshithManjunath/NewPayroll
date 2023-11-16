@@ -22,7 +22,7 @@ class report_new(report_newTemplate):
     ###########################################################
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
 
-    self.columns,self.unmodified_cols = anvil.server.call('get_transaction_columns', comp_details,gvarb.g_comcode)
+    self.columns,self.unmodified_cols,emp_details_list, general_details_list, attendance_list, extra_hours_list, deductions_list = anvil.server.call('get_transaction_columns', comp_details,gvarb.g_comcode)
     print("Original cols: ", self.unmodified_cols)
     print("Modified cols: ", self.columns)
 
@@ -30,18 +30,44 @@ class report_new(report_newTemplate):
 
     self.col_panel = anvil.ColumnPanel()
 
-    flow_panel = anvil.FlowPanel()
-    self.col_panel.add_component(flow_panel)
-    for i in range(len(self.columns)):
-      if self.columns[i] == 'Emp code' or self.columns[i] == 'Emp name' or self.columns[i] == 'Sl no':
-        checkbox = CheckBox(text=self.columns[i], checked=True)  
-        flow_panel.add_component(checkbox)
-      else:
-        checkbox = CheckBox(text=self.columns[i], checked=False)  
-        flow_panel.add_component(checkbox)
-    # self.add_component(flow_panel)
+    # flow_panel = anvil.FlowPanel()
+    # self.col_panel.add_component(flow_panel)
+    # for i in range(len(self.columns)):
+    #   if self.columns[i] == 'Emp code' or self.columns[i] == 'Emp name' or self.columns[i] == 'Sl no':
+    #     checkbox = CheckBox(text=self.columns[i], checked=True)  
+    #     flow_panel.add_component(checkbox)
+    #   else:
+    #     checkbox = CheckBox(text=self.columns[i], checked=False)  
+    #     flow_panel.add_component(checkbox)
+    # # self.add_component(flow_panel)
+    # self.add_component(self.col_panel)
+    
+    flow_panel_emp_details = anvil.FlowPanel()
+    self.col_panel.add_component(flow_panel_emp_details)
+    for name in emp_details_list:
+      checkbox = anvil.CheckBox(text=name,checked=True)
+      flow_panel_emp_details.add_component(checkbox)
+
+    flow_panel_general_details = anvil.FlowPanel()
+    flow_panel_general_details.add_component(anvil.Label(text="General"))
+    flow_panel_general_details.add_component(anvil.Spacer())
+    self.col_panel.add_component(flow_panel_general_details)
+    for name in general_details_list:
+      checkbox = anvil.CheckBox(text=name,checked=True)
+      flow_panel_general_details.add_component(checkbox)
     self.add_component(self.col_panel)
 
+
+    flow_panel_attendance_details = anvil.FlowPanel()
+    flow_panel_attendance_details.add_component(anvil.Label(text="Attendance"))
+    flow_panel_attendance_details.add_component(anvil.Spacer())
+    self.col_panel.add_component(flow_panel_attendance_details)
+    for name in attendance_list:
+      checkbox = anvil.CheckBox(text=name,checked=True)
+      flow_panel_attendance_details.add_component(checkbox)
+    self.add_component(self.col_panel)
+
+    
     # Dynamically create set all button
     button_set = anvil.Button(text="set all sellection")
     button_set.role = 'filled-button'

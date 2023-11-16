@@ -200,6 +200,7 @@ def get_transaction_columns(comp_details, comp_code):
     elif row == 'trans_empname':
       columns_after_modifying[index] = 'Emp name'
       emp_details_list.append('Emp name')
+      
     elif row == 'trans_father_husband':
       columns_after_modifying[index] = 'Father/Husband name'
       general_details_list.append('Father/Husband name')
@@ -208,48 +209,107 @@ def get_transaction_columns(comp_details, comp_code):
       general_details_list.append('Gender')
     elif row == 'trans_empdob':
       columns_after_modifying[index] = 'Date of birth'
+      general_details_list.append('Date of birth')
     elif row == 'trans_empdoj':
       columns_after_modifying[index] = 'Date join'
+      general_details_list.append('Date join')
     elif row == 'trans_emptype':
       columns_after_modifying[index] = 'Emp type'
+      general_details_list.append('Emp type')  
     elif row == 'trans_deptname':
-      columns_after_modifying[index] = 'Department' 
+      columns_after_modifying[index] = 'Department'
+      general_details_list.append('Department')  
     elif row == 'trans_desiname':
-      columns_after_modifying[index] = 'Designation' 
+      columns_after_modifying[index] = 'Designation'
+      general_details_list.append('Designation')  
     elif row == 'trans_emppfc':
       columns_after_modifying[index] = 'PF contri' 
+      general_details_list.append('PF contri')  
     elif row == 'trans_emppfno':
       columns_after_modifying[index] = 'PF No' 
+      general_details_list.append('PF No')  
     elif row == 'trans_emp_pfuan':
       columns_after_modifying[index] = 'PF UAN' 
+      general_details_list.append('PF UAN')  
     elif row == 'trans_empesic':
       columns_after_modifying[index] = 'ESI contri' 
+      general_details_list.append('ESI contri')  
     elif row == 'trans_empesino':
       columns_after_modifying[index] = 'ESI number' 
+      general_details_list.append('ESI contri')  
     elif row == 'trans_empdispensary':
-      columns_after_modifying[index] = 'Dispensary name' 
+      columns_after_modifying[index] = 'Dispensary name'
+      general_details_list.append('Dispensary name')  
     elif row == 'trans_empptc':
       columns_after_modifying[index] = 'PT contri' 
+      general_details_list.append('PT contri')  
     elif row == 'trans_empitc':
-      columns_after_modifying[index] = 'IT contri' 
+      columns_after_modifying[index] = 'IT contri'
+      general_details_list.append('IT contri')  
     elif row == 'trans_emppan':
-      columns_after_modifying[index] = 'PAN' 
+      columns_after_modifying[index] = 'PAN'
+      general_details_list.append('PAN')  
+    elif row == 'trans_phone_number':
+      columns_after_modifying[index] = 'Phone number' 
+      general_details_list.append('Phone number')  
+    elif row == 'trans_alt_phone_number':
+      columns_after_modifying[index] = 'Alt Phone number' 
+      general_details_list.append('Alt Phone number')  
+    elif row == 'trans_email_address':
+      columns_after_modifying[index] = 'Email address' 
+      general_details_list.append('Email address')  
+    elif row == 'trans_aadhar_number':
+      columns_after_modifying[index] = 'Aadhar number' 
+      general_details_list.append('PAN')  
+    elif row == 'trans_empbank':
+      columns_after_modifying[index] = 'Bank'
+      general_details_list.append('Bank')  
+    elif row == 'trans_empbank_ifsc':
+      columns_after_modifying[index] = 'IFSC'
+      general_details_list.append('IFSC')  
+    elif row == 'trans_empbank_acno':
+      columns_after_modifying[index] = 'Account no'
+      general_details_list.append('Account no')  
+    elif row == 'trans_emp_otc':
+      columns_after_modifying[index] = 'OT eligibility'
+      general_details_list.append('OT eligibility')  
+    elif row == 'trans_emp_otrate':
+      columns_after_modifying[index] = 'OT rate'
+      general_details_list.append('OT rate')  
+    elif row == 'trans_emp_incrate':
+      columns_after_modifying[index] = 'Incentive rate'     
+      general_details_list.append('Incentive rate')  
+    elif row == 'trans_attn_bonus':
+      columns_after_modifying[index] = 'Attn bonus rate' 
+      general_details_list.append('Attn bonus rate')  
+
+    
     elif row == 'trans_mandays':
-      columns_after_modifying[index] = 'Mandays' 
+      columns_after_modifying[index] = 'Mandays'
+      attendance_list.append('Mandays')      
     elif row == 'trans_wo':
       columns_after_modifying[index] = 'Weekly Off' 
+      attendance_list.append('Weekly Off')
     elif row == 'trans_ph':
       columns_after_modifying[index] = 'Paid Holiday' 
+      attendance_list.append('Paid Holiday')      
     elif row == 'trans_layoff':
-      columns_after_modifying[index] = 'Lay Off' 
+      columns_after_modifying[index] = 'Lay Off'
+      attendance_list.append('Lay Off')
     elif row == 'trans_absent':
-      columns_after_modifying[index] = 'Absent' 
+      columns_after_modifying[index] = 'Absent'
+      attendance_list.append('Absent')
     elif row == 'trans_paid_days':
       columns_after_modifying[index] = 'Paid days' 
+      attendance_list.append('Paid days')
     elif row == 'trans_othrs':
-      columns_after_modifying[index] = 'OT Hrs' 
+      columns_after_modifying[index] = 'OT Hrs'
+      attendance_list.append('OT Hrs')
     elif row == 'trans_inchrs':
       columns_after_modifying[index] = 'Incentive Hrs' 
+      attendance_list.append('Incentive Hrs')
+
+    
     elif row == 'trans_adv':
       columns_after_modifying[index] = 'Advance' 
     elif row == 'trans_tds':
@@ -262,16 +322,8 @@ def get_transaction_columns(comp_details, comp_code):
       columns_after_modifying[index] = 'Arrears esi pt' 
     elif row == 'trans_arr_pf':
       columns_after_modifying[index] = 'Arrears pf' 
-    elif row == 'trans_phone_number':
-      columns_after_modifying[index] = 'Phone number' 
-    elif row == 'trans_alt_phone_number':
-      columns_after_modifying[index] = 'Alt Phone number' 
-    elif row == 'trans_email_address':
-      columns_after_modifying[index] = 'Email address' 
-    elif row == 'trans_aadhar_number':
-      columns_after_modifying[index] = 'Aadhar number' 
-    elif row == 'trans_attn_bonus':
-      columns_after_modifying[index] = 'Attn bonus' 
+
+
     elif row == 'trans_earn_attn_bonus':
       columns_after_modifying[index] = 'Attn bonus earned' 
     elif row == 'fxd_earn_gross':
@@ -293,11 +345,13 @@ def get_transaction_columns(comp_details, comp_code):
     elif row == 'earn_bonus_salary':
       columns_after_modifying[index] = 'Bonus salary'   
     elif row == 'pf_amt':
-      columns_after_modifying[index] = 'PF Amt'   
+      columns_after_modifying[index] = 'PF Amt'
+      deductions_list.append('PF Amt')
     elif row == 'fpf_amt':
       columns_after_modifying[index] = 'FPF Amt'   
     elif row == 'esi_amt':
-      columns_after_modifying[index] = 'ESI Amt'   
+      columns_after_modifying[index] = 'ESI Amt'
+      deductions_list.append('ESI Amt')
     elif row == 'pt_amt':
       columns_after_modifying[index] = 'PT Amt'   
     elif row == 'ot_amt':
@@ -306,25 +360,15 @@ def get_transaction_columns(comp_details, comp_code):
       columns_after_modifying[index] = 'TDS repeated'   
     elif row == 'bonus_amt':
       columns_after_modifying[index] = 'Bonus Amt'   
-    elif row == 'trans_empbank':
-      columns_after_modifying[index] = 'Bank'
-    elif row == 'trans_empbank_ifsc':
-      columns_after_modifying[index] = 'IFSC'
-    elif row == 'trans_empbank_acno':
-      columns_after_modifying[index] = 'Account no'
-    elif row == 'trans_emp_otc':
-      columns_after_modifying[index] = 'OT eligibility'
-    elif row == 'trans_emp_otrate':
-      columns_after_modifying[index] = 'OT rate' 
-    elif row == 'trans_emp_incrate':
-      columns_after_modifying[index] = 'Incentive rate' 
   
   # column_names.insert(0,'Sl no')
   unmodified_cols.insert(0,'Sl no')
 
   columns_after_modifying.insert(0, 'Sl no')
 
-  return columns_after_modifying,unmodified_cols
+  emp_details_list.insert(0, 'Sl no')
+
+  return columns_after_modifying,unmodified_cols, emp_details_list, general_details_list, attendance_list, extra_hours_list, deductions_list
   
   # return column_names, unmodified_cols
 
