@@ -342,33 +342,44 @@ def get_transaction_columns(comp_details, comp_code):
     elif row == 'trans_earn_attn_bonus':
       columns_after_modifying[index] = 'Attn bonus earned' 
       earnings_list .append('Attn bonus earned')  
+    elif row == 'fxd_earn_gross':
+      columns_after_modifying[index] = 'Fixed Gross'  
+      earnings_list .append('Fixed Gross')  
+    elif row == 'earn_pf_salary':
+      columns_after_modifying[index] = 'PF salary'
+      earnings_list .append('PF salary')  
+    elif row == 'earn_fpf_salary':
+      columns_after_modifying[index] = 'FPF salary'
+      earnings_list .append('FPF salary')  
+    elif row == 'earn_esi_salary':
+      columns_after_modifying[index] = 'ESI salary'
+      earnings_list .append('ESI salary')  
+    elif row == 'earn_esi_salary':
+      columns_after_modifying[index] = 'ESI salary' 
+      earnings_list .append('ESI salary')  
+    elif row == 'earn_pt_salary':
+      columns_after_modifying[index] = 'PT salary'
+      earnings_list .append('PT salary')  
+    elif row == 'earn_ot_salary':
+      columns_after_modifying[index] = 'OT salary' 
+      earnings_list .append('OT salary')  
+    elif row == 'earn_it_salary':
+      columns_after_modifying[index] = 'IT salary' 
+      earnings_list .append('IT salary')  
+    elif row == 'earn_bonus_salary':
+      columns_after_modifying[index] = 'Bonus salary' 
+      earnings_list .append('Bonus salary')  
+    elif row == 'ot_amt':
+      columns_after_modifying[index] = 'OT Amt' 
+      earnings_list .append('OT Amt')  
+    elif row == 'bonus_amt':
+      columns_after_modifying[index] = 'Bonus Amt' 
+      earnings_list .append('Bonus Amt')  
 
     
-    elif row == 'fxd_earn_gross':
-      columns_after_modifying[index] = 'Fixed Gross'   
-    elif row == 'earn_pf_salary':
-      columns_after_modifying[index] = 'PF salary'   
-    elif row == 'earn_fpf_salary':
-      columns_after_modifying[index] = 'FPF salary'   
-    elif row == 'earn_esi_salary':
-      columns_after_modifying[index] = 'ESI salary'   
-    elif row == 'earn_esi_salary':
-      columns_after_modifying[index] = 'ESI salary'   
-    elif row == 'earn_pt_salary':
-      columns_after_modifying[index] = 'PT salary'   
-    elif row == 'earn_ot_salary':
-      columns_after_modifying[index] = 'OT salary'   
-    elif row == 'earn_it_salary':
-      columns_after_modifying[index] = 'IT salary'   
-    elif row == 'earn_bonus_salary':
-      columns_after_modifying[index] = 'Bonus salary'   
-    elif row == 'ot_amt':
-      columns_after_modifying[index] = 'OT Amt'   
     elif row == 'it_or_tds_amt':
       columns_after_modifying[index] = 'TDS repeated'   
-    elif row == 'bonus_amt':
-      columns_after_modifying[index] = 'Bonus Amt'   
-  
+
   # column_names.insert(0,'Sl no')
   unmodified_cols.insert(0,'Sl no')
 
