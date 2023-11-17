@@ -333,15 +333,17 @@ def get_transaction_columns(comp_details, comp_code):
       columns_after_modifying[index] = 'LIC'
       deductions_list.append('LIC')
 
- 
-
-
     elif row == 'trans_arr_esipt':
       columns_after_modifying[index] = 'Arrears esi pt' 
+      earnings_list .append('Arrears esi pt')
     elif row == 'trans_arr_pf':
       columns_after_modifying[index] = 'Arrears pf' 
+      earnings_list .append('Arrears pf')
     elif row == 'trans_earn_attn_bonus':
       columns_after_modifying[index] = 'Attn bonus earned' 
+      earnings_list .append('Attn bonus earned')  
+
+    
     elif row == 'fxd_earn_gross':
       columns_after_modifying[index] = 'Fixed Gross'   
     elif row == 'earn_pf_salary':
@@ -374,7 +376,7 @@ def get_transaction_columns(comp_details, comp_code):
 
   emp_details_list.insert(0, 'Sl no')
 
-  return columns_after_modifying,unmodified_cols, emp_details_list, general_details_list, attendance_list, extra_hours_list, deductions_list
+  return columns_after_modifying,unmodified_cols, emp_details_list, general_details_list, attendance_list, earnings_list, deductions_list
   
   # return column_names, unmodified_cols
 
@@ -476,10 +478,12 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
 
       elif selected_col == "fxd_earn_gross":
         formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
-        filtered_row[selected_col] = formatted_rupees       
+        filtered_row[selected_col] = formatted_rupees 
+        
       elif selected_col == "earn_pf_salary":
         formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
-        filtered_row[selected_col] = formatted_rupees 
+        filtered_row[selected_col] = formatted_rupees
+        
       elif selected_col == "earn_fpf_salary":
         formatted_rupees = "₹ {:,.2f}".format(record[selected_col])
         filtered_row[selected_col] = formatted_rupees 

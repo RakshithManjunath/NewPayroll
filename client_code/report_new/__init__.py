@@ -22,7 +22,7 @@ class report_new(report_newTemplate):
     ###########################################################
     comp_details = anvil.server.call('comp_get_details', gvarb.g_comcode)
 
-    self.columns,self.unmodified_cols,emp_details_list, general_details_list, attendance_list, extra_hours_list, deductions_list = anvil.server.call('get_transaction_columns', comp_details,gvarb.g_comcode)
+    self.columns,self.unmodified_cols,emp_details_list, general_details_list, attendance_list, earnings_list, deductions_list = anvil.server.call('get_transaction_columns', comp_details,gvarb.g_comcode)
     print("Original cols: ", self.unmodified_cols)
     print("Modified cols: ", self.columns)
 
@@ -63,6 +63,14 @@ class report_new(report_newTemplate):
     for name in attendance_list:
       checkbox = anvil.CheckBox(text=name,checked=True)
       flow_panel_attendance_details.add_component(checkbox)
+
+    flow_panel_earnings_details = anvil.FlowPanel()
+    flow_panel_earnings_details.add_component(anvil.Label(text="Earings"))
+    flow_panel_earnings_details.add_component(anvil.Spacer())
+    self.col_panel.add_component(flow_panel_earnings_details)
+    for name in  earnings_list:
+      checkbox = anvil.CheckBox(text=name,checked=True)
+      flow_panel_earnings_details.add_component(checkbox)    
 
     flow_panel_deduction_details = anvil.FlowPanel()
     flow_panel_deduction_details.add_component(anvil.Label(text="Deductions"))
