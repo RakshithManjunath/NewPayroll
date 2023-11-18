@@ -49,9 +49,10 @@ class report_new(report_newTemplate):
       flow_panel_emp_details.add_component(checkbox)
 
     flow_panel_general_details = anvil.FlowPanel()
-    label = anvil.Label(text="General")
-    label.tag.add_class('bold-text')  # Add a custom CSS class for bold text    
-    flow_panel_general_details.add_component(anvil.Label(text="General"))
+
+    
+
+    flow_panel_general_details.add_component(anvil.Label(text="General",bold=True,role="title"))
     flow_panel_general_details.add_component(anvil.Spacer())
     self.col_panel.add_component(flow_panel_general_details)
     for name in general_details_list:
