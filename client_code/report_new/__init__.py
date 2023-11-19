@@ -128,13 +128,13 @@ class report_new(report_newTemplate):
     flow_panel_with_boxes = col_panel[-1].get_components()
     all_flow_components = [component for component in flow_panel_with_boxes if isinstance(component, anvil.FlowPanel)]
     print("All flow components", all_flow_components)
+    selected_boxes = []
+    modified_col_names = []
     for flow_panel in all_flow_components:
       flow_component_with_checkboxes = flow_panel.get_components()
       print("Components in flow panel ", flow_component_with_checkboxes)
       only_checkboxes = [component for component in flow_component_with_checkboxes if isinstance(component, anvil.CheckBox)]
       print("Only Checkboxes", only_checkboxes)
-      selected_boxes = []
-      modified_col_names = []
       for checkbox in only_checkboxes:
         if checkbox.checked and checkbox.text not in self.unmodified_cols:
           print("Selected and not in og list: ",checkbox.text)
