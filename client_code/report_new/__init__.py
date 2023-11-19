@@ -104,14 +104,15 @@ class report_new(report_newTemplate):
   # Attach a click listener
   def dynamic_button_set_click(self, **event_args):
     all_components = self.get_components()
-    
     col_panel = [component for component in all_components if isinstance(component, anvil.ColumnPanel)]
     flow_panel_with_boxes = col_panel[-1].get_components()
     all_flow_components = [component for component in flow_panel_with_boxes if isinstance(component, anvil.FlowPanel)]
-    flow_component_with_checkboxes = all_flow_components[-1].get_components()
-    only_checkboxes = [component for component in flow_component_with_checkboxes if isinstance(component, anvil.CheckBox)]
-    for checkbox in only_checkboxes:
-      checkbox.checked = True
+    for flow_panel in all_flow_components:
+      flow_component_with_checkboxes = flow_panel.get_components()
+      print("Flow component with checkbox", flow_component_with_checkboxes)
+      only_checkboxes = [component for component in flow_component_with_checkboxes if isinstance(component, anvil.CheckBox)]
+      for checkbox in only_checkboxes:
+        checkbox.checked = True
 
   # Attach a click listener
   def dynamic_button_clear_click(self, **event_args):
@@ -126,20 +127,24 @@ class report_new(report_newTemplate):
     col_panel = [component for component in all_components if isinstance(component, anvil.ColumnPanel)]
     flow_panel_with_boxes = col_panel[-1].get_components()
     all_flow_components = [component for component in flow_panel_with_boxes if isinstance(component, anvil.FlowPanel)]
-    flow_component_with_checkboxes = all_flow_components[-1].get_components()
-    only_checkboxes = [component for component in flow_component_with_checkboxes if isinstance(component, anvil.CheckBox)]
-    selected_boxes = []
-    modified_col_names = []
-    for checkbox in only_checkboxes:
-      if checkbox.checked and checkbox.text not in self.unmodified_cols:
-        print("Selected and not in og list: ",checkbox.text)
-        pos = self.columns.index(checkbox.text)
-        print("corresponding unmodified value ",self.unmodified_cols[pos])
-        selected_boxes.append(self.unmodified_cols[pos])
-        modified_col_names.append(checkbox.text)
-      elif checkbox.checked and checkbox.text in self.unmodified_cols:
-        selected_boxes.append(checkbox.text)
-        modified_col_names.append(checkbox.text)
+    print("All flow components", all_flow_components)
+    for flow_panel in all_flow_components:
+      flow_component_with_checkboxes = flow_panel.get_components()
+      print("Components in flow panel ", flow_component_with_checkboxes)
+      only_checkboxes = [component for component in flow_component_with_checkboxes if isinstance(component, anvil.CheckBox)]
+      print("Only Checkboxes", only_checkboxes)
+      selected_boxes = []
+      modified_col_names = []
+      for checkbox in only_checkboxes:
+        if checkbox.checked and checkbox.text not in self.unmodified_cols:
+          print("Selected and not in og list: ",checkbox.text)
+          pos = self.columns.index(checkbox.text)
+          print("corresponding unmodified value ",self.unmodified_cols[pos])
+          selected_boxes.append(self.unmodified_cols[pos])
+          modified_col_names.append(checkbox.text)
+        elif checkbox.checked and checkbox.text in self.unmodified_cols:
+          selected_boxes.append(checkbox.text)
+          modified_col_names.append(checkbox.text)
         
     ############################################
     # grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes,modified_col_names)
