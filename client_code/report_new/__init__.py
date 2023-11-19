@@ -50,8 +50,6 @@ class report_new(report_newTemplate):
 
     flow_panel_general_details = anvil.FlowPanel()
 
-    
-
     flow_panel_general_details.add_component(anvil.Label(text="General",bold=True,role="title"))
     flow_panel_general_details.add_component(anvil.Spacer())
     self.col_panel.add_component(flow_panel_general_details)
@@ -60,7 +58,7 @@ class report_new(report_newTemplate):
       flow_panel_general_details.add_component(checkbox)
 
     flow_panel_attendance_details = anvil.FlowPanel()
-    flow_panel_attendance_details.add_component(anvil.Label(text="Attendance"))
+    flow_panel_attendance_details.add_component(anvil.Label(text="Attendance",bold=True,role="title"))
     flow_panel_attendance_details.add_component(anvil.Spacer())
     self.col_panel.add_component(flow_panel_attendance_details)
     for name in attendance_list:
@@ -68,7 +66,7 @@ class report_new(report_newTemplate):
       flow_panel_attendance_details.add_component(checkbox)
 
     flow_panel_earnings_details = anvil.FlowPanel()
-    flow_panel_earnings_details.add_component(anvil.Label(text="Earings"))
+    flow_panel_earnings_details.add_component(anvil.Label(text="Earings",bold=True,role="title"))
     flow_panel_earnings_details.add_component(anvil.Spacer())
     self.col_panel.add_component(flow_panel_earnings_details)
     for name in  earnings_list:
@@ -76,7 +74,7 @@ class report_new(report_newTemplate):
       flow_panel_earnings_details.add_component(checkbox)    
 
     flow_panel_deduction_details = anvil.FlowPanel()
-    flow_panel_deduction_details.add_component(anvil.Label(text="Deductions"))
+    flow_panel_deduction_details.add_component(anvil.Label(text="Deductions",bold=True,role="title"))
     flow_panel_deduction_details.add_component(anvil.Spacer())
     self.col_panel.add_component(flow_panel_deduction_details)
     for name in deductions_list:

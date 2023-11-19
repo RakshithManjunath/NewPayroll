@@ -96,10 +96,11 @@ container:
       >\n            <span class=\"topser-icon\">\u26b2</span>\n            <input\
       \ type=\"text\" class=\"search\" placeholder=\"Search...\">\n            <span\
       \ id=\"topsercross-icon\">\u2715</span>\n          </div>\n        </form>\n\
-      \      </div>\n\n\n      <div class=\"header\">\n        <div class=\"logo\"\
-      >\n        </div>\n        <div class=\"navbar\">\n          <ul id=\"menu\"\
-      >\n            <li>\n              <a href=\"#\" class=\"droptoggle\">Master\
-      \ <span class=\"down-arrow\">\ud83e\udc93</span></a>\n\n              <ul class=\"\
+      \      </div>\n\n\n\n   <strong>This bold text is also centered.</strong>\n\n\
+      \      \n  \n      <div class=\"header\">\n        <div class=\"logo\">\n  \
+      \      </div>\n        <div class=\"navbar\">\n          <ul id=\"menu\">\n\
+      \            <li>\n              <a href=\"#\" class=\"droptoggle\">Master <span\
+      \ class=\"down-arrow\">\ud83e\udc93</span></a>\n\n              <ul class=\"\
       submanu\">\n                <li>\n               <a href=\"#\" class=\"sub-sub-drop\"\
       >Company <span class=\"arrow-right\">\u276f</span></a>\n    \n             \
       \ <ul class=\"sub-sub-menu\">\n                    <li><a href=\"#\" id=\"comp_add\"\
