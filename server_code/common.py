@@ -387,6 +387,25 @@ def get_transaction_columns(comp_details, comp_code):
 
   emp_details_list.insert(0, 'Sl no')
 
+  extra_attendance_cols = ['trans_leave1', 'trans_leave2', 'trans_leave3']
+  index_of_extra_attendance_cols = [unmodified_cols.index(element) for element in extra_attendance_cols]
+  extra_attendance_cols_tbd = [columns_after_modifying[index] for index in index_of_extra_attendance_cols]
+  attendance_list.extend(extra_attendance_cols_tbd)
+
+  extra_ded_cols = ['trans_ded1', 'trans_ded2', 'trans_ded3', 'trans_ded4', 'trans_loan1', 'trans_loan2']
+  index_of_extra_ded_cols = [unmodified_cols.index(element) for element in extra_ded_cols]
+  index_of_extra_ded_cols_tbd = [columns_after_modifying[index] for index in index_of_extra_ded_cols]
+  deductions_list.extend(index_of_extra_ded_cols_tbd)
+
+  extra_earning_cols = ['trans_earn1', 'trans_earn2', 'trans_earn3', 'trans_earn4', 'trans_earn5', 
+                    'trans_earn6', 'trans_earn7', 'trans_earn8', 'trans_earn9', 'trans_earn10', 
+                    'trans_earn_earn1', 'trans_earn_earn2', 'trans_earn_earn3', 'trans_earn_earn4', 
+                    'trans_earn_earn5', 'trans_earn_earn6', 'trans_earn_earn7', 'trans_earn_earn8', 
+                    'trans_earn_earn9', 'trans_earn_earn10']
+  index_of_extra_earning_cols = [unmodified_cols.index(element) for element in extra_earning_cols]
+  index_of_extra_earning_cols_tbd = [columns_after_modifying[index] for index in index_of_extra_earning_cols]
+  earnings_list.extend(index_of_extra_earning_cols_tbd)
+
   return columns_after_modifying,unmodified_cols, emp_details_list, general_details_list, attendance_list, earnings_list, deductions_list
   
   # return column_names, unmodified_cols
