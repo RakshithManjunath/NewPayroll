@@ -74,10 +74,16 @@ class output_options(output_optionsTemplate):
     </html>
     """
 
-    self.html_content = anvil.server.call('pt_recovery_html_report',html_template,
+    self.html_content = anvil.server.call('report_recovery_html_report',html_template,
                                           report_varb.g_grid_rows,report_varb.g_grid_cols,
                                           gvarb.g_comname,gvarb.g_transdate)
     self.html = self.html_content
+
+    self.col_panel = anvil.ColumnPanel()
+    flow_panel_emp_details = anvil.FlowPanel()
+    self.col_panel.add_component(flow_panel_emp_details)
+    flow_panel_emp_details.add_component(anvil.Button(text="Front",align="center"))
+    self.add_component(self.col_panel)
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -85,16 +91,16 @@ class output_options(output_optionsTemplate):
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pdf = anvil.server.call('download_pt_recovery_pdf',self.html_content)
+    pdf = anvil.server.call('download_report_recovery_pdf',self.html_content)
     download(pdf)
 
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
-    excel = anvil.server.call('download_pt_recovery_excel',self.html_content,gvarb.g_comcode,gvarb.g_transdate)
+    excel = anvil.server.call('download_report_recovery_excel',self.html_content,gvarb.g_comcode,gvarb.g_transdate)
     download(excel)
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
-    csv = anvil.server.call('download_pt_recovery_csv',self.html_content)
+    csv = anvil.server.call('download_report_recovery_csv',self.html_content)
     download(csv)
   

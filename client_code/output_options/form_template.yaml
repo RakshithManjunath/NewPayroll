@@ -18,7 +18,7 @@ components:
   type: Spacer
   layout_properties: {slot: default}
 - name: button_2
-  properties: {text: Download as pdf, role: filled-button}
+  properties: {text: Download as pdf, role: filled-button, align: center}
   type: Button
   layout_properties: {slot: default}
   event_bindings: {click: button_2_click}

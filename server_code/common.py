@@ -799,7 +799,7 @@ def get_only_selected_trans_values(trans_comp_code,selected_list,modified_col_na
   return final_filter_records,final_filtered_cols_modified
 
 @anvil.server.callable
-def pt_recovery_html_report(html_template,grid_rows,grid_cols,g_comname,g_transdate):
+def report_recovery_html_report(html_template,grid_rows,grid_cols,g_comname,g_transdate):
   template = Template(html_template)
     
   # Provide data to fill the placeholders
@@ -811,7 +811,7 @@ def pt_recovery_html_report(html_template,grid_rows,grid_cols,g_comname,g_transd
   return html_content
 
 @anvil.server.callable
-def download_pt_recovery_pdf(html_content):
+def download_report_recovery_pdf(html_content):
   # Create a file-like buffer to receive PDF data
   buffer = BytesIO()
   
@@ -832,7 +832,7 @@ def download_pt_recovery_pdf(html_content):
   return pdf_media
 
 @anvil.server.callable
-def download_pt_recovery_excel(html_content,company_name,date):
+def download_report_recovery_excel(html_content,company_name,date):
   # Parse the HTML content
   soup = BeautifulSoup(html_content, 'html.parser')
   
@@ -870,7 +870,7 @@ def download_pt_recovery_excel(html_content,company_name,date):
   return pdf_media
 
 @anvil.server.callable
-def download_pt_recovery_csv(html_content):
+def download_report_recovery_csv(html_content):
   # Parse the HTML content
   soup = BeautifulSoup(html_content, 'html.parser')
   
