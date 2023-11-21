@@ -129,19 +129,32 @@ container:
       \                </li>\n                <li>\n                  <a href=\"#\"\
       \ class=\"sub-sub-drop\" id=\"complete_view\">View</span></a>\n            \
       \    </li>\n              </ul>\n           </li>\n\n            <li><a href=\"\
-      #\" id=\"update_form\">Update</a></li>\n            <li><a href=\"#\" id=\"\
-      view_trans\">Report</a></li>\n\n             <li>\n             <a href=\"#\"\
-      \ class=\"droptoggle\">Utilities <span class=\"down-arrow\">\ud83e\udc93</span></a>\n\
-      \             <ul class=\"submanu\">\n                <li>\n               \
-      \   <a href=\"#\" class=\"sub-sub-drop\" id=\"data_backup\">Data Backup</span></a>\n\
+      #\" id=\"update_form\">Update</a></li>\n \n\n\n            \n           <li>\n\
+      \             <a href=\"#\" class=\"droptoggle\">Report<span class=\"down-arrow\"\
+      >\ud83e\udc93</span></a>\n             <ul class=\"submanu\">\n            \
+      \    <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"change_trans\"\
+      >PF Report</span></a>\n                </li>\n                <li>\n       \
+      \           <a href=\"#\" class=\"sub-sub-drop\" id=\"complete_view\">ESI Reort</span></a>\n\
       \                </li>\n                <li>\n                  <a href=\"#\"\
-      \ class=\"sub-sub-drop\" id=\"recalculate\">Recalculate</span></a>\n       \
-      \         </li>\n                <li>\n                  <a href=\"#\" class=\"\
-      sub-sub-drop\" id=\"pass_add\">Password</span></a>\n                </li>\n\
-      \               </ul>\n           </li>\n            <li><a href=\"#\" id=\"\
-      login_page\">Logout</a></li\n            \n          </ul>\n        </div>\n\
-      \n        <div class=\"ser-btn\">\n        </div>\n\n      </div>\n\n\n\n  \
-      \  </div>\n  </div>\n  <div id='my-div'></div>\n  <script>\n    \n    \n   $('#dept_add_and_change').on('click',\
+      \ class=\"sub-sub-drop\" id=\"complete_view\">PT Reort</span></a>\n        \
+      \        </li>  \n                <li>\n                  <a href=\"#\" class=\"\
+      sub-sub-drop\" id=\"complete_view\">IT Reort</span></a>\n                </li>\n\
+      \                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
+      \ id=\"view_trans\">Grid View</span></a>\n                </li>            \
+      \   \n              </ul>\n           </li>\n    \n            \n          \
+      \  \n            <!-- <li><a href=\"#\" id=\"view_trans\">Report</a></li> -->\n\
+      \n\n            \n\n             <li>\n             <a href=\"#\" class=\"droptoggle\"\
+      >Utilities <span class=\"down-arrow\">\ud83e\udc93</span></a>\n            \
+      \ <ul class=\"submanu\">\n                <li>\n                  <a href=\"\
+      #\" class=\"sub-sub-drop\" id=\"data_backup\">Data Backup</span></a>\n     \
+      \           </li>\n                <li>\n                  <a href=\"#\" class=\"\
+      sub-sub-drop\" id=\"recalculate\">Recalculate</span></a>\n                </li>\n\
+      \                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
+      \ id=\"pass_add\">Password</span></a>\n                </li>\n             \
+      \  </ul>\n           </li>\n            <li><a href=\"#\" id=\"login_page\"\
+      >Logout</a></li\n            \n          </ul>\n        </div>\n\n        <div\
+      \ class=\"ser-btn\">\n        </div>\n\n      </div>\n\n\n\n    </div>\n  </div>\n\
+      \  <div id='my-div'></div>\n  <script>\n    \n    \n   $('#dept_add_and_change').on('click',\
       \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_dept\"\
       );\n  e.preventDefault();   \n}); \n\n$('#desi_add_and_change').on('click',\
       \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_desi\"\
