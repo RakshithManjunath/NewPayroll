@@ -134,10 +134,10 @@ container:
       \             <ul class=\"submanu\">\n               <li>\n                \
       \  <a href=\"#\" class=\"sub-sub-drop\">PF Report<span class=\"arrow-right\"\
       >\u276f</span></a>\n                   <ul class=\"sub-sub-menu\">\n       \
-      \               <li><a href=\"#\" id=\"comp_add\">PF Recovery</a></li>\n   \
-      \                   <li><a href=\"#\" id=\"comp_change\">Change</a></li>   \
-      \           \n                  </ul>    \n                </li>\n         \
-      \      \n                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
+      \               <li><a href=\"#\" id=\"pf_recovery\">PF Recovery</a></li>\n\
+      \                      <li><a href=\"#\" id=\"comp_change\">Change</a></li>\
+      \              \n                  </ul>    \n                </li>\n      \
+      \         \n                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
       >ESI Reort<span class=\"arrow-right\">\u276f</span></a>\n                  \
       \ <ul class=\"sub-sub-menu\">\n                      <li><a href=\"#\" id=\"\
       comp_add\">ESI Recovery</a></li>\n                      <li><a href=\"#\" id=\"\
@@ -197,7 +197,9 @@ container:
       \ = this;\n  anvil.call(linkElement, \"open_data_backup\");\n  e.preventDefault();\n\
       }); \n\n    $('#pass_add').on('click', function(e) {\n  var linkElement = this;\n\
       \  anvil.call(linkElement, \"open_pass_add\");\n  e.preventDefault();\n}); \n\
-      \    \n  </script>\n</body>\n</html>"}
+      \n    $('#pf_recovery').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_pf_recovery\");\n  e.preventDefault();\n});\
+      \ \n    \n  </script>\n</body>\n</html>"}
 components:
 - type: ColumnPanel
   properties: {}

@@ -69,3 +69,6 @@ class menu(menuTemplate):
 
   def open_trans(self, **kwargs):
     open_form('trans')
+
+  def open_pf_recovery(self, **kwargs):
+    open_form('pf_recovery')
