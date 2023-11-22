@@ -98,86 +98,93 @@ container:
       \ id=\"topsercross-icon\">\u2715</span>\n          </div>\n        </form>\n\
       \      </div>\n\n\n\n   <strong>This bold text is also centered.</strong>\n\n\
       \      \n  \n      <div class=\"header\">\n        <div class=\"logo\">\n  \
-      \      </div>\n        <div class=\"navbar\">\n          <ul id=\"menu\">\n\
+      \      </div>\n        <div class=\"navbar\">\n          <ul id=\"menu\">\n\n\
       \            <li>\n              <a href=\"#\" class=\"droptoggle\">Master <span\
-      \ class=\"down-arrow\">\ud83e\udc93</span></a>\n\n              <ul class=\"\
-      submanu\">\n                <li>\n               <a href=\"#\" class=\"sub-sub-drop\"\
-      >Company <span class=\"arrow-right\">\u276f</span></a>\n    \n             \
-      \ <ul class=\"sub-sub-menu\">\n                    <li><a href=\"#\" id=\"comp_add\"\
-      >New</a></li>\n                    <li><a href=\"#\" id=\"comp_change\">Change</a></li>\
-      \              \n               </ul>             \n                </li>\n\
-      \                \n                <li>\n                  <a href=\"#\" class=\"\
-      sub-sub-drop\" id=\"dept_add_and_change\">Department</a>\n                </li>\n\
-      \                \n                <li>\n                  <a href=\"#\" class=\"\
-      sub-sub-drop\" id=\"desi_add_and_change\">Designation</a>\n                </li>\n\
-      \n                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
-      \ id=\"bank_add_and_change\">Bank</span></a>\n                </li>\n\n    \
+      \ class=\"down-arrow\">\ud83e\udc93</span></a>\n              <ul class=\"submanu\"\
+      >\n              <li>\n              <a href=\"#\" class=\"sub-sub-drop\">Company\
+      \ <span class=\"arrow-right\">\u276f</span></a>\n              <ul class=\"\
+      sub-sub-menu\">\n                    <li><a href=\"#\" id=\"comp_add\">New</a></li>\n\
+      \                    <li><a href=\"#\" id=\"comp_change\">Change</a></li>  \
+      \            \n              </ul>             \n            </li>\n       \
+      \         \n                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
+      \ id=\"dept_add_and_change\">Department</a>\n                </li>\n       \
+      \         \n                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
+      \ id=\"desi_add_and_change\">Designation</a>\n                </li>\n\n    \
       \            <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"\
-      comp_more\">Statutory - 1</span></a>\n                </li>\n\n            \
-      \    <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"statutory\"\
-      >Statutory - 2</span></a>\n                </li>\n                \n       \
-      \         <li>\n                  <a href=\"#\" class=\"sub-sub-drop\">Employee\
-      \ <span class=\"arrow-right\">\u276f</span></a>\n                  <ul class=\"\
-      sub-sub-menu\">\n                    <li><a href=\"#\" id=\"emp_add\">Add</a></li>\n\
-      \                    <li><a href=\"#\" id=\"emp_chg\">Change</a></li>\n    \
-      \                <li><a href=\"#\" id=\"emp_more\">More</a></li>\n         \
-      \         </ul>\n                </li>\n                \n              </ul>\n\
-      \n\n            </li>\n\n           <li>\n             <a href=\"#\" class=\"\
+      bank_add_and_change\">Bank</span></a>\n                </li>\n\n           \
+      \     <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"comp_more\"\
+      >Statutory - 1</span></a>\n                </li>\n\n                <li>\n \
+      \                 <a href=\"#\" class=\"sub-sub-drop\" id=\"statutory\">Statutory\
+      \ - 2</span></a>\n                </li>\n                \n                <li>\n\
+      \                  <a href=\"#\" class=\"sub-sub-drop\">Employee <span class=\"\
+      arrow-right\">\u276f</span></a>\n                  <ul class=\"sub-sub-menu\"\
+      >\n                    <li><a href=\"#\" id=\"emp_add\">Add</a></li>\n     \
+      \               <li><a href=\"#\" id=\"emp_chg\">Change</a></li>\n         \
+      \           <li><a href=\"#\" id=\"emp_more\">More</a></li>\n              \
+      \    </ul>\n                </li>\n                \n              </ul>\n\n\
+      \n            </li>\n\n           <li>\n             <a href=\"#\" class=\"\
       droptoggle\">Transaction <span class=\"down-arrow\">\ud83e\udc93</span></a>\n\
       \             <ul class=\"submanu\">\n                <li>\n               \
       \   <a href=\"#\" class=\"sub-sub-drop\" id=\"change_trans\">Transaction</span></a>\n\
       \                </li>\n                <li>\n                  <a href=\"#\"\
       \ class=\"sub-sub-drop\" id=\"complete_view\">View</span></a>\n            \
       \    </li>\n              </ul>\n           </li>\n\n            <li><a href=\"\
-      #\" id=\"update_form\">Update</a></li>\n \n\n\n            \n           <li>\n\
-      \             <a href=\"#\" class=\"droptoggle\">Report<span class=\"down-arrow\"\
+      #\" id=\"update_form\">Update</a></li>\n\n           <li>\n             <a href=\"\
+      #\" class=\"droptoggle\">Report<span class=\"down-arrow\">\ud83e\udc93</span></a>\n\
+      \             <ul class=\"submanu\">\n               <li>\n                \
+      \  <a href=\"#\" class=\"sub-sub-drop\">PF Report<span class=\"arrow-right\"\
+      >\u276f</span></a>\n                   <ul class=\"sub-sub-menu\">\n       \
+      \               <li><a href=\"#\" id=\"comp_add\">PF Recovery</a></li>\n   \
+      \                   <li><a href=\"#\" id=\"comp_change\">Change</a></li>   \
+      \           \n                  </ul>    \n                </li>\n         \
+      \      \n                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
+      >ESI Reort<span class=\"arrow-right\">\u276f</span></a>\n                  \
+      \ <ul class=\"sub-sub-menu\">\n                      <li><a href=\"#\" id=\"\
+      comp_add\">ESI Recovery</a></li>\n                      <li><a href=\"#\" id=\"\
+      comp_change\">Change</a></li>              \n                  </ul>    \n \
+      \               </li>\n               \n                <li>\n             \
+      \     <a href=\"#\" class=\"sub-sub-drop\" id=\"complete_view\">PT Reort</span></a>\n\
+      \                </li>\n               \n                <li>\n            \
+      \      <a href=\"#\" class=\"sub-sub-drop\" id=\"complete_view\">IT Reort</span></a>\n\
+      \                </li>\n       \n                <li>\n                  <a\
+      \ href=\"#\" class=\"sub-sub-drop\" id=\"view_trans\">Grid View</span></a>\n\
+      \                </li>               \n              </ul>\n           </li>\n\
+      \    \n            \n            \n            <!-- <li><a href=\"#\" id=\"\
+      view_trans\">Report</a></li> -->\n\n\n            \n\n             <li>\n  \
+      \           <a href=\"#\" class=\"droptoggle\">Utilities <span class=\"down-arrow\"\
       >\ud83e\udc93</span></a>\n             <ul class=\"submanu\">\n            \
-      \    <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"change_trans\"\
-      >PF Report</span></a>\n                </li>\n                <li>\n       \
-      \           <a href=\"#\" class=\"sub-sub-drop\" id=\"complete_view\">ESI Reort</span></a>\n\
+      \    <li>\n                  <a href=\"#\" class=\"sub-sub-drop\" id=\"data_backup\"\
+      >Data Backup</span></a>\n                </li>\n                <li>\n     \
+      \             <a href=\"#\" class=\"sub-sub-drop\" id=\"recalculate\">Recalculate</span></a>\n\
       \                </li>\n                <li>\n                  <a href=\"#\"\
-      \ class=\"sub-sub-drop\" id=\"complete_view\">PT Reort</span></a>\n        \
-      \        </li>  \n                <li>\n                  <a href=\"#\" class=\"\
-      sub-sub-drop\" id=\"complete_view\">IT Reort</span></a>\n                </li>\n\
-      \                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
-      \ id=\"view_trans\">Grid View</span></a>\n                </li>            \
-      \   \n              </ul>\n           </li>\n    \n            \n          \
-      \  \n            <!-- <li><a href=\"#\" id=\"view_trans\">Report</a></li> -->\n\
-      \n\n            \n\n             <li>\n             <a href=\"#\" class=\"droptoggle\"\
-      >Utilities <span class=\"down-arrow\">\ud83e\udc93</span></a>\n            \
-      \ <ul class=\"submanu\">\n                <li>\n                  <a href=\"\
-      #\" class=\"sub-sub-drop\" id=\"data_backup\">Data Backup</span></a>\n     \
-      \           </li>\n                <li>\n                  <a href=\"#\" class=\"\
-      sub-sub-drop\" id=\"recalculate\">Recalculate</span></a>\n                </li>\n\
-      \                <li>\n                  <a href=\"#\" class=\"sub-sub-drop\"\
-      \ id=\"pass_add\">Password</span></a>\n                </li>\n             \
-      \  </ul>\n           </li>\n            <li><a href=\"#\" id=\"login_page\"\
-      >Logout</a></li\n            \n          </ul>\n        </div>\n\n        <div\
-      \ class=\"ser-btn\">\n        </div>\n\n      </div>\n\n\n\n    </div>\n  </div>\n\
-      \  <div id='my-div'></div>\n  <script>\n    \n    \n   $('#dept_add_and_change').on('click',\
-      \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_dept\"\
-      );\n  e.preventDefault();   \n}); \n\n$('#desi_add_and_change').on('click',\
-      \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_desi\"\
-      );\n  e.preventDefault();\n}); \n\n$('#comp_add').on('click', function(e) {\n\
-      \  var linkElement = this;\n  anvil.call(linkElement, \"open_comp\");\n  e.preventDefault();\n\
-      }); \n\n$('#comp_change').on('click', function(e) {\n  var linkElement = this;\n\
-      \  anvil.call(linkElement, \"open_comp_change\");\n  e.preventDefault();\n});\
-      \ \n\n$('#comp_more').on('click', function(e) {\n  var linkElement = this;\n\
-      \  anvil.call(linkElement, \"open_comp_more\");\n  e.preventDefault();\n});\
-      \     \n\n$('#bank_add_and_change').on('click', function(e) {\n  var linkElement\
-      \ = this;\n  anvil.call(linkElement, \"open_bank\");\n  e.preventDefault();\n\
-      }); \n    \n  $('#emp_add').on('click', function(e) {\n  var linkElement = this;\n\
-      \  anvil.call(linkElement, \"open_emp_add\");\n  e.preventDefault();\n});  \
-      \    \n  $('#emp_chg').on('click', function(e) {\n  var linkElement = this;\n\
-      \  anvil.call(linkElement, \"open_emp_chg\");\n  e.preventDefault();\n});  \
-      \ \n\n$('#emp_more').on('click', function(e) {\n  var linkElement = this;\n\
-      \  anvil.call(linkElement, \"open_emp_more\");\n  e.preventDefault();\n});\n\
-      \n$('#complete_view').on('click', function(e) {\n  var linkElement = this;\n\
-      \  anvil.call(linkElement, \"open_complete\");\n  e.preventDefault();\n});\n\
-      \n  $('.const_page').on('click', function(e) {\n  var linkElement = this;\n\
-      \  anvil.call(linkElement, \"open_report1_page\");\n  e.preventDefault();\n\
-      });\n    \n\n                     \n\n $('#login_page').on('click', function(e)\
-      \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_login_page\"\
+      \ class=\"sub-sub-drop\" id=\"pass_add\">Password</span></a>\n             \
+      \   </li>\n               </ul>\n           </li>\n            <li><a href=\"\
+      #\" id=\"login_page\">Logout</a></li\n            \n          </ul>\n      \
+      \  </div>\n\n        <div class=\"ser-btn\">\n        </div>\n\n      </div>\n\
+      \n\n\n    </div>\n  </div>\n  <div id='my-div'></div>\n  <script>\n    \n  \
+      \  \n   $('#dept_add_and_change').on('click', function(e) {\n  var linkElement\
+      \ = this;\n  anvil.call(linkElement, \"open_dept\");\n  e.preventDefault();\
+      \   \n}); \n\n$('#desi_add_and_change').on('click', function(e) {\n  var linkElement\
+      \ = this;\n  anvil.call(linkElement, \"open_desi\");\n  e.preventDefault();\n\
+      }); \n\n$('#comp_add').on('click', function(e) {\n  var linkElement = this;\n\
+      \  anvil.call(linkElement, \"open_comp\");\n  e.preventDefault();\n}); \n\n\
+      $('#comp_change').on('click', function(e) {\n  var linkElement = this;\n  anvil.call(linkElement,\
+      \ \"open_comp_change\");\n  e.preventDefault();\n}); \n\n$('#comp_more').on('click',\
+      \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_comp_more\"\
+      );\n  e.preventDefault();\n});     \n\n$('#bank_add_and_change').on('click',\
+      \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_bank\"\
+      );\n  e.preventDefault();\n}); \n    \n  $('#emp_add').on('click', function(e)\
+      \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_emp_add\");\n\
+      \  e.preventDefault();\n});      \n  $('#emp_chg').on('click', function(e) {\n\
+      \  var linkElement = this;\n  anvil.call(linkElement, \"open_emp_chg\");\n \
+      \ e.preventDefault();\n});   \n\n$('#emp_more').on('click', function(e) {\n\
+      \  var linkElement = this;\n  anvil.call(linkElement, \"open_emp_more\");\n\
+      \  e.preventDefault();\n});\n\n$('#complete_view').on('click', function(e) {\n\
+      \  var linkElement = this;\n  anvil.call(linkElement, \"open_complete\");\n\
+      \  e.preventDefault();\n});\n\n  $('.const_page').on('click', function(e) {\n\
+      \  var linkElement = this;\n  anvil.call(linkElement, \"open_report1_page\"\
+      );\n  e.preventDefault();\n});\n    \n\n                     \n\n $('#login_page').on('click',\
+      \ function(e) {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_login_page\"\
       );\n  e.preventDefault();\n});    \n\n$('#update_form').on('click', function(e)\
       \ {\n  var linkElement = this;\n  anvil.call(linkElement, \"open_update_page\"\
       );\n  e.preventDefault();\n});\n\n$('#statutory').on('click', function(e) {\n\

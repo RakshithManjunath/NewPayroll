@@ -371,7 +371,7 @@ def get_transaction_columns(comp_details, comp_code):
       earnings_list .append('Bonus salary')  
     elif row == 'ot_amt':
       columns_after_modifying[index] = 'OT Amt' 
-      earnings_list .append('OT Amt [ ₹ ]')  
+      earnings_list .append('OT Amt')  
     elif row == 'bonus_amt':
       columns_after_modifying[index] = 'Bonus Amt' 
       earnings_list .append('Bonus Amt')  
