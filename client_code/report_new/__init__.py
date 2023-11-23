@@ -150,6 +150,7 @@ class report_new(report_newTemplate):
     # grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', '002',selected_boxes,modified_col_names)
     ############################################
     grid_rows, grid_cols = anvil.server.call('get_only_selected_trans_values', gvarb.g_comcode,selected_boxes,modified_col_names)
+    print("Grid rows and columns",grid_rows, grid_cols)
     report_varb.g_grid_cols = grid_cols
     report_varb.g_grid_rows = grid_rows
 

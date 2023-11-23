@@ -15,10 +15,12 @@ class pf_recovery(pf_recoveryTemplate):
 
     # Any code you write here will run before the form opens.
 
-    grid_cols = anvil.server.call('pf_recovery_report',gvarb.g_comcode)
+    grid_rows,grid_cols = anvil.server.call('pf_recovery_report',gvarb.g_comcode)
+    report_varb.g_pf_recovery_rows = grid_rows
     report_varb.g_pf_recovery_cols = grid_cols
 
     print("pf recovery grid cols: ",report_varb.g_pf_recovery_cols)
+    print("pf recovery grid rows: ",report_varb.g_pf_recovery_rows)
     html_template = """
     <!DOCTYPE html>
     <html>
@@ -78,5 +80,5 @@ class pf_recovery(pf_recoveryTemplate):
     """
 
     self.html_content = anvil.server.call('pf_recovery_html',html_template,
-                                          report_varb.g_pf_recovery_cols)
+                                          report_varb.g_pf_recovery_rows,report_varb.g_pf_recovery_cols)
     self.html = self.html_content

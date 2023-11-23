@@ -15,3 +15,4 @@ g_grid_cols = None
 g_grid_rows = None
 
 g_pf_recovery_cols = None
+g_pf_recovery_rows = None

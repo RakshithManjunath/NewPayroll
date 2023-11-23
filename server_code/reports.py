@@ -23,24 +23,38 @@ from jinja2 import Template
 @anvil.server.callable
 def pf_recovery_report(trans_comp_code):
   # rows = app_tables.transaction.get(trans_comp_code=trans_comp_code)
-  # app_tables.transaction.list_columns()
-  filtered_columns = [{'id': 'trans_empid', 'title': 'Employee code', 'data_key': 'trans_empid', 'width': 100},
+  filtered_columns = [{'id': 'Sl no', 'title': 'Sl no', 'data_key': 'Sl no', 'width': 100},
+                      {'id': 'trans_empid', 'title': 'Employee code', 'data_key': 'trans_empid', 'width': 100},
                       {'id': 'trans_empname', 'title': 'Employee name', 'data_key': 'trans_empname', 'width': 200},
                       {'id': 'trans_emppfno', 'title': 'Employee pf number', 'data_key': 'trans_emppfno', 'width': 100},
                       {'id': 'trans_emp_pfuan', 'title': 'Employee pf uan', 'data_key': 'trans_emp_pfuan', 'width': 100},
                       {'id': 'earn_pf_salary', 'title': 'Employee pf sal', 'data_key': 'earn_pf_salary', 'width': 100},
                       {'id': 'pf_amt', 'title': 'Employee pf amount', 'data_key': 'pf_amt', 'width': 100}]
-  return filtered_columns
+
+  rows = app_tables.transaction.search(trans_comp_code=trans_comp_code)
+  filtered_rows = []
+  for count,row in enumerate(rows):
+    new_dict = {'Sl no':count +1,
+                'trans_empid':row['trans_empid'],
+                'trans_empname':row['trans_empname'],
+                'trans_emppfno':row['trans_emppfno'],
+                'trans_emp_pfuan':row['trans_emp_pfuan'],
+                'earn_pf_salary':row['earn_pf_salary'],
+                'pf_amt':row['pf_amt']}
+    filtered_rows.append(new_dict)
+  
+  # Grid rows and columns [{'trans_empid': '001', 'trans_empname': 'RAKS', 'Sl no': 1}, {'trans_empid': '002', 'trans_empname': 'MANJU', 'Sl no': 2}] [{'id': 'Sl no', 'title': 'SL NO', 'data_key': 'Sl no', 'width': 75}, {'id': 'trans_empid', 'title': 'EMP CODE', 'data_key': 'trans_empid', 'width': 150}, {'id': 'trans_empname', 'title': 'EMP NAME', 'data_key': 'trans_empname', 'width': 250}]
+  return filtered_rows,filtered_columns
 
   
   # return rows['trans_empid'], rows['trans_empname'], rows['trans_emppfno'], rows['trans_emp_pfuan'], rows['earn_pf_salary'],rows['pf_amt']
 
 @anvil.server.callable
-def pf_recovery_html(html_template,grid_cols):
+def pf_recovery_html(html_template,grid_rows,grid_cols):
   template = Template(html_template)
     
   # Provide data to fill the placeholders
-  data = {'grid_cols':grid_cols}
+  data = {'grid_rows':grid_rows,'grid_cols':grid_cols}
   
   # Render the HTML with the data
   html_content = template.render(data)
