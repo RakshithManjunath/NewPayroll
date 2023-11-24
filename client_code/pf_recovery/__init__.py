@@ -29,6 +29,7 @@ class pf_recovery(pf_recoveryTemplate):
         <style>
             body {
                 font-family: Arial, sans-serif;
+                text-align: center; /* Center align the content */
             }
             h1 {
                 font-size: 24px;
@@ -37,9 +38,9 @@ class pf_recovery(pf_recoveryTemplate):
                 font-size: 16px;
             }
             table {
-                width: 100%;
+                width: 80%; /* Adjust the width as needed */
+                margin: 20px auto; /* Center the table horizontally with 20px top and bottom margin */
                 border-collapse: collapse;
-                margin-top: 20px;
             }
             th, td {
                 border: 1px solid #000;

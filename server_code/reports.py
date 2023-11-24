@@ -40,11 +40,11 @@ def pf_recovery_report(trans_comp_code):
                 'trans_empid':row['trans_empid'],
                 'trans_empname':row['trans_empname'],
                 'trans_emppfno':row['trans_emppfno'],
-                'trans_emp_pfuan':row['trans_emp_pfuan'],
-                'earn_pf_salary':row['earn_pf_salary'],
-                'pf_amt':row['pf_amt'],
-                'fpf_amt':row['fpf_amt'],
-                'Total':row['pf_amt'] +row['fpf_amt']}
+                'trans_emp_pfuan': row['trans_emp_pfuan'],
+                'earn_pf_salary':"{:,.2f}".format(row['earn_pf_salary']),
+                'pf_amt':"{:,.2f}".format(row['pf_amt']),
+                'fpf_amt':"{:,.2f}".format(row['fpf_amt']),
+                'Total':"{:,.2f}".format(row['pf_amt'] +row['fpf_amt'])}
     filtered_rows.append(new_dict)
   
   # Grid rows and columns [{'trans_empid': '001', 'trans_empname': 'RAKS', 'Sl no': 1}, {'trans_empid': '002', 'trans_empname': 'MANJU', 'Sl no': 2}] [{'id': 'Sl no', 'title': 'SL NO', 'data_key': 'Sl no', 'width': 75}, {'id': 'trans_empid', 'title': 'EMP CODE', 'data_key': 'trans_empid', 'width': 150}, {'id': 'trans_empname', 'title': 'EMP NAME', 'data_key': 'trans_empname', 'width': 250}]
