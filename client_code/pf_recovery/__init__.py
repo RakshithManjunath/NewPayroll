@@ -76,6 +76,10 @@ class pf_recovery(pf_recoveryTemplate):
             {% endfor %}
         </tbody>
     </table>
+
+    <h1>{{ summary_heading }}</h1>
+    <h1> </h1> 
+    <h4 style="text-align: left;">1 > Total salary for PF [ ₹ ] - {{ report_head }}</h4>
     </body>
     </html>
     """
@@ -83,5 +87,6 @@ class pf_recovery(pf_recoveryTemplate):
     self.html_content = anvil.server.call('pf_recovery_html',html_template,
                                           report_varb.g_pf_recovery_rows,report_varb.g_pf_recovery_cols,
                                           "PF Recovery statement for the month of "+gvarb.g_transdate.strftime("%B %Y").upper(),
-                                          gvarb.g_comname,gvarb.g_comadd1,gvarb.g_comadd2,gvarb.g_comadd3)
+                                          gvarb.g_comname,gvarb.g_comadd1,gvarb.g_comadd2,gvarb.g_comadd3,
+                                         "PF summary for the month of "+gvarb.g_transdate.strftime("%B %Y").upper())
     self.html = self.html_content

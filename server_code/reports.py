@@ -59,13 +59,15 @@ def pf_recovery_report(trans_comp_code):
 @anvil.server.callable
 def pf_recovery_html(html_template,grid_rows,grid_cols,
                      report_head,company_name,
-                     addr_line1,addr_line2,addr_line3):
+                     addr_line1,addr_line2,addr_line3,
+                    summary_heading):
   template = Template(html_template)
     
   # Provide data to fill the placeholders
   data = {'grid_rows':grid_rows,'grid_cols':grid_cols,
           'report_head':report_head,'company_name':company_name,
-          'addr_line1':addr_line1,'addr_line2':addr_line2,'addr_line3':addr_line3}
+          'addr_line1':addr_line1,'addr_line2':addr_line2,'addr_line3':addr_line3,
+         'summary_heading':summary_heading}
   
   # Render the HTML with the data
   html_content = template.render(data)
