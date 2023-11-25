@@ -392,7 +392,7 @@ db_schema:
       admin_ui: {width: 200}
       type: string
     - name: comp_addr3
-      admin_ui: {width: 200}
+      admin_ui: {order: 3.25, width: 200}
       type: string
     - name: comp_pto_circle
       admin_ui: {width: 200}
