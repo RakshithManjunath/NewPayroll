@@ -23,6 +23,8 @@ class company_select(company_selectTemplate):
       gvarb.g_comcode,gvarb.g_comname = split_list_comp[0],split_list_comp[1]
       company_row = anvil.server.call('comp_get_details',gvarb.g_comcode)
       gvarb.g_comadd1 = company_row['comp_addr1']
+      gvarb.g_comadd2 = company_row['comp_addr2']
+      gvarb.g_comadd3 = company_row['comp_addr3']
       open_form('mode_select')
     else:
       Notification("Pls select company").show()
