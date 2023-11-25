@@ -14,6 +14,9 @@ import datetime
 
 g_comcode = ""
 g_comname = ""
+g_comadd1 = ""
+g_comadd2 = ""
+g_comadd3 = ""
 g_empcode = ""
 g_empname = ""
 g_mode = ""

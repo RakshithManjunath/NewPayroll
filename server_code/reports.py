@@ -57,11 +57,11 @@ def pf_recovery_report(trans_comp_code):
   # return rows['trans_empid'], rows['trans_empname'], rows['trans_emppfno'], rows['trans_emp_pfuan'], rows['earn_pf_salary'],rows['pf_amt']
 
 @anvil.server.callable
-def pf_recovery_html(html_template,grid_rows,grid_cols):
+def pf_recovery_html(html_template,grid_rows,grid_cols,report_head,company_name):
   template = Template(html_template)
     
   # Provide data to fill the placeholders
-  data = {'grid_rows':grid_rows,'grid_cols':grid_cols}
+  data = {'grid_rows':grid_rows,'grid_cols':grid_cols,'report_head':report_head,'company_name':company_name}
   
   # Render the HTML with the data
   html_content = template.render(data)

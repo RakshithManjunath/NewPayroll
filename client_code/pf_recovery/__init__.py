@@ -51,11 +51,8 @@ class pf_recovery(pf_recoveryTemplate):
     </head>
     <body>
     <div class="content">
-        <h1>PF Recovery Statement</h1>
-        
-        <p>Date: {{ trans_date }}</p>
-
         <h1>{{ company_name }}</h1>
+        <h1>{{ report_head }}</h1>
      </div>
 
     <table>
@@ -81,5 +78,7 @@ class pf_recovery(pf_recoveryTemplate):
     """
 
     self.html_content = anvil.server.call('pf_recovery_html',html_template,
-                                          report_varb.g_pf_recovery_rows,report_varb.g_pf_recovery_cols)
+                                          report_varb.g_pf_recovery_rows,report_varb.g_pf_recovery_cols,
+                                          "PF Recovery statement for the month of "+gvarb.g_transdate.strftime("%B %Y").upper(),
+                                          gvarb.g_comname)
     self.html = self.html_content
