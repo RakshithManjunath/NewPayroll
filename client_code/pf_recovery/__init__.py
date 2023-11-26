@@ -80,6 +80,16 @@ class pf_recovery(pf_recoveryTemplate):
     <h1>{{ summary_heading }}</h1>
     <h1> </h1> 
     <h4 style="text-align: left;">1 > Total salary for PF [ ₹ ] - {{ report_head }}</h4>
+    <h4 style="text-align: left;">2 > Total salary for FPF [ ₹ ] - {{ report_head }}</h4>
+    <h4 style="text-align: left;">3 > Total employee PF [ ₹ ] - {{ report_head }}</h4>
+    <h4 style="text-align: left;">4 > Total employer PF [ ₹ ] - {{ report_head }}</h4>
+    <h4 style="text-align: left;">5 > Total employee FPF [ ₹ ] - {{ report_head }}</h4>
+    <h4 style="text-align: left;">6 > Total employer FPF [ ₹ ] - {{ report_head }}</h4>
+    <h4 style="text-align: left;">7 > Total admin charges [ ₹ ] - {{ report_head }}</h4>
+    <h4 style="text-align: left;">8 > Total EDLI charges [ ₹ ] - {{ report_head }}</h4>
+    <h4 style="text-align: left;">9 > Total mislenous charges [ ₹ ] - {{ report_head }}</h4>
+    
+    
     </body>
     </html>
     """
