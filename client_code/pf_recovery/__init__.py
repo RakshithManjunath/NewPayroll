@@ -70,7 +70,7 @@ class pf_recovery(pf_recoveryTemplate):
 
         th:nth-child(3),
         td:nth-child(3) {
-            width: 40%;
+            width: 25%;
         }
         
         th:nth-child(4),
@@ -85,7 +85,7 @@ class pf_recovery(pf_recoveryTemplate):
         
         th:nth-child(6),
         td:nth-child(6) {
-            width: 10%;
+            width: 15%;
         }  
         th:nth-child(7),
         td:nth-child(7) {
@@ -97,9 +97,25 @@ class pf_recovery(pf_recoveryTemplate):
         } 
         th:nth-child(9),
         td:nth-child(9) {
-            width: 10%;
+            width: 20%;
         }        
-
+        } 
+        th:nth-child(10),
+        td:nth-child(10) {
+            width: 20%;
+        }  
+        } 
+        th:nth-child(11),
+        td:nth-child(11) {
+            width: 10%;
+        } 
+        } 
+        th:nth-child(12),
+        td:nth-child(12) {
+            width: 10%;
+        }  
+        
+        
     .charges-container {
         text-align: left;
         /* Adjust margin-top as needed */
@@ -158,6 +174,7 @@ class pf_recovery(pf_recoveryTemplate):
         </table>
 
         <h1>{{ summary_heading }}</h1>
+        <h1> </h1> 
         <div class="charges-container">
             <h4>1 > Total salary for PF [ ₹ ] - {{ report_head }}</h4>
             <h4> </h4>            
@@ -178,6 +195,8 @@ class pf_recovery(pf_recoveryTemplate):
             <h4>9 > Total mislenous charges [ ₹ ] - {{ report_head }}</h4>
             <h4> </h4>                
         </div>
+
+        
     <script>
     $('#back_btn').on('click', function(e) {
     var linkElement = this;

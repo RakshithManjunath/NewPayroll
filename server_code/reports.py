@@ -23,19 +23,33 @@ from jinja2 import Template
 @anvil.server.callable
 def pf_recovery_report(trans_comp_code):
   # rows = app_tables.transaction.get(trans_comp_code=trans_comp_code)
-  filtered_columns = [{'id': 'Sl no', 'title': 'Sl no', 'data_key': 'Sl no', 'width': 100},
-                      {'id': 'trans_empid', 'title': 'Employee code', 'data_key': 'trans_empid', 'width': 100},
-                      {'id': 'trans_empname', 'title': 'Employee name', 'data_key': 'trans_empname', 'width': 200},
-                      {'id': 'trans_emppfno', 'title': 'PF number', 'data_key': 'trans_emppfno', 'width': 100},
-                      {'id': 'trans_emp_pfuan', 'title': 'PF UAN', 'data_key': 'trans_emp_pfuan', 'width': 100},
-                      {'id': 'earn_pf_salary', 'title': 'PF salary [ ₹ ]', 'data_key': 'earn_pf_salary', 'width': 100},
-                      {'id': 'pf_amt', 'title': 'Employeee PF Amt [ ₹ ]', 'data_key': 'pf_amt', 'width': 100},
-                      {'id': 'emp_pf_amt', 'title': 'Employeee FPF Amt [ ₹ ]', 'data_key': 'emp_pf_amt', 'width': 100}, 
-                      {'id': 'empr_pf_amt', 'title': 'Employer PF Amt [ ₹ ]', 'data_key': 'empr_pf_amt', 'width': 100},
-                      {'id': 'fpf_amt', 'title': 'Employer FPF Amt [ ₹ ]', 'data_key': 'fpf_amt', 'width': 100},   
-                      {'id': 'trans_pfvol', 'title': 'Employeee PF Voluntary Amt [ ₹ ]', 'data_key': 'trans_pfvol', 'width': 100},                      
-                      {'id': 'Total', 'title': 'Total Amount [ ₹ ]', 'data_key': 'Total', 'width': 100}]
+  # filtered_columns = [{'id': 'Sl no', 'title': 'Sl no', 'data_key': 'Sl no', 'width': 100},
+  #                     {'id': 'trans_empid', 'title': 'Employee code', 'data_key': 'trans_empid', 'width': 100},
+  #                     {'id': 'trans_empname', 'title': 'Employee name', 'data_key': 'trans_empname', 'width': 200},
+  #                     {'id': 'trans_emppfno', 'title': 'PF number', 'data_key': 'trans_emppfno', 'width': 100},
+  #                     {'id': 'trans_emp_pfuan', 'title': 'PF UAN', 'data_key': 'trans_emp_pfuan', 'width': 100},
+  #                     {'id': 'earn_pf_salary', 'title': 'PF salary [ ₹ ]', 'data_key': 'earn_pf_salary', 'width': 100},
+  #                     {'id': 'pf_amt', 'title': 'Employeee PF Amt [ ₹ ]', 'data_key': 'pf_amt', 'width': 100},
+  #                     {'id': 'emp_pf_amt', 'title': 'Employeee FPF Amt [ ₹ ]', 'data_key': 'emp_pf_amt', 'width': 100}, 
+  #                     {'id': 'empr_pf_amt', 'title': 'Employer PF Amt [ ₹ ]', 'data_key': 'empr_pf_amt', 'width': 100},
+  #                     {'id': 'fpf_amt', 'title': 'Employer FPF Amt [ ₹ ]', 'data_key': 'fpf_amt', 'width': 100},   
+  #                     {'id': 'trans_pfvol', 'title': 'Employeee PF Voluntary Amt [ ₹ ]', 'data_key': 'trans_pfvol', 'width': 100},                      
+  #                     {'id': 'Total', 'title': 'Total Amount [ ₹ ]', 'data_key': 'Total', 'width': 100}]
 
+  filtered_columns = [{'id': 'Sl no', 'title': 'Sl no', 'data_key': 'Sl no'},
+                      {'id': 'trans_empid', 'title': 'Employee code', 'data_key': 'trans_empid'},
+                      {'id': 'trans_empname', 'title': 'Employee name', 'data_key': 'trans_empname'},
+                      {'id': 'trans_emppfno', 'title': 'PF number', 'data_key': 'trans_emppfno'},
+                      {'id': 'trans_emp_pfuan', 'title': 'PF UAN', 'data_key': 'trans_emp_pfuan'},
+                      {'id': 'earn_pf_salary', 'title': 'PF salary [ ₹ ]', 'data_key': 'earn_pf_salary'},
+                      {'id': 'pf_amt', 'title': 'Employeee PF Amt [ ₹ ]', 'data_key': 'pf_amt'},
+                      {'id': 'emp_pf_amt', 'title': 'Employeee FPF Amt [ ₹ ]', 'data_key': 'emp_pf_amt'}, 
+                      {'id': 'empr_pf_amt', 'title': 'Employer PF Amt [ ₹ ]', 'data_key': 'empr_pf_amt'},
+                      {'id': 'fpf_amt', 'title': 'Employer FPF Amt [ ₹ ]', 'data_key': 'fpf_amt'},   
+                      {'id': 'trans_pfvol', 'title': 'Employeee PF Voluntary Amt [ ₹ ]', 'data_key': 'trans_pfvol'},                      
+                      {'id': 'Total', 'title': 'Total Amount [ ₹ ]', 'data_key': 'Total'}]
+
+  
   rows = app_tables.transaction.search(trans_comp_code=trans_comp_code)
   filtered_rows = []
   for count,row in enumerate(rows):
