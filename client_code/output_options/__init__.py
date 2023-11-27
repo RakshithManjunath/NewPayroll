@@ -79,11 +79,11 @@ class output_options(output_optionsTemplate):
                                           gvarb.g_comname,gvarb.g_transdate)
     self.html = self.html_content
 
-    self.col_panel = anvil.ColumnPanel()
-    flow_panel_emp_details = anvil.FlowPanel()
-    self.col_panel.add_component(flow_panel_emp_details)
-    flow_panel_emp_details.add_component(anvil.Button(text="Front",align="center"))
-    self.add_component(self.col_panel)
+    # self.col_panel = anvil.ColumnPanel()
+    # flow_panel_emp_details = anvil.FlowPanel()
+    # self.col_panel.add_component(flow_panel_emp_details)
+    # flow_panel_emp_details.add_component(anvil.Button(text="Front",align="center"))
+    # self.add_component(self.col_panel)
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""

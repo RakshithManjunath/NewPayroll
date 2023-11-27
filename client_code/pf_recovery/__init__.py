@@ -217,3 +217,4 @@ class pf_recovery(pf_recoveryTemplate):
 
   def open_menu(self, **kwargs):
     open_form('menu')
+
