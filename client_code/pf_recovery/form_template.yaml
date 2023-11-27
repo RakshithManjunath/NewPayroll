@@ -1,5 +1,34 @@
 container:
   type: HtmlTemplate
-  properties: {html: ''}
-components: []
+  properties: {html: "<center style=\"font-style:italic; color:#888; margin: 3em;\"\
+      >\n  (Insert your custom HTML here)\n</center>\n<div anvil-slot=\"default\"\
+      ></div>"}
+components:
+- name: spacer_1
+  properties: {height: 32}
+  type: Spacer
+  layout_properties: {slot: default}
+- name: outlined_button_1
+  properties: {text: Download as pdf, role: filled-button, bold: true}
+  type: Button
+  layout_properties: {slot: default}
+  event_bindings: {click: outlined_button_1_click}
+- name: spacer_3
+  properties: {height: 32}
+  type: Spacer
+  layout_properties: {slot: default}
+- name: outlined_button_2
+  properties: {text: Download as excel, role: filled-button, bold: true}
+  type: Button
+  layout_properties: {slot: default}
+  event_bindings: {click: outlined_button_2_click}
+- name: spacer_2
+  properties: {height: 32}
+  type: Spacer
+  layout_properties: {slot: default}
+- name: outlined_button_3
+  properties: {text: Download as csv, role: filled-button, bold: true}
+  type: Button
+  layout_properties: {slot: default}
+  event_bindings: {click: outlined_button_3_click}
 is_package: true

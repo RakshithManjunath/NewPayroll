@@ -218,3 +218,18 @@ class pf_recovery(pf_recoveryTemplate):
   def open_menu(self, **kwargs):
     open_form('menu')
 
+  def outlined_button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pdf = anvil.server.call('download_report_recovery_pdf',self.html_content)
+    download(pdf)
+
+  def outlined_button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    excel = anvil.server.call('download_report_recovery_excel',self.html_content,gvarb.g_comcode,gvarb.g_transdate)
+    download(excel)
+
+  def outlined_button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    csv = anvil.server.call('download_report_recovery_csv',self.html_content)
+    download(csv)
+
