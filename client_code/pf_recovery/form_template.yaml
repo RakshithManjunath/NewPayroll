@@ -1,11 +1,5 @@
 container:
   type: HtmlTemplate
-  properties: {html: "<center style=\"font-style:italic; color:#888; margin: 3em;\"\
-      >\n  (Insert your custom HTML here)\n</center>\n<div anvil-slot=\"default\"\
-      ></div>"}
-components:
-- name: flow_panel_1
-  properties: {}
-  type: FlowPanel
-  layout_properties: {slot: default}
+  properties: {html: ''}
+components: []
 is_package: true

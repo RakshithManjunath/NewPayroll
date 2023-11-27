@@ -63,11 +63,24 @@ class pf_recovery(pf_recoveryTemplate):
         width: 80%;
         margin: 20px auto; /* Adjust to match the left margin of the table */
     }
+
+    button {
+            padding: 10px;
+            font-size: 16px;
+        }
+    .button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
 </style>
 
     </head>
     
     <body>
+    <div id="back_btn" class="button-container">
+        <button>Back</button>
+    </div>
         <div class="content">
             <h1>{{ company_name }}</h1>
             <h4>{{ addr_line1 }}</h4>
@@ -116,11 +129,15 @@ class pf_recovery(pf_recoveryTemplate):
             <h4>9 > Total mislenous charges [ ₹ ] - {{ report_head }}</h4>
             <h4> </h4>                
         </div>
-    
+    <script>
+    $('#back_btn').on('click', function(e) {
+    var linkElement = this;
+    anvil.call(linkElement, "open_menu");
+    e.preventDefault();   
+  }); 
+  </script>
     </body>
-    
     </html>
-
     """
 
     self.html_content = anvil.server.call('pf_recovery_html',html_template,
@@ -129,3 +146,6 @@ class pf_recovery(pf_recoveryTemplate):
                                           gvarb.g_comname,gvarb.g_comadd1,gvarb.g_comadd2,gvarb.g_comadd3,
                                          "PF summary for the month of "+gvarb.g_transdate.strftime("%B %Y").upper())
     self.html = self.html_content
+
+  def open_menu(self, **kwargs):
+    open_form('menu')
