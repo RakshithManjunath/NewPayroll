@@ -57,6 +57,49 @@ class pf_recovery(pf_recoveryTemplate):
         text-align: left;
     }
 
+      /* Adjust the width of individual columns as needed */
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 10%;
+        }
+
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 10%;
+        }
+
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 40%;
+        }
+        
+        th:nth-child(4),
+        td:nth-child(4) {
+            width: 10%;
+        }
+        
+        th:nth-child(5),
+        td:nth-child(5) {
+            width: 10%;
+        }
+        
+        th:nth-child(6),
+        td:nth-child(6) {
+            width: 10%;
+        }  
+        th:nth-child(7),
+        td:nth-child(7) {
+            width: 10%;
+        }  
+        th:nth-child(8),
+        td:nth-child(8) {
+            width: 10%;
+        } 
+        th:nth-child(9),
+        td:nth-child(9) {
+            width: 10%;
+        }        
+
     .charges-container {
         text-align: left;
         /* Adjust margin-top as needed */
@@ -67,7 +110,13 @@ class pf_recovery(pf_recoveryTemplate):
     button {
             padding: 10px;
             font-size: 16px;
-        }
+            background-color: darkblue;
+            color: white;
+            border-radius: 20px; /* Adjust the value to control the roundness, making it oval-shaped */
+           }
+
+    
+
     .button-container {
             position: absolute;
             top: 10px;
@@ -79,7 +128,7 @@ class pf_recovery(pf_recoveryTemplate):
     
     <body>
     <div id="back_btn" class="button-container">
-        <button>Back</button>
+        <button>  Main menu  </button>
     </div>
         <div class="content">
             <h1>{{ company_name }}</h1>
