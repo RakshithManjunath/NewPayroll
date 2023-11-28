@@ -26,10 +26,11 @@ class pf_recovery(pf_recoveryTemplate):
     <html>
     
     <head>
+     <meta charset="UTF-8">
         <title>PF Recovery Statement</title>
         <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'DejaVu Sans', sans-serif;
         text-align: center;
         /* Center align the content */
     }
@@ -99,17 +100,17 @@ class pf_recovery(pf_recoveryTemplate):
         td:nth-child(9) {
             width: 20%;
         }        
-        } 
+        
         th:nth-child(10),
         td:nth-child(10) {
             width: 20%;
         }  
-        } 
+        
         th:nth-child(11),
         td:nth-child(11) {
             width: 10%;
         } 
-        } 
+        
         th:nth-child(12),
         td:nth-child(12) {
             width: 10%;
@@ -123,29 +124,11 @@ class pf_recovery(pf_recoveryTemplate):
         margin: 20px auto; /* Adjust to match the left margin of the table */
     }
 
-    button {
-            padding: 10px;
-            font-size: 16px;
-            background-color: darkblue;
-            color: white;
-            border-radius: 20px; /* Adjust the value to control the roundness, making it oval-shaped */
-           }
-
-    
-
-    .button-container {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
 </style>
 
     </head>
     
     <body>
-    <div id="back_btn" class="button-container">
-        <button>  Main menu  </button>
-    </div>
         <div class="content">
             <h1>{{ company_name }}</h1>
             <h4>{{ addr_line1 }}</h4>
@@ -196,14 +179,6 @@ class pf_recovery(pf_recoveryTemplate):
             <h4> </h4>                
         </div>
 
-        
-    <script>
-    $('#back_btn').on('click', function(e) {
-    var linkElement = this;
-    anvil.call(linkElement, "open_menu");
-    e.preventDefault();   
-  }); 
-  </script>
     </body>
     </html>
     """
@@ -215,11 +190,7 @@ class pf_recovery(pf_recoveryTemplate):
                                          "PF summary for the month of "+gvarb.g_transdate.strftime("%B %Y").upper())
     self.html = self.html_content
 
-  def open_menu(self, **kwargs):
-    open_form('menu')
-
   def outlined_button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
     pdf = anvil.server.call('download_report_recovery_pdf',self.html_content)
     download(pdf)
 
@@ -230,6 +201,5 @@ class pf_recovery(pf_recoveryTemplate):
 
   def outlined_button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
-    csv = anvil.server.call('download_report_recovery_csv',self.html_content)
-    download(csv)
+    open_form('menu')
 

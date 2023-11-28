@@ -4,6 +4,11 @@ container:
       >\n  (Insert your custom HTML here)\n</center>\n<div anvil-slot=\"default\"\
       ></div>"}
 components:
+- name: back_btn
+  properties: {text: Main Menu, role: filled-button, bold: true}
+  type: Button
+  layout_properties: {slot: default}
+  event_bindings: {click: outlined_button_3_click}
 - name: spacer_1
   properties: {height: 32}
   type: Spacer
