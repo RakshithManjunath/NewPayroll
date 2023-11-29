@@ -12,7 +12,6 @@ from xhtml2pdf import pisa
 from io import BytesIO
 from bs4 import BeautifulSoup
 
-
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
 #

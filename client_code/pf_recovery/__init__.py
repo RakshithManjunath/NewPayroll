@@ -26,9 +26,15 @@ class pf_recovery(pf_recoveryTemplate):
     <html>
     
     <head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
      <meta charset="UTF-8">
         <title>PF Recovery Statement</title>
         <style>
+        @font-face {
+            font-family: Roboto;
+            src: url(_/theme/DejaVuSans.ttf);
+        }
+
     body {
         font-family: 'DejaVu Sans', sans-serif;
         text-align: center;
@@ -130,6 +136,7 @@ class pf_recovery(pf_recoveryTemplate):
     
     <body>
         <div class="content">
+            <h1>ಕನ್ನಡದಲ್ಲಿ</h1
             <h1>{{ company_name }}</h1>
             <h4>{{ addr_line1 }}</h4>
             <h4>{{ addr_line2 }}</h4>
