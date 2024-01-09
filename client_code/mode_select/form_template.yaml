@@ -25,12 +25,13 @@ components:
     layout_properties: {grid_position: 'UPMAWH,BAZDAY'}
     components:
     - type: Button
-      properties: {role: tonal-button, align: full, tooltip: '', border: '', enabled: false,
+      properties: {role: tonal-button, align: full, tooltip: '', border: '', enabled: true,
         foreground: '', visible: true, text: Time Office, font_size: 25, font: '',
         spacing_above: small, icon_align: left, spacing_below: small, italic: false,
         background: '', bold: true, underline: false, icon: ''}
       name: time_office_btn
       layout_properties: {grid_position: 'HGVPAO,IOLUUA'}
+      event_bindings: {click: time_office_btn_click}
     - type: Spacer
       properties: {height: 32}
       name: spacer_1

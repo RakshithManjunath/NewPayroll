@@ -27,5 +27,10 @@ class mode_select(mode_selectTemplate):
     gvarb.g_mode = "Payroll "
     open_form('month_and_year_select')
 
+  def time_office_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    gvarb.g_mode = "Time Office "
+    open_form('day_select')
+
 
 
