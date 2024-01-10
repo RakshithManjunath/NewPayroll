@@ -23,6 +23,7 @@ g_mode = ""
 g_transdate= ""
 g_username = ""
 g_curmonyear = True
+g_tosdate= ""
 
 
 

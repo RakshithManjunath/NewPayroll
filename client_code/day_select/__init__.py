@@ -17,4 +17,9 @@ class day_select(day_selectTemplate):
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-  open_form('logform')
+    open_form('logform')
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    g_tosdate = self.date_picker_1.date
+    open_form('tos_mode_select')

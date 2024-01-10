@@ -16,12 +16,21 @@ components:
     properties: {height: 32}
     type: Spacer
     layout_properties: {grid_position: 'HNGUZP,CVYRMI'}
+  - name: date_picker_1
+    properties: {}
+    type: DatePicker
+    layout_properties: {grid_position: 'KACVEQ,RPBFVO'}
+  - name: spacer_2
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'COQLEH,SCZQCF'}
   - name: button_1
     properties: {text: Submit, role: filled-button, bold: true}
     type: Button
     layout_properties: {grid_position: 'FJVZVB,ZWUYCW'}
+    event_bindings: {click: button_1_click}
   - name: button_2
-    properties: {text: Cancel, role: filled-button, bold: true}
+    properties: {text: Cancel, role: filled-button, bold: true, align: center}
     type: Button
     layout_properties: {grid_position: 'FJVZVB,SJKZXR'}
     event_bindings: {click: button_2_click}
